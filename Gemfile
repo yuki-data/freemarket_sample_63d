@@ -64,6 +64,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # hamlを使用するため
 gem "haml-rails"
 
+# font-awesomeを使うため
+gem 'font-awesome-rails'
+
 group :development, :test do
   # 以下はvscodeのリンターを使うためのgem
   gem "rubocop"
