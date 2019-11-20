@@ -1,0 +1,66 @@
+.wrapper
+  .sp-header
+  .pc-header
+    .pc-header__inner
+      .pc-header__inner__top
+        .pc-header__inner__top__logo
+          = image_tag 'fmarket_logo_red.svg', alt: 'fmarket_logo', height: '36', width: '134', class: ''
+        .pc-header__inner__top__search
+          %form.pc-header__inner__top__search
+            %input{ type: "search", placeholder: "なにかお探しですか", class: "pc-header__inner__top__search__input" }
+            = fa_icon "search", class: ".pc-header__inner__top__search__icon"
+      .pc-header__inner__navbar
+        .pc-header__inner__navbar__menu-left
+          %ul.pc-header__inner__navbar__menu-left__list
+            %li.pc-header__inner__navbar__menu-left__list__item
+              = fa_icon "list"
+              %span カテゴリーから探す
+            %li.pc-header__inner__navbar__menu-left__list__item
+              = fa_icon "tags"
+              %span ブランドから探す
+        .pc-header__inner__navbar__menu-right
+          %ul.pc-header__inner__navbar__menu-right__list
+            %li.pc-header__inner__navbar__menu-right__list__item
+              = fa_icon "heart"
+              %span いいね一覧
+            %li.pc-header__inner__navbar__menu-right__list__item
+              = fa_icon "bell"
+              %span お知らせ
+            %li.pc-header__inner__navbar__menu-right__list__item
+              = fa_icon "check"
+              %span やることリスト
+            %li.pc-header__inner__navbar__menu-right__list__item
+              = fa_icon "user"
+              %span マイページ
+  .breadcrumb
+  .main
+    .main__inner
+      .main__inner__sidebar
+        .main__inner__sidebar__menu
+          .main__inner__sidebar__menu__nav
+          .main__inner__sidebar__menu__payment
+            %h3.main__inner__sidebar__menu__payment__title メルペイ
+            %ul.main__inner__sidebar__menu__payment__list
+              %li.main__inner__sidebar__menu__payment__list__item 売上・振込申請
+              %li.main__inner__sidebar__menu__payment__list__item ポイント
+          .main__inner__sidebar__menu__config
+            %h3.main__inner__sidebar__menu__config__title 設定
+            %ul.main__inner__sidebar__menu__config__list
+              %li.main__inner__sidebar__menu__config__list__item プロフィール
+              %li.main__inner__sidebar__menu__config__list__item 発送元・お届け先住所変更
+              %li.main__inner__sidebar__menu__config__list__item 支払い方法
+              %li.main__inner__sidebar__menu__config__list__item メール/パスワード
+              %li.main__inner__sidebar__menu__config__list__item 本人情報
+              %li.main__inner__sidebar__menu__config__list__item 電話番号の確認
+              %li.main__inner__sidebar__menu__config__list__item ログアウト
+      .main__inner__content
+        .main__inner__content__user-icon
+        .main__inner__content__notification
+          %ul.main__inner__content__notification__tabs
+          .main__inner__content__notification__content
+            .main__inner__content__notification__message
+            .main__inner__content__notification__alert
+        .main__inner__content__purchase-history
+  .banner
+  .footer
+  .sell-button
