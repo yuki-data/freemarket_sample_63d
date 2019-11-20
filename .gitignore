@@ -25,3 +25,10 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# vscode設定を無視
+.vscode/
+# rubocop設定を無視
+.rubocop.yml
+# eslint設定を無視
+.eslintrc.json
