@@ -60,3 +60,21 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :development, :test do
+  # 以下はvscodeのリンターを使うためのgem
+  gem "rubocop"
+  gem "ruby-debug-ide"
+  gem "debase"
+  gem "rcodetools"
+  gem "fastri"
+  gem "ruby-lint"
+  gem "reek"
+  gem "faster"
+  gem "debride"
+  gem "solargraph"
+  gem "fastri"
+
+  # pryを使うためのgem
+  gem 'pry-rails'
+end
