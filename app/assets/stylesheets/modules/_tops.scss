@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 //////ヘッダー/////
 header{
 
@@ -19,31 +20,63 @@ header{
 }
 
 //////人気のカテゴリー/////
-.Popularity{
-  
+.Popularity{ 
+  padding-top:56px;
   height:200px;
-  background: gray;
   width:100%;
+  h2{text-align: center;
+    margin-bottom: 16px;
+    font-size:28px;
+    font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+    font-weight: 600;
+    background:white;
   
-
+  }
+  ul{
+    display: flex;
+    justify-content: center; 
+    li{
+      background-color: rgb(239, 239, 239);
+      margin:0px 10px;
+      padding:5px;
+      border-radius:5px;
+    }
+  } 
 }
 
 //////新着アイテム/////
-.newItemTitle {
+.newItem__Title {
   display: flex;
-  background: coral;
+  width:80%;
+  margin:0 auto;
+  justify-content:space-between;
+  align-items: center;
+  h3{
+    font-size:24px;
+    font-weight:600;
+  }
+  a{
+    text-decoration: none;
+    color: rgb(0, 149, 238);
+
+  }
+}
+ul.new__item{
+  width:80%;
+  margin:0 auto;
+  li{
+    width:100px;
+    height:100px;
+    background: pink;
+  }
 }
 
-.topAside {
+.news__Bar {
   height: 200px;
   background: blue;
   width: 100%;
 
-  .imgContainer {
-    background: red;
-    width: 90px;
-    height: 90px;
-  }
+  
 }
 
 
@@ -58,7 +91,7 @@ footer{
 }
 
 /////赤い固定ボタン/////
-.redButton{
+.red__Button{
   width:100px;
   height:100px;
   background: red;
