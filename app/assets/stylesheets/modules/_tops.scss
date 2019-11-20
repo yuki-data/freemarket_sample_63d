@@ -1,0 +1,77 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//////ヘッダー/////
+header{
+
+  height:10vh;
+  background:white;
+  width:100%;
+
+}
+
+//////スライダー/////
+.slider{
+  h2{
+    text-align: center;
+    margin:0 auto;
+  }
+  height:390px;
+  background: green;
+  width:100%;
+}
+
+//////人気のカテゴリー/////
+.Popularity{
+  
+  height:200px;
+  background: gray;
+  width:100%;
+  
+
+}
+
+//////新着アイテム/////
+.newItemTitle {
+  display: flex;
+  background: coral;
+}
+
+.topAside {
+  height: 200px;
+  background: blue;
+  width: 100%;
+
+  .imgContainer {
+    background: red;
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
+
+
+
+/////フッター/////
+footer{
+  height:900px;
+  background: black;
+  width:100%;
+}
+
+/////赤い固定ボタン/////
+.redButton{
+  width:100px;
+  height:100px;
+  background: red;
+  border-radius: 50%;
+  position:fixed;
+  right:10px;
+  bottom:10px;
+}
+
+
+
+
