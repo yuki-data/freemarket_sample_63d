@@ -65,7 +65,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "haml-rails"
 
 # font-awesomeを使うため
-gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 
 group :development, :test do
   # 以下はvscodeのリンターを使うためのgem

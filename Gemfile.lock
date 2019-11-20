@@ -100,8 +100,8 @@ GEM
     faster (0.0.1)
     fastri (0.3.1.1)
     ffi (1.11.2)
-    font-awesome-rails (4.7.0.5)
-      railties (>= 3.2, < 6.1)
+    font-awesome-sass (5.11.2)
+      sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.1.2)
@@ -230,6 +230,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.2.1)
+      ffi (~> 1.9)
     selenium-webdriver (3.142.6)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -300,7 +302,7 @@ DEPENDENCIES
   debride
   faster
   fastri
-  font-awesome-rails
+  font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
