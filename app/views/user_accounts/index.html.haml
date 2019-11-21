@@ -110,5 +110,19 @@
               %li.main__inner__body__purchase-history__content__previous__item 田中さんからスマホケースを購入
               %li.main__inner__body__purchase-history__content__previous__item 佐藤さんからmacbookを購入
   .banner
+    .banner__inner
+      .banner__inner__promotion
+        %h2.banner__inner__promotion__title スマホでかんたんフリマアプリ
+        %h2.banner__inner__promotion__text 今すぐ無料ダウンロード！
+        .banner__inner__promotion__icons
+          .banner__inner__promotion__icons__logo
+            = image_tag 'logos/logo_gray.svg', alt: 'logo_gray', width: "68"
+          %ul.banner__inner__promotion__icons__apps
+            %li.banner__inner__promotion__icons__apps__item
+              = image_tag 'badges/App_Store_Badge_JP_RGB_blk.svg', alt: 'App_Store_Badge_JP_RGB_blk', width: "133", height: "40"
+            %li.banner__inner__promotion__icons__apps__item
+              = image_tag 'badges/App_Store_Badge_JP_RGB_blk.svg', alt: 'App_Store_Badge_JP_RGB_blk', width: "133", height: "40"
+      .banner__inner__image
+        = image_tag 'logos/logo_gray.svg', alt: 'logo_gray', width: "68", width: "260", height: "300"
   .footer
   .sell-button
