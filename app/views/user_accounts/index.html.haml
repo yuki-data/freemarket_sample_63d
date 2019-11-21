@@ -77,16 +77,25 @@
             %li.main__inner__sidebar__config__list__item 本人情報
             %li.main__inner__sidebar__config__list__item 電話番号の確認
             %li.main__inner__sidebar__config__list__item ログアウト
-      .main__inner__content
-        .main__inner__content__user-icon
-        .main__inner__content__notification
-          %ul.main__inner__content__notification__tabs
-            %li.main__inner__content__notification__tabs__item お知らせ
-            %li.main__inner__content__notification__tabs__item やることリスト
-          .main__inner__content__notification__content
-            .main__inner__content__notification__message
-            .main__inner__content__notification__alert
-        .main__inner__content__purchase-history
+      .main__inner__body
+        .main__inner__body__user-icon
+        .main__inner__body__notification
+          %ul.main__inner__body__notification__tabs
+            %li.main__inner__body__notification__tabs__title お知らせ
+            %li.main__inner__body__notification__tabs__title やることリスト
+          .main__inner__body__notification__content
+            %ul.main__inner__body__notification__messages
+              %li.main__inner__body__notification__messages__item 事務局から個別メッセージ
+              %li.main__inner__body__notification__messages__item 出品祭開催中！
+              %li.main__inner__body__notification__messages__item メイルペイスマートがお得！
+              %li.main__inner__body__notification__messages__item TBSにてテレビ放送
+              %li.main__inner__body__notification__messages__item 「ゆうパケットプラス」が新登場
+              %li.main__inner__body__notification__messages__item
+                = link_to "一覧をみる", "#"
+            %ul.main__inner__body__notification__alerts
+              %li.main__inner__body__notification__alerts__item 購入した商品のお支払いをしてください
+              %li.main__inner__body__notification__alerts__item 出品した商品を発送してください
+        .main__inner__body__purchase-history
   .banner
   .footer
   .sell-button
