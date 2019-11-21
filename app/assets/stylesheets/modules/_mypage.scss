@@ -46,6 +46,30 @@
           height: 200px;
           background-image: url(mypage/bg_ocean_suiheisen.jpg);
         }
+        &__notification {
+          background-color: #fff;
+          &__tabs {
+            background-color: #eee;
+            display: flex;
+            &__title {
+              flex-grow: 1;
+              line-height: 72px;
+              text-align: center;
+            }
+          }
+          &__messages {
+            &__item {
+              a {
+                @include notification_link;
+              }
+              &--show-list {
+                a {
+                  @include notification_link;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
