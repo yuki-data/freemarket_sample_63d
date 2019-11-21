@@ -1,0 +1,62 @@
+.wrapper {
+  .pc-header {
+    &__inner {
+      width: 1020px;
+      margin: 0 auto;
+      &__top {
+        display: flex;
+      }
+      &__navbar {
+        display: flex;
+        justify-content: space-between;
+        &__menu-left {
+          display: flex;
+        }
+        &__menu-right {
+          display: flex;
+        }
+      }
+    }
+  }
+  .main {
+    background-color: #eef3f8;
+    padding-top: 40px;
+    &__inner {
+      width: 1020px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      &__sidebar {
+        width: 280px;
+        li {
+          border-bottom: 1px solid whitesmoke;
+          background-color: #fff;
+          a {
+            color: #333333;
+            display: block;
+            font-size: 14px;
+            padding: 16px;
+            text-decoration: none;
+          }
+        }
+      }
+      &__body {
+        width: 700px;
+        &__user-icon {
+          height: 200px;
+          background-image: url(mypage/bg_ocean_suiheisen.jpg);
+        }
+      }
+    }
+  }
+  .banner {
+    background-image: url(mypage/rec-room.jpg);
+    background-position: center;
+    background-size: cover;
+    &__inner {
+      height: 260px;
+      width: 700px;
+      display: flex;
+    }
+  }
+}
