@@ -65,18 +65,27 @@
         .main__inner__sidebar__payment
           %h3.main__inner__sidebar__payment__title メルペイ
           %ul.main__inner__sidebar__payment__list
-            %li.main__inner__sidebar__payment__list__item 売上・振込申請
-            %li.main__inner__sidebar__payment__list__item ポイント
+            %li.main__inner__sidebar__payment__list__item
+              = link_to "売上・振込申請", "#"
+            %li.main__inner__sidebar__payment__list__item
+              = link_to "ポイント", "#"
         .main__inner__sidebar__config
           %h3.main__inner__sidebar__config__title 設定
           %ul.main__inner__sidebar__config__list
-            %li.main__inner__sidebar__config__list__item プロフィール
-            %li.main__inner__sidebar__config__list__item 発送元・お届け先住所変更
-            %li.main__inner__sidebar__config__list__item 支払い方法
-            %li.main__inner__sidebar__config__list__item メール/パスワード
-            %li.main__inner__sidebar__config__list__item 本人情報
-            %li.main__inner__sidebar__config__list__item 電話番号の確認
-            %li.main__inner__sidebar__config__list__item ログアウト
+            %li.main__inner__sidebar__config__list__item
+              = link_to "プロフィール", "#"
+            %li.main__inner__sidebar__config__list__item
+              = link_to "発送元・お届け先住所変更", "#"
+            %li.main__inner__sidebar__config__list__item
+              = link_to "支払い方法", "#"
+            %li.main__inner__sidebar__config__list__item
+              = link_to "メール/パスワード", "#"
+            %li.main__inner__sidebar__config__list__item
+              = link_to "本人情報", "#"
+            %li.main__inner__sidebar__config__list__item
+              = link_to "電話番号の確認", "#"
+            %li.main__inner__sidebar__config__list__item
+              = link_to "ログアウト", "#"
       .main__inner__body
         .main__inner__body__user-icon
         .main__inner__body__notification
