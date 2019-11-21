@@ -49,12 +49,16 @@
         &__notification {
           background-color: #fff;
           &__tabs {
-            background-color: #eee;
             display: flex;
             &__title {
+              background-color: #eee;
               flex-grow: 1;
               line-height: 72px;
               text-align: center;
+              &.active {
+                background-color: #fff;
+                border-top: 2px solid red;
+              }
             }
           }
           &__messages {
