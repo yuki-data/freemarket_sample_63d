@@ -1,4 +1,5 @@
 %body
+
   %header.header
 
   .slider
@@ -7,22 +8,133 @@
     %h2 人気のカテゴリー
     %ul
       %li
-        %a レディース
+        = link_to do
+          レディース
       %li
-        %a メンズ
+        = link_to do
+          メンズ
       %li
-        %a 家電・スマホ・カメラ
+        = link_to do
+          家電・スマホ・カメラ
       %li
-        %a おもちゃ・ホビー・グッズ
+        = link_to do
+          おもちゃ・ホビー・グッズ
 
+  
   .item__All
+
     .newItem__Title
       %h3 レディース新着アイテム
-      %a{:href => "#"} もっと見る＞
+      = link_to do
+        %b
+          もっと見る＞
+
     %ul.new__item
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+
+    %ul.new__item
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+      = link_to do
+        %li.item
+          .item__picture
+            .item__capital
+              ¥999
+            .item__caption
+              ダミー画像
+
+
+
+
+    .newItem__Title
+      %h3 メンズ新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+    
+  
+  .Popularity
+    %h2 人気のブランド
+    %ul
       %li
+        = link_to do
+          シャネル
+      %li
+        = link_to do
+          ルイヴィトン
+      %li
+        = link_to do
+          シュプリーム
+      %li
+        = link_to do
+          ナイキ
+        
+    = render partial: "tops"
+    
+    
+    
       
-      
+
   .news__Bar
   %footer
   .red__Button

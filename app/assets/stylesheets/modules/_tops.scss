@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a{
+  text-decoration: none;
+}
 
 //////ヘッダー/////
 header{
@@ -24,6 +27,7 @@ header{
   padding-top:56px;
   height:200px;
   width:100%;
+  
   h2{text-align: center;
     margin-bottom: 16px;
     font-size:28px;
@@ -34,41 +38,91 @@ header{
   }
   ul{
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     li{
       background-color: rgb(239, 239, 239);
       margin:0px 10px;
       padding:5px;
       border-radius:5px;
+      a{
+        color:black;
+      }
     }
   } 
 }
 
 //////新着アイテム/////
-.newItem__Title {
-  display: flex;
-  width:80%;
-  margin:0 auto;
-  justify-content:space-between;
-  align-items: center;
-  h3{
-    font-size:24px;
-    font-weight:600;
-  }
-  a{
-    text-decoration: none;
-    color: rgb(0, 149, 238);
+.item__All{
+  background: #efefef;
+  padding:50px 0px;
+  .newItem__Title {
+    display: flex;
+    width:80%;
+    margin:0 auto;
+    justify-content:space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    h3{
+      font-size:24px;
+      font-weight:600;
+    }
+    a{
+      color: rgb(0, 149, 238);
 
+    }
   }
 }
+
 ul.new__item{
   width:80%;
   margin:0 auto;
-  li{
-    width:100px;
-    height:100px;
-    background: pink;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  li.item{
+    padding:10px;
+    .item__picture{
+      width:188px;
+      height:252px;
+      background:white;
+      position: relative;
+      background-image: url(http://ochiai.lolipop.jp/portsitenew/img/jigazonew.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,.18);
+      color:black;
+
+      &:hover{
+        border: 1px solid skyblue;
+      }
+
+      .item__capital{
+        padding:10px;
+        position: absolute;
+        bottom: 50px;
+        left:0px;
+        align-items: center;
+        background: rgba(0,0,0,.4);
+        border-radius: 0 14px 14px 0;
+        text-align: center;
+        color:white;
+  
+      }
+      .item__caption{
+        padding:10px;
+        background: white;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    
+
+    
   }
+  
 }
 
 .news__Bar {
