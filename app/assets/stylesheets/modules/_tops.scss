@@ -2,17 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/////aタグ/////
 a{
   text-decoration: none;
 }
 
 //////ヘッダー/////
 header{
-
   height:10vh;
   background:white;
   width:100%;
-
 }
 
 //////スライダー/////
@@ -22,19 +21,17 @@ header{
   width:100%;
 }
 
-//////人気のカテゴリー/////
+//////人気商品カテゴリー/////
 .Popularity{ 
   padding-top:56px;
   height:200px;
   width:100%;
-  
   h2{text-align: center;
     margin-bottom: 16px;
     font-size:28px;
     font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
     font-weight: 600;
     background:white;
-  
   }
   ul{
     display: flex;
@@ -51,10 +48,11 @@ header{
   } 
 }
 
-//////新着アイテム/////
+//////商品見出し梱包/////
 .item__All{
   background: #efefef;
   padding:50px 0px;
+  /////見出しタイトル/////
   .newItem__Title {
     display: flex;
     width:80%;
@@ -65,10 +63,10 @@ header{
     h3{
       font-size:24px;
       font-weight:600;
+      font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
     }
     a{
       color: rgb(0, 149, 238);
-
     }
   }
 }
@@ -77,10 +75,13 @@ ul.new__item{
   width:80%;
   margin:0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  //justify-content: space-between;
   flex-wrap:wrap;
+  /////商品画像掲載を梱包/////
   li.item{
     padding:10px;
+    /////商品画像/////
     .item__picture{
       width:188px;
       height:252px;
@@ -92,11 +93,11 @@ ul.new__item{
       background-position: center;
       box-shadow: 0 2px 4px rgba(0,0,0,.18);
       color:black;
-
+      /////画像にカーソルが乗ったら罫線表示/////
       &:hover{
         border: 1px solid skyblue;
       }
-
+      /////商品値段/////
       .item__capital{
         padding:10px;
         position: absolute;
@@ -109,6 +110,7 @@ ul.new__item{
         color:white;
   
       }
+      /////商品画像キャプション/////
       .item__caption{
         padding:10px;
         background: white;
@@ -117,25 +119,15 @@ ul.new__item{
         width: 100%;
         text-align: center;
       }
-    }
-    
-
-    
-  }
-  
+    } 
+  }  
 }
-
+/////広告バーダミー/////
 .news__Bar {
   height: 200px;
   background: blue;
-  width: 100%;
-
-  
+  width: 100%;  
 }
-
-
-
-
 
 /////フッター/////
 footer{
@@ -146,13 +138,27 @@ footer{
 
 /////赤い固定ボタン/////
 .red__Button{
-  width:100px;
-  height:100px;
+  width:160px;
+  height:160px;
   background: red;
   border-radius: 50%;
   position:fixed;
   right:10px;
   bottom:10px;
+  color:white;
+  text-align: center;
+  font-weight: bold;
+  font-size:22px;
+  .red__Button__caption{
+    position: relative;
+    top:20px;
+
+  }
+  .red__Button__icon{
+    font-size:80px;
+    position: relative;
+    bottom:5px;
+  }
 }
 
 

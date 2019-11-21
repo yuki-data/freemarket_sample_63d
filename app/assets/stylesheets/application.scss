@@ -1,9 +1,10 @@
-
-  @import "config/reset";
-  @import "config/boxsizing";
-  @import "config/variables";
-  @import "mixins/tops";
-  @import "modules/tops";
+@import "config/reset";
+@import "config/boxsizing";
+@import "config/variables";
+@import "mixins/tops";
+@import "modules/tops";
+@import "font-awesome-sprockets";
+@import "./font-awesome";
  
 
 

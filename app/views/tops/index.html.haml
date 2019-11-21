@@ -1,6 +1,7 @@
 %body
 
   %header.header
+  
 
   .slider
 
@@ -19,7 +20,6 @@
       %li
         = link_to do
           おもちゃ・ホビー・グッズ
-
   
   .item__All
 
@@ -29,81 +29,7 @@
         %b
           もっと見る＞
 
-    %ul.new__item
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-
-    %ul.new__item
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-      = link_to do
-        %li.item
-          .item__picture
-            .item__capital
-              ¥999
-            .item__caption
-              ダミー画像
-
-
+    = render partial: "tops"
 
 
     .newItem__Title
@@ -111,8 +37,26 @@
       = link_to do
         %b
           もっと見る＞
+
+    = render partial: "tops"
+
+
+    .newItem__Title
+      %h3 家電・スマホ・カメラ新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+
+    = render partial: "tops"
+
+    .newItem__Title
+      %h3 おもちゃ・ホビー・グッズ新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+
+    = render partial: "tops"
     
-  
   .Popularity
     %h2 人気のブランド
     %ul
@@ -128,13 +72,51 @@
       %li
         = link_to do
           ナイキ
-        
+    
+  .item__All
+
+    .newItem__Title
+      %h3 シャネル新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+
     = render partial: "tops"
-    
-    
+
+    .newItem__Title
+      %h3 ルイヴィトン新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+
+    = render partial: "tops"
+
+    .newItem__Title
+      %h3 シュプリーム新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+
+    = render partial: "tops"
+
+    .newItem__Title
+      %h3 ナイキ新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+
+    = render partial: "tops"  
     
       
 
   .news__Bar
   %footer
-  .red__Button
+
+  = link_to do
+    .red__Button
+      .red__Button__caption
+        出品
+      .red__Button__icon
+        %i.fas.fa-camera
+  
+
