@@ -50,6 +50,10 @@
               font-size: 14px;
               height: 44px;
               line-height: 44px;
+              font-weight: 700;
+              i {
+                color: #ea352d;
+              }
             }
           }
         }
@@ -66,6 +70,21 @@
               font-size: 14px;
               height: 44px;
               line-height: 44px;
+              display: flex;
+              align-items: center;
+              i {
+                font-size: 18px;
+                color: #ccc;
+              }
+              span {
+                margin-left: 10px;
+                line-height: 1;
+              }
+              img {
+                line-height: 1;
+                border-radius: 50%;
+                background-color: grey;
+              }
             }
           }
         }
