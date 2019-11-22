@@ -12,24 +12,30 @@
       .pc-header__inner__navbar
         %ul.pc-header__inner__navbar__menu-left
           %li.pc-header__inner__navbar__menu-left__item
-            = icon("fas" , "list")
-            %span カテゴリーから探す
+            = link_to "#" do
+              = icon("fas" , "list")
+              %span カテゴリーから探す
           %li.pc-header__inner__navbar__menu-left__item
-            = icon("fas", "tags")
-            %span ブランドから探す
+            = link_to "#" do
+              = icon("fas", "tags")
+              %span ブランドから探す
         %ul.pc-header__inner__navbar__menu-right
           %li.pc-header__inner__navbar__menu-right__item
-            = icon("far", "heart")
-            %span いいね一覧
+            = link_to "#" do
+              = icon("far", "heart")
+              %span いいね一覧
           %li.pc-header__inner__navbar__menu-right__item
-            = icon("far", "bell")
-            %span お知らせ
+            = link_to "#" do
+              = icon("far", "bell")
+              %span お知らせ
           %li.pc-header__inner__navbar__menu-right__item
-            = icon("fas", "check")
-            %span やることリスト
+            = link_to "#" do
+              = icon("fas", "check")
+              %span やることリスト
           %li.pc-header__inner__navbar__menu-right__item
-            = icon("far", "user")
-            %span マイページ
+            = link_to "#" do
+              = icon("far", "user")
+              %span マイページ
   .breadcrumb
   .main
     .main__inner
