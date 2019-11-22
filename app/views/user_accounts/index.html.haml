@@ -94,15 +94,55 @@
             %li.main__inner__body__notification__tabs__title やることリスト
           %ul.main__inner__body__notification__messages
             %li.main__inner__body__notification__messages__item
-              = link_to "事務局から個別メッセージ", "#"
+              = link_to "#", class: "messages__item" do
+                = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                .messages__item__content
+                  .messages__item__content__text 事務局から個別メッセージ
+                  .messages__item__content__date
+                    = icon("far", "clock")
+                    %span ２日前
+                .messages__item__arrow
+                  = icon("fas", "angle-right")
             %li.main__inner__body__notification__messages__item
-              = link_to "出品祭開催中！", "#"
+              = link_to "#", class: "messages__item" do
+                = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                .messages__item__content
+                  .messages__item__content__text 事務局から個別メッセージ
+                  .messages__item__content__date
+                    = icon("far", "clock")
+                    %span ２日前
+                .messages__item__arrow
+                  = icon("fas", "angle-right")
             %li.main__inner__body__notification__messages__item
-              = link_to "メイルペイスマートがお得！", "#"
+              = link_to "#", class: "messages__item" do
+                = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                .messages__item__content
+                  .messages__item__content__text 事務局から個別メッセージ
+                  .messages__item__content__date
+                    = icon("far", "clock")
+                    %span ２日前
+                .messages__item__arrow
+                  = icon("fas", "angle-right")
             %li.main__inner__body__notification__messages__item
-              = link_to "TBSにてテレビ放送", "#"
+              = link_to "#", class: "messages__item" do
+                = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                .messages__item__content
+                  .messages__item__content__text 事務局から個別メッセージ
+                  .messages__item__content__date
+                    = icon("far", "clock")
+                    %span ２日前
+                .messages__item__arrow
+                  = icon("fas", "angle-right")
             %li.main__inner__body__notification__messages__item
-              = link_to "「ゆうパケットプラス」が新登場", "#"
+              = link_to "#", class: "messages__item" do
+                = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                .messages__item__content
+                  .messages__item__content__text 事務局から個別メッセージ
+                  .messages__item__content__date
+                    = icon("far", "clock")
+                    %span ２日前
+                .messages__item__arrow
+                  = icon("fas", "angle-right")
             %li.main__inner__body__notification__messages__item--show-list
               = link_to "一覧をみる", "#"
           %ul.main__inner__body__notification__alerts
