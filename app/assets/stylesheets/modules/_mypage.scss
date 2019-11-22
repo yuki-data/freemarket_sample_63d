@@ -52,7 +52,7 @@
             display: flex;
             &__title {
               background-color: #eee;
-              flex-grow: 1;
+              flex: 1;
               line-height: 72px;
               text-align: center;
               &.active {
