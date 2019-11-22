@@ -114,6 +114,9 @@
             align-items: center;
             justify-content: space-between;
           }
+          &:hover {
+            background-color: #fafafa;
+          }
         }
       }
       &__body {
