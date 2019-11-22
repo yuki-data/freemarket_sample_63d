@@ -7,6 +7,9 @@
       &__top {
         display: flex;
         align-items: center;
+        &__logo {
+          line-height: 1;
+        }
         &__search {
           width: 100%;
           margin-left: 45px;
