@@ -114,9 +114,17 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-          }
-          &:hover {
-            background-color: #fafafa;
+            i {
+              color: #ccc;
+            }
+            &:hover {
+              background-color: #fafafa;
+              & i {
+                transform: translateX(50%);
+                transition-duration: 0.3s;
+                color: #333;
+              }
+            }
           }
         }
       }
