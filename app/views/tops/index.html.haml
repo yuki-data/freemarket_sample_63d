@@ -1,12 +1,14 @@
 %body
 
-  %header.header
   
 
+  %header.header
+  
   .slider
-    
-    %i.fas.fa-angle-left
-    %i.fas.fa-angle-right
+    = link_to do  
+      %i.fas.fa-angle-left
+    = link_to do
+      %i.fas.fa-angle-right
 
   .Popularity
     %h2 人気のカテゴリー
@@ -23,7 +25,7 @@
       %li
         = link_to do
           おもちゃ・ホビー・グッズ
-  
+
   .item__All
 
     .newItem__Title
@@ -31,25 +33,20 @@
       = link_to do
         %b
           もっと見る＞
-
     = render partial: "tops"
-
 
     .newItem__Title
       %h3 メンズ新着アイテム
       = link_to do
         %b
           もっと見る＞
-
     = render partial: "tops"
-
 
     .newItem__Title
       %h3 家電・スマホ・カメラ新着アイテム
       = link_to do
         %b
           もっと見る＞
-
     = render partial: "tops"
 
     .newItem__Title
@@ -57,7 +54,6 @@
       = link_to do
         %b
           もっと見る＞
-
     = render partial: "tops"
     
   .Popularity
@@ -83,7 +79,6 @@
       = link_to do
         %b
           もっと見る＞
-
     = render partial: "tops"
 
     .newItem__Title
@@ -91,7 +86,6 @@
       = link_to do
         %b
           もっと見る＞
-
     = render partial: "tops"
 
     .newItem__Title
@@ -99,7 +93,6 @@
       = link_to do
         %b
           もっと見る＞
-
     = render partial: "tops"
 
     .newItem__Title
@@ -107,19 +100,15 @@
       = link_to do
         %b
           もっと見る＞
-
     = render partial: "tops"  
     
-      
-
   .news__Bar
   %footer
 
-  = link_to do
-    .red__Button
-      .red__Button__caption
-        出品
-      .red__Button__icon
-        %i.fas.fa-camera
+  = render partial: "exibit_button"
+
+  
+
+  
   
 
