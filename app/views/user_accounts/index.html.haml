@@ -3,7 +3,7 @@
   .pc-header
     .pc-header__inner
       .pc-header__inner__top
-        .pc-header__inner__top__logo
+        = link_to "#", class: "pc-header__inner__top__logo" do
           = image_tag 'logos/fmarket_logo_red.svg', alt: 'fmarket_logo', height: '36', width: '134'
         %form.pc-header__inner__top__search
           %input{ type: "search", placeholder: "なにかお探しですか", class: "pc-header__inner__top__search__input" }
