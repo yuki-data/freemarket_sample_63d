@@ -63,8 +63,23 @@
           }
           &__messages {
             &__item {
-              a {
+              .messages__item {
                 @include notification_link;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px;
+                &__content {
+                  flex-grow: 1;
+                  padding: 0 20px;
+                  &__date {
+                    color: #888;
+                  }
+                }
+                &__arrow {
+                  font-size: 1.5rem;
+                  color: #333;
+                }
               }
               &--show-list {
                 a {
