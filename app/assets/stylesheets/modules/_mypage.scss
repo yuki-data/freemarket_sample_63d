@@ -65,6 +65,7 @@
             &__item {
               .messages__item {
                 @include notification_link;
+                min-height: 80px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -81,9 +82,14 @@
                   color: #333;
                 }
               }
-              &--show-list {
+              &--show-all {
+                padding: 16px;
                 a {
                   @include notification_link;
+                  background-color: #eee;
+                  height: 56px;
+                  line-height: 56px;
+                  text-align: center;
                 }
               }
             }
