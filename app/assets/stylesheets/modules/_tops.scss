@@ -9,6 +9,8 @@
 //@media (min-width: 992px) {}
 //@media (min-width: 1200px) {}
 
+
+
 /////aタグ/////
 a{
   text-decoration: none;
@@ -40,7 +42,7 @@ header{
 }
 
 //////人気商品カテゴリー/////
-.Popularity{ 
+.popularity{ 
   //padding-top:56px;
   //height:200px;
   //width:100%;
@@ -54,6 +56,7 @@ header{
     font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
     font-weight: 600;
     background:white;
+    color:$main__black;
   }
   //////人気商品カテゴリー一覧/////
   ul{
@@ -61,12 +64,12 @@ header{
     justify-content: center;
     font-size: 1vw;
     li{
-      background-color: rgb(239, 239, 239);
+      background-color: $main__gray;
       margin:0px 10px;
       padding:5px;
       border-radius:15px;
       a{
-        color:black;
+        color:$main__black;
       }
     }
   } 
@@ -74,11 +77,11 @@ header{
 
 
 //////商品見出し梱包/////
-.item__All{
-  background: #efefef;
+.item__all{
+  background: $main__gray;
   padding:50px 0px;
   /////見出しタイトル/////
-  .newItem__Title {
+  .new__item__title {
     display: flex;
     width:80%;
     margin:0 auto;
@@ -91,11 +94,12 @@ header{
       font-size:2vw;
       font-weight:600;
       font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+      color:$main__black;
     }
     /////>部分の色/////
     a{
       font-size: 1.3vw;
-      color: rgb(0, 149, 238);
+      color: $main__blue;
     }
   }
 }
@@ -110,8 +114,7 @@ ul.new__item{
   justify-content: space-between;
   flex-wrap:wrap;
   /////商品画像掲載を梱包/////
-  li.item{
-    
+  li.item{  
     padding:10px 0px;
     /////商品画像/////
     .item__picture{
@@ -120,35 +123,23 @@ ul.new__item{
       background:white;
       position: relative;
       background-image: url(http://ochiai.lolipop.jp/portsitenew/img/jigazonew.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,.18);
-      color:black;
+      @include boxSet;
       /////画像にカーソルが乗ったら罫線表示/////
       &:hover{
-        border: 1px solid skyblue;
+        border: 1px solid $main__blue;
       }
       /////商品値段/////
       .item__capital{
-        padding:10px 5px;
         position: absolute;
         bottom: 50px;
         left:0px;
-        align-items: center;
-        background: rgba(0,0,0,.4);
-        border-radius: 0 14px 14px 0;
-        text-align: center;
-        color:white;
+        @include boxSet__capital;
       }
       /////商品画像キャプション/////
       .item__caption{
-        padding:10px;
-        background: white;
         position: absolute;
         bottom: 0px;
-        width: 100%;
-        text-align: center;
+        @include boxSet__caption;
       }
     } 
   }  
@@ -157,9 +148,9 @@ ul.new__item{
 
 
 /////広告バーダミー/////
-.news__Bar {
+.news__bar {
   height: 200px;
-  background: blue;
+  background:$main__blue;
   width: 100%;  
 }
 
@@ -173,10 +164,10 @@ footer{
 
 
 /////赤い固定ボタン/////
-.red__Button{
+.red__button{
   width:160px;
   height:160px;
-  background: red;
+  background:$main__red;
   border-radius: 50%;
   position:fixed;
   right:30px;
@@ -186,12 +177,12 @@ footer{
   font-weight: bold;
   font-size:22px;
   /////出品という文字/////
-  .red__Button__caption{
+  &__caption{
     position: relative;
     top:20px;
   }
   /////カメラアイコン/////
-  .red__Button__icon{
+  &__icon{
     font-size:80px;
     position: relative;
     bottom:5px;
@@ -202,10 +193,10 @@ footer{
 /////768px以下のデバイスで見た場合/////
 @media (max-width: 768px) {
 
-  .red__Button{
+  .red__button{
     width:80px;
     height:80px;
-    background:red;
+    background:$main__red;
     border-radius: 50%;
     position:fixed;
     right:30px;
@@ -215,13 +206,13 @@ footer{
     font-weight: bold;
     font-size:2rem;
     /////出品という文字/////
-    .red__Button__caption{
+    &__caption{
       position: relative;
       top:12px;
       font-size:0.4em;
     }
     /////カメラアイコン/////
-    .red__Button__icon{
+    &__icon{
       font-size:1em;
       position: relative;
       top:2px;

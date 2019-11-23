@@ -1,0 +1,28 @@
+//商品画像サムネイルの大枠共通
+@mixin boxSet {
+	background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  color: #333;
+}
+
+//商品画像の値札部分共通
+@mixin boxSet__capital {
+  background: rgba(0,0,0,.4);
+  border-radius: 0 14px 14px 0;
+  padding:10px 5px;
+  text-align: center;
+  color:white;
+}
+
+//商品画像のキャプション部分共通
+@mixin boxSet__caption {
+  padding:10px;
+  background: white;
+  width: 100%;
+  text-align: center;
+  color:$main__black;
+}
+
+
