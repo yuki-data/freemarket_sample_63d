@@ -125,6 +125,10 @@
                 color: #333;
               }
             }
+            &.active {
+              background: #eee;
+              font-weight: 600;
+            }
           }
         }
       }
