@@ -200,13 +200,25 @@
               = link_to "一覧をみる", "#"
           %ul.main__inner__body__notification__alerts
             %li.main__inner__body__notification__alerts__item
-              = link_to "購入した商品のお支払いをしてください", "#"
+              = link_to "#", class: "messages__item" do
+                = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                .messages__item__content
+                  .messages__item__content__text 購入した商品のお支払いをしてください
+                  .messages__item__content__date
+                    = icon("far", "clock")
+                    %span ２日前
             %li.main__inner__body__notification__alerts__item
-              = link_to "出品した商品を発送してください", "#"
+              = link_to "#", class: "messages__item" do
+                = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                .messages__item__content
+                  .messages__item__content__text 出品した商品を発送してください
+                  .messages__item__content__date
+                    = icon("far", "clock")
+                    %span ２日前
         .main__inner__body__purchase-history
           %h2.main__inner__body__purchase-history__title 購入した商品
           %ul.main__inner__body__purchase-history__tabs
-            %li.main__inner__body__purchase-history__tabs__title 取引中
+            %li.main__inner__body__purchase-history__tabs__title.active 取引中
             %li.main__inner__body__purchase-history__tabs__title 過去の取引
           .main__inner__body__purchase-history__content
             %ul.main__inner__body__purchase-history__content__current
