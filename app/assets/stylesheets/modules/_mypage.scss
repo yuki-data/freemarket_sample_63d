@@ -245,7 +245,7 @@
   }
   .footer {
     background-color: black;
-    color: white;
+    color: #ffffff;
     a {
       color: #fff;
       font-size: 12px;
@@ -290,6 +290,18 @@
             }
           }
         }
+      }
+    }
+    &__bottom {
+      width: 1020px;
+      margin: 0 auto;
+      padding: 30px 0 20px 0;
+      display: flex;
+      align-items: center;
+      &__copyright {
+        text-align: center;
+        flex-grow: 1;
+        font-size: 12px;
       }
     }
   }
