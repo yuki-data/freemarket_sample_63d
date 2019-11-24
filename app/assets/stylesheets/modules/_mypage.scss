@@ -188,6 +188,23 @@
         }
         &__purchase-history {
           margin-top: 40px;
+          &__title {
+            background-color: #fafafa;
+            line-height: 72px;
+          }
+          &__tabs {
+            display: flex;
+            &__title {
+              background-color: #eee;
+              flex: 1;
+              line-height: 72px;
+              text-align: center;
+              &.active {
+                background-color: #fff;
+                border-top: 2px solid red;
+              }
+            }
+          }
         }
       }
     }
