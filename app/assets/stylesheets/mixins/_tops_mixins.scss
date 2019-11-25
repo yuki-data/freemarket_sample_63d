@@ -1,6 +1,6 @@
 //商品画像サムネイルの大枠共通
 @mixin boxSet {
-	background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
@@ -22,7 +22,5 @@
   background: white;
   width: 100%;
   text-align: center;
-  color:$main__black;
+  color:$main-black;
 }
-
-

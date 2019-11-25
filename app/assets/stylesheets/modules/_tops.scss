@@ -9,22 +9,6 @@
 //@media (min-width: 992px) {}
 //@media (min-width: 1200px) {}
 
-
-
-/////aタグ/////
-a{
-  text-decoration: none;
-}
-
-
-//////ヘッダー/////
-header{
-  height:10vh;
-  background:white;
-  width:100%;
-}
-
-
 //////スライダーのダミー/////
 .slider{
   height:50vh;
@@ -41,12 +25,8 @@ header{
   }
 }
 
-
 //////人気商品カテゴリー/////
 .popularity{ 
-  //padding-top:56px;
-  //height:200px;
-  //width:100%;
   padding-top: 5vh;
   width: 100%;
   padding-bottom: 5vh;
@@ -54,32 +34,30 @@ header{
   h2{text-align: center;
     margin-bottom: 16px;
     font-size:2vw;
-    font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
     font-weight: 600;
     background:white;
-    color:$main__black;
+    color:$main-black;
   }
   //////人気商品カテゴリー一覧/////
-  ul{
+  ul.item{
     display: flex;
     justify-content: center;
     font-size: 1vw;
-    li{
-      background-color: $main__gray;
+    li.item__tag{
+      background-color: $main-gray;
       margin:0px 10px;
-      padding:5px;
+      padding:5px 10px;
       border-radius:15px;
       a{
-        color:$main__black;
+        color:$main-black;
       }
     }
   } 
 }
 
-
 //////商品見出し梱包/////
 .item__all{
-  background: $main__gray;
+  background: $main-gray;
   padding:50px 0px;
   /////見出しタイトル/////
   .new__item__title {
@@ -94,17 +72,15 @@ header{
     h3{
       font-size:2vw;
       font-weight:600;
-      font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
-      color:$main__black;
+      color:$main-black;
     }
     /////>部分の色/////
     a{
       font-size: 1.3vw;
-      color: $main__blue;
+      color: $main-blue;
     }
   }
 }
-
 
 /////商品画像一覧について設定各種/////
 ul.new__item{
@@ -127,7 +103,7 @@ ul.new__item{
       @include boxSet;
       /////画像にカーソルが乗ったら罫線表示/////
       &:hover{
-        border: 1px solid $main__blue;
+        border: 1px solid $main-blue;
       }
       /////商品値段/////
       .item__capital{
@@ -146,15 +122,12 @@ ul.new__item{
   }  
 }
 
-
-
 /////広告バーダミー/////
 .news__bar {
   height: 200px;
-  background:$main__blue;
+  background:$main-blue;
   width: 100%;  
 }
-
 
 /////フッター/////
 footer{
@@ -163,12 +136,11 @@ footer{
   width:100%;
 }
 
-
 /////赤い固定ボタン/////
 .red__button{
   width:160px;
   height:160px;
-  background:$main__red;
+  background:$main-red;
   border-radius: 50%;
   position:fixed;
   right:30px;
@@ -184,21 +156,19 @@ footer{
   }
   /////カメラアイコン/////
   &__icon{
-    font-size:80px;
+    font-size: 80px;
     position: relative;
-    bottom:5px;
+    top: 15px;
   }
 }
-
 /////ここからブレイクポイント指定//////////ここからブレイクポイント指定//////////ここからブレイクポイント指定/////
 
 /////768px以下のデバイスで見た場合ボタンが縮小/////
 @media (max-width: 768px) {
-
   .red__button{
     width:80px;
     height:80px;
-    background:$main__red;
+    background:$main-red;
     border-radius: 50%;
     position:fixed;
     right:30px;
@@ -216,9 +186,8 @@ footer{
     /////カメラアイコン/////
     &__icon{
       font-size:1em;
-      position: relative;
-      top:2px;
+      position:relative;
+      top:10px;
     }
   }
-
 }

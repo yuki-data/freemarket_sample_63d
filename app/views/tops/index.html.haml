@@ -1,8 +1,6 @@
 %body
 
-  
-
-  %header.header
+  %header
   
   .slider
     = link_to do  
@@ -12,17 +10,17 @@
 
   .popularity
     %h2 人気のカテゴリー
-    %ul
-      %li
+    %ul.item
+      %li.item__tag
         = link_to do
           レディース
-      %li
+      %li.item__tag
         = link_to do
           メンズ
-      %li
+      %li.item__tag
         = link_to do
           家電・スマホ・カメラ
-      %li
+      %li.item__tag
         = link_to do
           おもちゃ・ホビー・グッズ
 
@@ -58,17 +56,17 @@
     
   .popularity
     %h2 人気のブランド
-    %ul
-      %li
+    %ul.item
+      %li.item__tag
         = link_to do
           シャネル
-      %li
+      %li.item__tag
         = link_to do
           ルイヴィトン
-      %li
+      %li.item__tag
         = link_to do
           シュプリーム
-      %li
+      %li.item__tag
         = link_to do
           ナイキ
     
@@ -106,9 +104,3 @@
   %footer
 
   = render partial: "exibit_button"
-
-  
-
-  
-  
-
