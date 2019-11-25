@@ -1,0 +1,163 @@
+.main__inner__body
+  .main__inner__body__user-icon
+    = link_to "#", class: "user-icon__link" do
+      .user-icon__link__image
+        = image_tag 'mypage/boy_01.png', alt: 'user_icon', height: '60', width: '60'
+      %h2.user-icon__link__nickname ユーザーニックネーム
+      %ul.user-icon__link__statistics
+        %li.user-icon__link__statistics__rate
+          評価
+          %span 10
+        %li.user-icon__link__statistics__prod-count
+          出品数
+          %span 5
+  .main__inner__body__notification
+    %ul.main__inner__body__notification__tabs
+      %li#notice-tab.main__inner__body__notification__tabs__title.active
+        = link_to "お知らせ", "#"
+      %li#todo-tab.main__inner__body__notification__tabs__title
+        = link_to "やることリスト", "#"
+    %ul.main__inner__body__notification__messages
+      %li.main__inner__body__notification__messages__item
+        = link_to "#", class: "messages__item" do
+          = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+          .messages__item__content
+            .messages__item__content__text 事務局から個別メッセージ
+            .messages__item__content__date
+              = icon("far", "clock")
+              %span ２日前
+          .messages__item__arrow
+            = icon("fas", "chevron-right")
+      %li.main__inner__body__notification__messages__item
+        = link_to "#", class: "messages__item" do
+          = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+          .messages__item__content
+            .messages__item__content__text 事務局から個別メッセージ
+            .messages__item__content__date
+              = icon("far", "clock")
+              %span ２日前
+          .messages__item__arrow
+            = icon("fas", "chevron-right")
+      %li.main__inner__body__notification__messages__item
+        = link_to "#", class: "messages__item" do
+          = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+          .messages__item__content
+            .messages__item__content__text 事務局から個別メッセージ
+            .messages__item__content__date
+              = icon("far", "clock")
+              %span ２日前
+          .messages__item__arrow
+            = icon("fas", "chevron-right")
+      %li.main__inner__body__notification__messages__item
+        = link_to "#", class: "messages__item" do
+          = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+          .messages__item__content
+            .messages__item__content__text 事務局から個別メッセージ
+            .messages__item__content__date
+              = icon("far", "clock")
+              %span ２日前
+          .messages__item__arrow
+            = icon("fas", "chevron-right")
+      %li.main__inner__body__notification__messages__item
+        = link_to "#", class: "messages__item" do
+          = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+          .messages__item__content
+            .messages__item__content__text 事務局から個別メッセージ
+            .messages__item__content__date
+              = icon("far", "clock")
+              %span ２日前
+          .messages__item__arrow
+            = icon("fas", "chevron-right")
+      %li.main__inner__body__notification__messages__item--show-all
+        = link_to "一覧をみる", "#"
+    %ul.main__inner__body__notification__alerts
+      %li.main__inner__body__notification__messages__item
+        = link_to "#", class: "messages__item" do
+          = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+          .messages__item__content
+            .messages__item__content__text 購入した商品のお支払いをしてください
+            .messages__item__content__date
+              = icon("far", "clock")
+              %span ２日前
+          .messages__item__arrow
+            = icon("fas", "chevron-right")
+      %li.main__inner__body__notification__messages__item
+        = link_to "#", class: "messages__item" do
+          = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+          .messages__item__content
+            .messages__item__content__text 出品した商品を発送してください
+            .messages__item__content__date
+              = icon("far", "clock")
+              %span ２日前
+          .messages__item__arrow
+            = icon("fas", "chevron-right")
+  .main__inner__body__purchase-history
+    %h2.main__inner__body__purchase-history__title 購入した商品
+    %ul.main__inner__body__purchase-history__tabs
+      %li#current-transaction-tab.main__inner__body__purchase-history__tabs__title.active
+        = link_to "取引中", "#"
+      %li#previous-transaction-tab.main__inner__body__purchase-history__tabs__title
+        = link_to "過去の取引", "#"
+    .main__inner__body__purchase-history__content
+      %ul.main__inner__body__purchase-history__content__current
+        %li.main__inner__body__notification__messages__item
+          = link_to "#", class: "messages__item" do
+            = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+            .messages__item__content
+              .messages__item__content__text 山田さんから自転車を購入（取引中）
+              .messages__item__content__date
+                = icon("far", "clock")
+                %span ２日前
+            .messages__item__arrow
+              = icon("fas", "chevron-right")
+        %li.main__inner__body__notification__messages__item
+          = link_to "#", class: "messages__item" do
+            = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+            .messages__item__content
+              .messages__item__content__text 田中さんからスマホケースを購入（取引中）
+              .messages__item__content__date
+                = icon("far", "clock")
+                %span ２日前
+            .messages__item__arrow
+              = icon("fas", "chevron-right")
+        %li.main__inner__body__notification__messages__item
+          = link_to "#", class: "messages__item" do
+            = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+            .messages__item__content
+              .messages__item__content__text 山田さんから自転車佐藤さんからmacbookを購入（取引中）を購入（取引中）
+              .messages__item__content__date
+                = icon("far", "clock")
+                %span ２日前
+            .messages__item__arrow
+              = icon("fas", "chevron-right")
+      %ul.main__inner__body__purchase-history__content__previous
+        %li.main__inner__body__notification__messages__item
+          = link_to "#", class: "messages__item" do
+            = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+            .messages__item__content
+              .messages__item__content__text 山田さんから自転車を購入
+              .messages__item__content__date
+                = icon("far", "clock")
+                %span ２日前
+            .messages__item__arrow
+              = icon("fas", "chevron-right")
+        %li.main__inner__body__notification__messages__item
+          = link_to "#", class: "messages__item" do
+            = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+            .messages__item__content
+              .messages__item__content__text 田中さんからスマホケースを購入
+              .messages__item__content__date
+                = icon("far", "clock")
+                %span ２日前
+            .messages__item__arrow
+              = icon("fas", "chevron-right")
+        %li.main__inner__body__notification__messages__item
+          = link_to "#", class: "messages__item" do
+            = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+            .messages__item__content
+              .messages__item__content__text 佐藤さんからmacbookを購入
+              .messages__item__content__date
+                = icon("far", "clock")
+                %span ２日前
+            .messages__item__arrow
+              = icon("fas", "chevron-right")
