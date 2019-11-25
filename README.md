@@ -28,7 +28,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nick_name|string|null: false|
+|nickname|string|null: false|
 |profile|text|null: false|
 |avator|string||
 
@@ -91,9 +91,9 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :category
-- belomgs_to :saling_product
-- belomgs_to :buyed_product
-- belomgs_to :sold_product
+- belongs_to :saling_product
+- belongs_to :buyed_product
+- belongs_to :sold_product
 - has_many :product_images
 
 ## product_imagesテーブル
