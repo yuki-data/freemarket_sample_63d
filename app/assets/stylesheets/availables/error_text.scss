@@ -1,0 +1,7 @@
+.has-error-text {
+  line-height: 1.5;
+  @include font(14px, null, $red, null);
+  li {
+    margin: 8px 0 0;
+  }
+}
