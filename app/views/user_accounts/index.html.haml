@@ -36,9 +36,10 @@
             = link_to "#" do
               = image_tag 'mypage/boy_01.png', alt: 'user_icon', height: '32', width: '32'
               %span マイページ
-  .breadcrumb
-    - breadcrumb :mypage
-    = breadcrumbs separator: " &rsaquo; "
+  .breadcrumb-wrapper
+    .breadcrumb-inner
+      - breadcrumb :mypage
+      = breadcrumbs separator: " &rsaquo; "
   .main
     .main__inner
       .main__inner__sidebar
