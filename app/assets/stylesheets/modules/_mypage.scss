@@ -143,6 +143,30 @@
         &__user-icon {
           height: 200px;
           background-image: url(mypage/bg_ocean_suiheisen.jpg);
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          .user-icon__link {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333333;
+            font-size: 14px;
+            text-decoration: none;
+            &__image {
+              img {
+                border-radius: 50%;
+                background-color: #eee;
+              }
+            }
+            &__statistics {
+              display: flex;
+              &__prod-count {
+                margin-left: 10px;
+              }
+            }
+          }
         }
         &__notification {
           background-color: #fff;

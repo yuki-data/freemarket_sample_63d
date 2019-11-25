@@ -141,6 +141,17 @@
                 = icon("fas", "chevron-right")
       .main__inner__body
         .main__inner__body__user-icon
+          = link_to "#", class: "user-icon__link" do
+            .user-icon__link__image
+              = image_tag 'mypage/boy_01.png', alt: 'user_icon', height: '60', width: '60'
+            %h2.user-icon__link__nickname ユーザーニックネーム
+            %ul.user-icon__link__statistics
+              %li.user-icon__link__statistics__rate
+                評価
+                %span 10
+              %li.user-icon__link__statistics__prod-count
+                出品数
+                %span 5
         .main__inner__body__notification
           %ul.main__inner__body__notification__tabs
             %li.main__inner__body__notification__tabs__title.active お知らせ
