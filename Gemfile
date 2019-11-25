@@ -67,6 +67,9 @@ gem "haml-rails"
 # font-awesomeを使うため
 gem 'font-awesome-sass'
 
+# パンくずリストの表示
+gem 'gretel'
+
 group :development, :test do
   # 以下はvscodeのリンターを使うためのgem
   gem "rubocop"
