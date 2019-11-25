@@ -264,13 +264,7 @@
   .footer {
     background-color: black;
     color: #ffffff;
-    a {
-      color: #fff;
-      font-size: 12px;
-      line-height: 18px;
-      display: block;
-      opacity: 0.7;
-    }
+
     &__nav {
       width: 1020px;
       margin: 0 auto;
@@ -292,7 +286,12 @@
           &__item {
             margin-top: 14px;
             a {
+              color: #ffffff;
               text-decoration: none;
+              font-size: 12px;
+              line-height: 18px;
+              display: block;
+              opacity: 0.7;
               &:hover {
                 text-decoration: underline;
               }
