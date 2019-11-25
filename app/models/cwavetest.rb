@@ -1,0 +1,2 @@
+class Cwavetest < ApplicationRecord
+end
