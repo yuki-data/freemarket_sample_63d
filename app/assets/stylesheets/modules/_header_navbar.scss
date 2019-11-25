@@ -29,7 +29,7 @@
           height: 40px;
           line-height: 40px;
           text-align: center;
-          font-size: 14px;
+          font-size: $mypage-font-size;
         }
       }
     }
@@ -47,7 +47,7 @@
             display: block;
             color: $mypage-black;
             text-decoration: none;
-            font-size: 14px;
+            font-size: $mypage-font-size;
             height: 44px;
             line-height: 44px;
             font-weight: 700;
@@ -67,7 +67,7 @@
             display: block;
             color: $mypage-black;
             text-decoration: none;
-            font-size: 14px;
+            font-size: $mypage-font-size;
             height: 44px;
             line-height: 44px;
             display: flex;

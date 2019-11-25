@@ -2,6 +2,6 @@
   display: block;
   color: $mypage-black;
   text-decoration: none;
-  font-size: 14px;
+  font-size: $mypage-font-size;
   border-bottom: 1px solid $mypage-hover-dimgray;
 }
