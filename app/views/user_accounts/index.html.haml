@@ -222,13 +222,55 @@
             %li.main__inner__body__purchase-history__tabs__title 過去の取引
           .main__inner__body__purchase-history__content
             %ul.main__inner__body__purchase-history__content__current
-              %li.main__inner__body__purchase-history__content__current__item 山田さんから自転車を購入（取引中）
-              %li.main__inner__body__purchase-history__content__current__item 田中さんからスマホケースを購入（取引中）
-              %li.main__inner__body__purchase-history__content__current__item 佐藤さんからmacbookを購入（取引中）
+              %li.main__inner__body__notification__messages__item
+                = link_to "#", class: "messages__item" do
+                  = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                  .messages__item__content
+                    .messages__item__content__text 山田さんから自転車を購入（取引中）
+                    .messages__item__content__date
+                      = icon("far", "clock")
+                      %span ２日前
+              %li.main__inner__body__notification__messages__item
+                = link_to "#", class: "messages__item" do
+                  = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                  .messages__item__content
+                    .messages__item__content__text 田中さんからスマホケースを購入（取引中）
+                    .messages__item__content__date
+                      = icon("far", "clock")
+                      %span ２日前
+              %li.main__inner__body__notification__messages__item
+                = link_to "#", class: "messages__item" do
+                  = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                  .messages__item__content
+                    .messages__item__content__text 山田さんから自転車佐藤さんからmacbookを購入（取引中）を購入（取引中）
+                    .messages__item__content__date
+                      = icon("far", "clock")
+                      %span ２日前
             %ul.main__inner__body__purchase-history__content__previous
-              %li.main__inner__body__purchase-history__content__previous__item 山田さんから自転車を購入
-              %li.main__inner__body__purchase-history__content__previous__item 田中さんからスマホケースを購入
-              %li.main__inner__body__purchase-history__content__previous__item 佐藤さんからmacbookを購入
+              %li.main__inner__body__notification__messages__item
+                = link_to "#", class: "messages__item" do
+                  = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                  .messages__item__content
+                    .messages__item__content__text 山田さんから自転車を購入
+                    .messages__item__content__date
+                      = icon("far", "clock")
+                      %span ２日前
+              %li.main__inner__body__notification__messages__item
+                = link_to "#", class: "messages__item" do
+                  = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                  .messages__item__content
+                    .messages__item__content__text 田中さんからスマホケースを購入
+                    .messages__item__content__date
+                      = icon("far", "clock")
+                      %span ２日前
+              %li.main__inner__body__notification__messages__item
+                = link_to "#", class: "messages__item" do
+                  = image_tag 'logos/logo_red.svg', alt: 'logo_red', height: '48', width: '48'
+                  .messages__item__content
+                    .messages__item__content__text 佐藤さんからmacbookを購入
+                    .messages__item__content__date
+                      = icon("far", "clock")
+                      %span ２日前
   .banner
     .banner__inner
       .banner__inner__promotion
