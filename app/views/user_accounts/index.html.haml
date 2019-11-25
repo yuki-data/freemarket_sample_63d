@@ -157,8 +157,10 @@
                 %span 5
         .main__inner__body__notification
           %ul.main__inner__body__notification__tabs
-            %li.main__inner__body__notification__tabs__title.active お知らせ
-            %li.main__inner__body__notification__tabs__title やることリスト
+            %li.main__inner__body__notification__tabs__title.active
+              = link_to "お知らせ", "#"
+            %li.main__inner__body__notification__tabs__title
+              = link_to "やることリスト", "#"
           %ul.main__inner__body__notification__messages
             %li.main__inner__body__notification__messages__item
               = link_to "#", class: "messages__item" do
