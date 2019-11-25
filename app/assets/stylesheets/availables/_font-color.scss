@@ -1,0 +1,11 @@
+$sale-header: 18px;
+
+$red: red;
+$white:#fff;
+
+@mixin font($size: null, $weight: null, $color: null, $algin: null) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  text-align: $algin;
+}
