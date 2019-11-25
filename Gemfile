@@ -70,7 +70,7 @@ group :production do
 end
 
 #####################################
-####### Capistrano ########
+############ Capistrano #############
 #####################################
 
 group :development, :test do
@@ -80,3 +80,10 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+
+#####################################
+############ Carrierwave ############
+#####################################
+
+gem 'carrierwave'
+gem 'mini_magick'
