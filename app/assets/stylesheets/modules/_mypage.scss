@@ -251,6 +251,11 @@
               flex: 1;
               line-height: 72px;
               text-align: center;
+              a {
+                text-decoration: none;
+                color: #333333;
+                display: block;
+              }
               &.active {
                 background-color: #fff;
                 border-top: 2px solid red;
