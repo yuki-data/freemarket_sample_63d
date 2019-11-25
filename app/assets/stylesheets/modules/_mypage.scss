@@ -168,6 +168,9 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 16px;
+                &:hover {
+                  background-color: #fafafa;
+                }
                 &__content {
                   flex-grow: 1;
                   padding: 0 20px;
@@ -187,6 +190,9 @@
                   height: 56px;
                   line-height: 56px;
                   text-align: center;
+                  &:hover {
+                    background-color: #fafafa;
+                  }
                 }
               }
             }
