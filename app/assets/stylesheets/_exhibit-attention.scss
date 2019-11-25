@@ -1,0 +1,12 @@
+.sell-btn-box {
+  line-height: 20px;
+  @include font(14px, null, null, null);
+  .blue-font {
+    @include font(null, null, #0099e8, null);
+    text-decoration: none;
+    touch-action: manipulation;
+  }
+  .black-font{
+    @include font(14px, null, black, null);
+  }
+}
