@@ -265,6 +265,11 @@
               }
             }
           }
+          &__content {
+            &__previous {
+              display: none;
+            }
+          }
         }
       }
     }
