@@ -63,12 +63,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # hamlを使用するため
 gem "haml-rails"
-
 # font-awesomeを使うため
 gem 'font-awesome-sass'
-
 # パンくずリストの表示
 gem 'gretel'
+# jqueryを使うため
+gem "jquery-rails"
 
 group :development, :test do
   # 以下はvscodeのリンターを使うためのgem
