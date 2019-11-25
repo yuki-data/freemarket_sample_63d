@@ -1,7 +1,7 @@
 @mixin notification_link {
   display: block;
-  color: $mypage_black;
+  color: $mypage-black;
   text-decoration: none;
   font-size: 14px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $mypage-hover-dimgray;
 }

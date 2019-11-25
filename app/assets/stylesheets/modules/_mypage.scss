@@ -1,28 +1,28 @@
 .mypage {
   .breadcrumb-wrapper {
-    border-top: 1px solid #eee;
+    border-top: 1px solid $mypage-hover-dimgray;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16);
     .breadcrumb-inner {
-      width: $mypage_lg_width;
+      width: $mypage-lg-width;
       padding: 16px 0;
       margin: 0 auto;
     }
   }
   .main {
-    background-color: $mypage_bgcolor;
+    background-color: $mypage-bgcolor;
     padding: 40px 0;
     &__inner {
-      width: $mypage_lg_width;
+      width: $mypage-lg-width;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       &__sidebar {
         width: 280px;
         li {
-          border-bottom: 1px solid $mypage_bgcolor;
-          background-color: $mypage_white;
+          border-bottom: 1px solid $mypage-bgcolor;
+          background-color: $mypage-white;
           a {
-            color: $mypage_black;
+            color: $mypage-black;
             display: block;
             font-size: 14px;
             padding: 16px;
@@ -31,18 +31,18 @@
             align-items: center;
             justify-content: space-between;
             i {
-              color: #ccc;
+              color: $mypage-tab-dimgray;
             }
             &:hover {
               background-color: #fafafa;
               & i {
                 transform: translateX(50%);
                 transition-duration: 0.3s;
-                color: $mypage_black;
+                color: $mypage-black;
               }
             }
             &.active {
-              background: #eee;
+              background: $mypage-hover-dimgray;
               font-weight: 600;
             }
           }
@@ -67,13 +67,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: $mypage_black;
+            color: $mypage-black;
             font-size: 14px;
             text-decoration: none;
             &__image {
               img {
                 border-radius: 50%;
-                background-color: #eee;
+                background-color: $mypage-hover-dimgray;
               }
             }
             &__statistics {
@@ -85,21 +85,21 @@
           }
         }
         &__notification {
-          background-color: $mypage_white;
+          background-color: $mypage-white;
           &__tabs {
             display: flex;
             &__title {
-              background-color: #eee;
+              background-color: $mypage-hover-dimgray;
               flex: 1;
               line-height: 72px;
               text-align: center;
               a {
                 text-decoration: none;
-                color: $mypage_black;
+                color: $mypage-black;
                 display: block;
               }
               &.active {
-                background-color: $mypage_white;
+                background-color: $mypage-white;
                 border-top: 2px solid red;
               }
             }
@@ -124,14 +124,14 @@
                   }
                 }
                 &__arrow {
-                  color: $mypage_black;
+                  color: $mypage-black;
                 }
               }
               &--show-all {
                 padding: 16px;
                 a {
                   @include notification_link;
-                  background-color: #eee;
+                  background-color: $mypage-hover-dimgray;
                   height: 56px;
                   line-height: 56px;
                   text-align: center;
@@ -148,7 +148,7 @@
         }
         &__purchase-history {
           margin-top: 40px;
-          background-color: $mypage_white;
+          background-color: $mypage-white;
           &__title {
             background-color: #fafafa;
             line-height: 72px;
@@ -157,17 +157,17 @@
           &__tabs {
             display: flex;
             &__title {
-              background-color: #eee;
+              background-color: $mypage-hover-dimgray;
               flex: 1;
               line-height: 72px;
               text-align: center;
               a {
                 text-decoration: none;
-                color: $mypage_black;
+                color: $mypage-black;
                 display: block;
               }
               &.active {
-                background-color: $mypage_white;
+                background-color: $mypage-white;
                 border-top: 2px solid red;
               }
             }

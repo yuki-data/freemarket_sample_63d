@@ -24,7 +24,7 @@
     justify-content: space-between;
     align-items: center;
     &__promotion {
-      color: $mypage_white;
+      color: $mypage-white;
       &__title {
         font-size: 24px;
       }
@@ -36,7 +36,7 @@
         justify-content: space-evenly;
         align-items: center;
         &__logo {
-          background-color: $mypage_white;
+          background-color: $mypage-white;
           border-radius: 10px;
           padding: 10px;
         }
@@ -51,10 +51,10 @@
 }
 .footer {
   background-color: black;
-  color: $mypage_white;
+  color: $mypage-white;
 
   &__nav {
-    width: $mypage_lg_width;
+    width: $mypage-lg-width;
     margin: 0 auto;
     display: flex;
     &__cell {
@@ -74,7 +74,7 @@
         &__item {
           margin-top: 14px;
           a {
-            color: $mypage_white;
+            color: $mypage-white;
             text-decoration: none;
             font-size: 12px;
             line-height: 18px;
@@ -89,7 +89,7 @@
             a {
               opacity: 1;
               i {
-                color: $mypage_white;
+                color: $mypage-white;
                 font-size: 26px;
                 margin: 16px 18px 0 0;
               }
@@ -100,7 +100,7 @@
     }
   }
   &__bottom {
-    width: $mypage_lg_width;
+    width: $mypage-lg-width;
     margin: 0 auto;
     padding: 30px 0 20px 0;
     display: flex;

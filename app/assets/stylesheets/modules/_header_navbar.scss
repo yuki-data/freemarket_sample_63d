@@ -1,6 +1,6 @@
 .pc-header {
   &__inner {
-    width: $mypage_lg_width;
+    width: $mypage-lg-width;
     margin: 0 auto;
     padding-top: 8px;
     &__top {
@@ -15,8 +15,8 @@
         padding-left: 10px;
         display: flex;
         align-items: center;
-        background-color: $mypage_bgcolor;
-        border: 1px solid #ccc;
+        background-color: $mypage-bgcolor;
+        border: 1px solid $mypage-tab-dimgray;
         border-radius: 4px;
         &__input {
           background-color: rgba(255, 255, 255, 0);
@@ -45,7 +45,7 @@
           }
           a {
             display: block;
-            color: $mypage_black;
+            color: $mypage-black;
             text-decoration: none;
             font-size: 14px;
             height: 44px;
@@ -65,7 +65,7 @@
           }
           a {
             display: block;
-            color: $mypage_black;
+            color: $mypage-black;
             text-decoration: none;
             font-size: 14px;
             height: 44px;
@@ -74,7 +74,7 @@
             align-items: center;
             i {
               font-size: 18px;
-              color: #ccc;
+              color: $mypage-tab-dimgray;
             }
             span {
               margin-left: 10px;
