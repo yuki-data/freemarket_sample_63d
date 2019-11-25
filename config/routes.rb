@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get '/', to: 'user_accounts#index'
+  root to: "user_accounts#top_page"
+  resources :user_accounts, only: ["index"]
 end
