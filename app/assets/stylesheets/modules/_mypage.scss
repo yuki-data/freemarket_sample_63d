@@ -3,26 +3,26 @@
     border-top: 1px solid #eee;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16);
     .breadcrumb-inner {
-      width: 1020px;
+      width: $mypage_lg_width;
       padding: 16px 0;
       margin: 0 auto;
     }
   }
   .main {
-    background-color: #f5f5f5;
+    background-color: $mypage_bgcolor;
     padding: 40px 0;
     &__inner {
-      width: 1020px;
+      width: $mypage_lg_width;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       &__sidebar {
         width: 280px;
         li {
-          border-bottom: 1px solid whitesmoke;
-          background-color: #fff;
+          border-bottom: 1px solid $mypage_bgcolor;
+          background-color: $mypage_white;
           a {
-            color: #333333;
+            color: $mypage_black;
             display: block;
             font-size: 14px;
             padding: 16px;
@@ -38,7 +38,7 @@
               & i {
                 transform: translateX(50%);
                 transition-duration: 0.3s;
-                color: #333;
+                color: $mypage_black;
               }
             }
             &.active {
@@ -67,7 +67,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #333333;
+            color: $mypage_black;
             font-size: 14px;
             text-decoration: none;
             &__image {
@@ -85,7 +85,7 @@
           }
         }
         &__notification {
-          background-color: #fff;
+          background-color: $mypage_white;
           &__tabs {
             display: flex;
             &__title {
@@ -95,11 +95,11 @@
               text-align: center;
               a {
                 text-decoration: none;
-                color: #333333;
+                color: $mypage_black;
                 display: block;
               }
               &.active {
-                background-color: #fff;
+                background-color: $mypage_white;
                 border-top: 2px solid red;
               }
             }
@@ -124,7 +124,7 @@
                   }
                 }
                 &__arrow {
-                  color: #333;
+                  color: $mypage_black;
                 }
               }
               &--show-all {
@@ -148,7 +148,7 @@
         }
         &__purchase-history {
           margin-top: 40px;
-          background-color: #ffffff;
+          background-color: $mypage_white;
           &__title {
             background-color: #fafafa;
             line-height: 72px;
@@ -163,11 +163,11 @@
               text-align: center;
               a {
                 text-decoration: none;
-                color: #333333;
+                color: $mypage_black;
                 display: block;
               }
               &.active {
-                background-color: #fff;
+                background-color: $mypage_white;
                 border-top: 2px solid red;
               }
             }
