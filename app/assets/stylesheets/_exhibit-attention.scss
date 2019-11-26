@@ -1,8 +1,7 @@
 .sell-btn-box {
   line-height: 20px;
-  @include font(14px, null, null, null);
   .blue-font {
-    @include font(null, null, #0099e8, null);
+    @include font(14px, null, #0099e8, null);
     text-decoration: none;
     touch-action: manipulation;
   }
