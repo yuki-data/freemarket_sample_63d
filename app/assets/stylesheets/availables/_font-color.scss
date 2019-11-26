@@ -1,7 +1,5 @@
-$sale-header: 18px;
-
-$red: red;
-$white:#fff;
+$require-background-color: red;
+$arbitrary-background-color:gray;
 
 @mixin font($size: null, $weight: null, $color: null, $algin: null) {
   font-size: $size;
