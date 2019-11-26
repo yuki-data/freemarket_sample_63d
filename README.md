@@ -38,7 +38,7 @@ Things you may want to cover:
 - has_many :products
 - has_many :comments
 - has_many :saling_products
-- has_many :purchased_products
+- has_many :bought_products
 - has_many :sold_products
 
 ## user_profilesテーブル
@@ -50,8 +50,8 @@ Things you may want to cover:
 |password|string|null: false|
 |first_name|string|null: false|
 |last_name|string|null: false|
-|first_name_phoneticGuide|string|null: false|
-|last_name_phoneticGuide|string|null: false|
+|first_name_phonetic_guide|string|null: false|
+|last_name_phonetic_guide|string|null: false|
 |year_of_birth|date|null: false|
 |month_of_birth|date|null: false|
 |day_of_birth|date|null: false|
@@ -92,7 +92,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :category
 - belongs_to :saling_product
-- belongs_to :purchased_product
+- belongs_to :bought_product
 - belongs_to :sold_product
 - has_many :product_images
 
@@ -148,12 +148,12 @@ Things you may want to cover:
 - belongs_to :product
 - belongs_to :user
 
-## purchased_productsテーブル
+## bought_productsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |product_id|integer|null: false|
-|purchased_user_id|integer|null: false|
+|bought_user_id|integer|null: false|
 
 ### Association
 - belongs_to :product
