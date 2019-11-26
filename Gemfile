@@ -82,8 +82,9 @@ group :development, :test do
 end
 
 #####################################
-############ Carrierwave ############
+############ Carrierwave fog ########
 #####################################
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
