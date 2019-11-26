@@ -1,0 +1,9 @@
+$require-background-color: red;
+$arbitrary-background-color:gray;
+
+@mixin font($size: null, $weight: null, $color: null, $algin: null) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  text-align: $algin;
+}
