@@ -5,3 +5,16 @@
 @import "modules/tops";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
+@import "./availables/font-color";
+@import "./availables/style";
+@import "./availables/error_text";
+@import "./exhibit";
+@import "./reset";
+@import "./single/_single-header";
+@import "./single/_single-footer";
+@import "./_exhibit-attention";
+
+*{
+  box-sizing: border-box;
+}
+
