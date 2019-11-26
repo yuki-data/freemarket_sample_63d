@@ -81,9 +81,8 @@
           height: 15px;
           border-radius: 50%;
           background: #0099e8;
-          color: white;
           line-height: 19px;
-          font-size: 12px;
+          @include font(12px, null, white, null);
           font-weight: bold;
           text-align: center;
         }
@@ -145,21 +144,11 @@
   }
   //必須のSass
   .form-require {
-    background: #ea352d;
-    margin: 0 0 0 8px;
-    padding: 2px 4px;
-    border-radius: 2px;
-    @include font(12px, null, #fff, null);
-    vertical-align: top;
+    @include require-arbitrary($require-background-color);
   }
   //任意のSass
   .form-arbitrary{
-    background: gray;
-    margin: 0 0 0 8px;
-    padding: 2px 4px;
-    border-radius: 2px;
-    @include font(12px, null, #fff, null);
-    vertical-align: top;
+    @include require-arbitrary($arbitrary-background-color);
   }
 }
 
@@ -167,8 +156,7 @@
 .input-default {
   height: 48px;
   padding: 0px 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  @include input-select-border;
   background: #fff;
   line-height: 1.5;
   @include font(16px, null, null, null);
@@ -184,8 +172,7 @@
     height: 48px;
     width: 100%;
     padding: 0px 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    @include input-select-border;
     background: #fff;
     line-height: 1.5;
     @include font(16px, null, null, null);
@@ -196,8 +183,7 @@
 .textarea-default{
   height: 142px;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  @include input-select-border;
   line-height: 1.5;
 }
 
@@ -223,20 +209,19 @@
 }
 
 .product-price .form-group .l-right{
+  width: 50%;
   display: flex;
   flex-direction: row;
-  width: 50%;
 }
 
 .form-group .input-price{
   height: 48px;
+  width: 100%;
   padding: 0px 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  @include input-select-border;
   background: #fff;
   line-height: 1.5;
   @include font(16px, null, null, right);
-  width: 100%;
 }
 
 .form-group-price{
