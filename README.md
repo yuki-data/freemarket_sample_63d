@@ -33,8 +33,8 @@ Things you may want to cover:
 |avator|string||
 
 ### Association
-- belongs_to :user_profile
-- belongs_to :user_address
+- has_one :user_profile
+- has_one :user_address
 - has_many :products
 - has_many :comments
 - has_many :saling_products
@@ -64,6 +64,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
 |post_number|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -77,10 +78,10 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|product_name|string|null: false|
-|category_id|integer|null: false|
-|bland_id|integer||
-|product_description|text|null: false|
+|name|string|null: false|
+|category_id|integer|null: false, foreign_key: true|
+|bland_id|integer|null: false, foreign_key: true|
+|description|text|null: false|
 |status|integer|null: false|
 |who_charge_shipping|integer|null: false|
 |way_of_shipping|integer|null: false|
@@ -94,13 +95,15 @@ Things you may want to cover:
 - belongs_to :saling_product
 - belongs_to :bought_product
 - belongs_to :sold_product
+- belongs_to :brand
 - has_many :product_images
+- has_many :comments
 
 ## product_imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|integer|null: false|
+|product_id|integer|null: false, foreign_key: true|
 |image|string|null: false|
 
 ### Association
@@ -110,12 +113,13 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|product_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 |comment|text|null: false|
 
 ### Association
 - belongs_to :user
+- belongs_to :product
 
 ## categoryテーブル
 
@@ -132,16 +136,15 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|product_id|integer|null: false|
 
 ### Association
-- belongs_to :product
+- has_many :product
 
 ## saling_productsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|integer|null: false|
+|product_id|integer|null: false, foreign_key: true|
 |saling_user_id|integer|null: false|
 
 ### Association
@@ -152,7 +155,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|integer|null: false|
+|product_id|integer|null: false, foreign_key: true|
 |bought_user_id|integer|null: false|
 
 ### Association
@@ -163,7 +166,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|integer|null: false|
+|product_id|integer|null: false, foreign_key: true|
 |sold_user_id|integer|null: false|
 
 ### Association
