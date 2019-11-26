@@ -1,4 +1,4 @@
 class ExhibitController < ApplicationController
-  def exhibit
+  def new
   end
 end
