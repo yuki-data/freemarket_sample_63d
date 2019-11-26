@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 # test
 
-## usesrテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -38,7 +38,7 @@ Things you may want to cover:
 - has_many :products
 - has_many :comments
 - has_many :saling_products
-- has_many :buyed_products
+- has_many :purchased_products
 - has_many :sold_products
 
 ## user_profilesテーブル
@@ -92,7 +92,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :category
 - belongs_to :saling_product
-- belongs_to :buyed_product
+- belongs_to :purchased_product
 - belongs_to :sold_product
 - has_many :product_images
 
@@ -148,12 +148,12 @@ Things you may want to cover:
 - belongs_to :product
 - belongs_to :user
 
-## buyed_productsテーブル
+## purchased_productsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |product_id|integer|null: false|
-|buyed_user_id|integer|null: false|
+|purchased_user_id|integer|null: false|
 
 ### Association
 - belongs_to :product
