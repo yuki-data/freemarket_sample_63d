@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-@import "config/reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "config/variables";
-@import "modules/global";
 @import "mixins/mypage";
 @import "modules/header_navbar";
 @import "modules/footer";
 @import "modules/mypage";
-=======
-@import "font-awesome";
 @import "./availables/font-color";
 @import "./availables/style";
 @import "./availables/error_text";
@@ -19,7 +14,12 @@
 @import "./single/_single-footer";
 @import "./_exhibit-attention";
 
-*{
+* {
   box-sizing: border-box;
 }
->>>>>>> master
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
