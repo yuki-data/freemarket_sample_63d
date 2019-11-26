@@ -61,6 +61,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+<<<<<<< HEAD
 # hamlを使用するため
 gem "haml-rails"
 # font-awesomeを使うため
@@ -87,6 +88,12 @@ group :development, :test do
   # pryを使うためのgem
   gem 'pry-rails'
 end
+=======
+gem 'haml-rails'
+gem 'erb2haml'
+gem 'font-awesome-rails'
+
+>>>>>>> master
 #####################################
 ####### Unicornを本番環境に追加 ########
 #####################################
@@ -106,3 +113,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
