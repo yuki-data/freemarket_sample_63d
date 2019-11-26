@@ -87,3 +87,22 @@ group :development, :test do
   # pryを使うためのgem
   gem 'pry-rails'
 end
+#####################################
+####### Unicornを本番環境に追加 ########
+#####################################
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
+#####################################
+####### Capistrano ########
+#####################################
+
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+end
