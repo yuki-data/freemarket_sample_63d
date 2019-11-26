@@ -1,4 +1,4 @@
-= render partial: "shared/header_navbar"
+= render "shared/header_navbar"
 .mypage
   .breadcrumb-wrapper
     .breadcrumb-inner
@@ -6,6 +6,6 @@
       = breadcrumbs separator: " &rsaquo; "
   .main
     .main__inner
-      = render partial: "mypage_sidebar"
-      = render partial: "mypage_body"
-= render partial: "shared/footer"
+      = render "mypage_sidebar"
+      = render "mypage_body"
+= render "shared/footer"
