@@ -1,18 +1,17 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "config/variables";
-@import "mixins/mypage";
-@import "modules/header_navbar";
-@import "modules/footer";
-@import "modules/mypage";
+@import "./reset";
 @import "./availables/font-color";
 @import "./availables/style";
 @import "./availables/error_text";
 @import "./exhibit";
-@import "./reset";
 @import "./single/_single-header";
 @import "./single/_single-footer";
 @import "./_exhibit-attention";
+@import "mixins/mypage";
+@import "modules/header_navbar";
+@import "modules/footer";
+@import "modules/mypage";
 
 * {
   box-sizing: border-box;
