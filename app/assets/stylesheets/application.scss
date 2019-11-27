@@ -1,6 +1,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./reset";
+@import "config/reset";
+@import "config/boxsizing";
+@import "config/variables";
+@import "mixins/tops_mixins";
+@import "modules/tops";
 @import "./availables/font-color";
 @import "./availables/style";
 @import "./availables/error_text";
