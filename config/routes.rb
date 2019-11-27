@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :cwavetests, only: [:index, :create, :new]
   resources :exhibit
   resources :user_accounts, only: [:index], path: "mypage"
+  get "/mypage/card", to: "user_accounts#card"
 end
