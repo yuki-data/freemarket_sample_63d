@@ -64,7 +64,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font-awesome-sass'
 gem 'haml-rails'
 gem 'erb2haml'
-gem 'font-awesome-rails'
 
 #####################################
 ####### Unicornを本番環境に追加 ########
