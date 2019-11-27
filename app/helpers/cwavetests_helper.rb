@@ -1,0 +1,2 @@
+module CwavetestsHelper
+end
