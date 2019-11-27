@@ -89,7 +89,6 @@ group :development, :test do
 end
 
 gem 'erb2haml'
-gem 'font-awesome-rails'
 
 #####################################
 ####### Unicornを本番環境に追加 ########
