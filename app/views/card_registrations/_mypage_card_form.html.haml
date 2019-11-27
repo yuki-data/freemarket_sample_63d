@@ -1,0 +1,7 @@
+.main__inner__body
+  .mypage__payment
+    .mypage__payment__title クレジットカード情報入力
+    .mypage__payment__container
+      = form_with class: "mypage__payment__container__form" do |f|
+        = f.label :name
+        = f.text_field :name
