@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :cwavetests, only: [:index, :create, :new]
   resources :exhibit
   resources :user_accounts, only: [:index], path: "mypage"
-  resources :card_registrations, only: [:index], path: "/mypage/card"
+  resources :card_registrations, only: [:index, :new], path: "/mypage/card"
 end
