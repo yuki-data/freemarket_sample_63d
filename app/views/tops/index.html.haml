@@ -1,0 +1,106 @@
+%body
+
+  %header
+  
+  .slider
+    = link_to do  
+      %i.fas.fa-angle-left
+    = link_to do
+      %i.fas.fa-angle-right
+
+  .popularity
+    %h2 人気のカテゴリー
+    %ul.item
+      %li.item__tag
+        = link_to do
+          レディース
+      %li.item__tag
+        = link_to do
+          メンズ
+      %li.item__tag
+        = link_to do
+          家電・スマホ・カメラ
+      %li.item__tag
+        = link_to do
+          おもちゃ・ホビー・グッズ
+
+  .item__all
+
+    .new__item__title
+      %h3 レディース新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops"
+
+    .new__item__title
+      %h3 メンズ新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops"
+
+    .new__item__title
+      %h3 家電・スマホ・カメラ新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops"
+
+    .new__item__title
+      %h3 おもちゃ・ホビー・グッズ新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops"
+    
+  .popularity
+    %h2 人気のブランド
+    %ul.item
+      %li.item__tag
+        = link_to do
+          シャネル
+      %li.item__tag
+        = link_to do
+          ルイヴィトン
+      %li.item__tag
+        = link_to do
+          シュプリーム
+      %li.item__tag
+        = link_to do
+          ナイキ
+    
+  .item__all
+
+    .new__item__title
+      %h3 シャネル新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops"
+
+    .new__item__title
+      %h3 ルイヴィトン新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops"
+
+    .new__item__title
+      %h3 シュプリーム新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops"
+
+    .new__item__title
+      %h3 ナイキ新着アイテム
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops"  
+    
+  .news__bar
+  %footer
+
+  = render partial: "exibit_button"
