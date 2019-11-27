@@ -4,7 +4,4 @@ class UserAccountsController < ApplicationController
 
   def top_page
   end
-
-  def card
-  end
 end
