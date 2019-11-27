@@ -67,12 +67,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_074601) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "s3images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "saling_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id", null: false
     t.integer "saling_products", null: false
