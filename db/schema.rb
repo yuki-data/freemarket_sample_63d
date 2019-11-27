@@ -10,12 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-#ここ2つあるのいいのか？
-ActiveRecord::Schema.define(version: 2019_11_25_114750) do
-  create_table "cwavetests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "image"
-  end
-  
 ActiveRecord::Schema.define(version: 2019_11_26_074601) do
 
   create_table "blands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -24,10 +18,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_074601) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "s3images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "image"
-  end
-  
   create_table "boughat_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id", null: false
     t.integer "bought_products", null: false
@@ -45,6 +35,12 @@ ActiveRecord::Schema.define(version: 2019_11_26_074601) do
     t.integer "user_id", null: false
     t.integer "product_id", null: false
     t.text "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cwavetests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,6 +63,12 @@ ActiveRecord::Schema.define(version: 2019_11_26_074601) do
     t.integer "shipping_region", null: false
     t.integer "how_long_shipping", null: false
     t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "s3images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
