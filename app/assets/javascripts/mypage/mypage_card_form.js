@@ -1,4 +1,5 @@
-$(function() {
+var $;
+$(document).on("turbolinks:load", function() {
   var creditCardToolTip = $(
     ".mypage__card__form__security-code__about__tool-tip"
   );
