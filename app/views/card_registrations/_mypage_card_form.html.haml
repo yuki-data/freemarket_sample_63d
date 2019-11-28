@@ -22,9 +22,10 @@
           %span 月/
           = f.select :exp_year, [ [19, "2019"], [20, "2020"], [21, "2021"], [22, "2022"], [23, "2023"], [24, "2024"], [25, "2025"], [26, "2026"], [27, "2027"], [28, "2028"], [29, "2029"] ]
           %span 年
-        = f.label :security_code, "セキュリティコード"
-        = f.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", class: "mypage__card__form__security-code"
-        .mypage__card__form__about-security-code
-          = icon("fas", "question-circle")
-          %span カード裏面の番号とは？
+        .mypage__card__form__security-code
+          = f.label :security_code, "セキュリティコード"
+          = f.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", class: "mypage__card__form__security-code__input"
+          .mypage__card__form__security-code__about
+            = icon("fas", "question-circle")
+            %span カード裏面の番号とは？
         = f.submit "追加する", class: "mypage__card__form__submit-button"
