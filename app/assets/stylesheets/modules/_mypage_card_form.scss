@@ -12,6 +12,13 @@
             label {
               font-weight: bold;
             }
+            span {
+              background-color: red;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+            }
           }
           &__input {
             width: 100%;
@@ -39,6 +46,13 @@
             margin-bottom: 8px;
             label {
               font-weight: bold;
+            }
+            span {
+              background-color: red;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
             }
           }
           &__select {
