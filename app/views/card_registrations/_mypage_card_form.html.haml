@@ -19,10 +19,15 @@
         .mypage__card__form__expiration
           = f.label :exp_month, "有効期限"
           %br
-          = f.select :exp_month, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
-          %span 月/
-          = f.select :exp_year, [ [19, "2019"], [20, "2020"], [21, "2021"], [22, "2022"], [23, "2023"], [24, "2024"], [25, "2025"], [26, "2026"], [27, "2027"], [28, "2028"], [29, "2029"] ]
-          %span 年
+          .mypage__card__form__expiration__select
+            .mypage__card__form__expiration__select__item
+              = f.select :exp_month, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+              = icon("fas", "chevron-down")
+              %span 月
+            .mypage__card__form__expiration__select__item
+              = f.select :exp_year, [ [19, "2019"], [20, "2020"], [21, "2021"], [22, "2022"], [23, "2023"], [24, "2024"], [25, "2025"], [26, "2026"], [27, "2027"], [28, "2028"], [29, "2029"] ]
+              = icon("fas", "chevron-down")
+              %span 年
         .mypage__card__form__security-code
           = f.label :security_code, "セキュリティコード"
           = f.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", class: "mypage__card__form__security-code__input"
