@@ -16,12 +16,12 @@
             %li= image_tag 'credit_card/discover.svg', alt: 'discover', height: '20'
             %li= image_tag 'credit_card/jcb.svg', alt: 'jcb', height: '20'
             %li= image_tag 'credit_card/dinersclub.svg', alt: 'dinersclub', height: '20'
-        = f.label :exp_month, "有効期限"
-        = f.select :exp_month, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
-        %span 月/
-        = f.select :exp_year, [ [19, "2019"], [20, "2020"], [21, "2021"], [22, "2022"], [23, "2023"], [24, "2024"], [25, "2025"], [26, "2026"], [27, "2027"], [28, "2028"], [29, "2029"] ]
-        %span 年
-        %br
+        .mypage__card__form__expiration
+          = f.label :exp_month, "有効期限"
+          = f.select :exp_month, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+          %span 月/
+          = f.select :exp_year, [ [19, "2019"], [20, "2020"], [21, "2021"], [22, "2022"], [23, "2023"], [24, "2024"], [25, "2025"], [26, "2026"], [27, "2027"], [28, "2028"], [29, "2029"] ]
+          %span 年
         = f.label :security_code, "セキュリティコード"
         = f.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", class: "mypage__card__form__security-code"
         .mypage__card__form__about-security-code
