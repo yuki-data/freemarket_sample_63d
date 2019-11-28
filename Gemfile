@@ -88,6 +88,8 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+gem 'sassc', '2.1.0'
+gem 'haml-rails'
 gem 'erb2haml'
 
 #####################################
