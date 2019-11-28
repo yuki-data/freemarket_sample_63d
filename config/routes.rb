@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "tets#index"
+  root to: "tops#index"
   resources :tops, only: [:index]
   resources :cwavetests, only: [:index, :create, :new]
   resources :exhibit
