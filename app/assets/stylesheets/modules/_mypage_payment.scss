@@ -28,13 +28,13 @@
             line-height: 48px;
             color: $mypage-white;
             text-align: center;
-            font-size: 14px;
+            font-size: $mypage-font-size;
           }
         }
         &__about {
           margin-top: 40px;
           text-align: right;
-          font-size: 14px;
+          font-size: $mypage-font-size;
           a {
             color: $mypage-ultramarine;
             text-decoration: none;

@@ -7,8 +7,8 @@
         max-width: 343px;
         &__card-num {
           &__title {
-            font-size: 14px;
-            margin-bottom: 8px;
+            font-size: $mypage-font-size;
+            margin-bottom: $mypage-card-form-input-margin;
             label {
               font-weight: bold;
             }
@@ -17,7 +17,7 @@
               padding: 2px 4px;
               border-radius: 2px;
               color: $mypage-white;
-              font-size: 12px;
+              font-size: $mypage-font-size-small;
             }
           }
           &__input {
@@ -30,7 +30,7 @@
             line-height: 1.5;
           }
           &__logos {
-            margin-top: 8px;
+            margin-top: $mypage-card-form-input-margin;
             display: flex;
             li {
               &:not(:first-of-type) {
@@ -40,10 +40,10 @@
           }
         }
         &__expiration {
-          margin-top: 40px;
+          margin-top: $mypage-card-form-section-spacing;
           &__title {
-            font-size: 14px;
-            margin-bottom: 8px;
+            font-size: $mypage-font-size;
+            margin-bottom: $mypage-card-form-input-margin;
             label {
               font-weight: bold;
             }
@@ -52,7 +52,7 @@
               padding: 2px 4px;
               border-radius: 2px;
               color: $mypage-white;
-              font-size: 12px;
+              font-size: $mypage-font-size-small;
             }
           }
           &__select {
@@ -86,10 +86,10 @@
           }
         }
         &__security-code {
-          margin-top: 40px;
+          margin-top: $mypage-card-form-section-spacing;
           &__title {
-            font-size: 14px;
-            margin-bottom: 8px;
+            font-size: $mypage-font-size;
+            margin-bottom: $mypage-card-form-input-margin;
             label {
               font-weight: bold;
             }
@@ -104,10 +104,10 @@
             line-height: 1.5;
           }
           &__about {
-            padding: 8px 0;
+            padding: $mypage-card-form-input-margin 0;
             text-align: right;
             color: #0099e8;
-            font-size: 14px;
+            font-size: $mypage-font-size;
             position: relative;
             &__tool-tip {
               color: black;
@@ -123,10 +123,10 @@
         &__submit-button {
           width: 100%;
           background-color: $mypage-red;
-          margin-top: 40px;
+          margin-top: $mypage-card-form-section-spacing;
           color: $mypage-white;
           line-height: 48px;
-          font-size: 14px;
+          font-size: $mypage-font-size;
           border-width: 0;
         }
       }
