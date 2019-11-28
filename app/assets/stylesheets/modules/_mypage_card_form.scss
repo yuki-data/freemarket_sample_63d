@@ -71,7 +71,7 @@
             }
             select:-moz-focusring {
               color: transparent;
-              text-shadow: 0 0 0 #000;
+              text-shadow: 0 0 0 $mypage-black;
             }
             &__item {
               flex-grow: 1;
@@ -106,11 +106,11 @@
           &__about {
             padding: $mypage-card-form-input-margin 0;
             text-align: right;
-            color: #0099e8;
+            color: $mypage-ultramarine;
             font-size: $mypage-font-size;
             position: relative;
             &__tool-tip {
-              color: black;
+              color: $mypage-black;
               background: $mypage-dimgray;
               padding: 16px;
               text-align: center;
