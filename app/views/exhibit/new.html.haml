@@ -2,8 +2,8 @@
   =render 'single/single-header'
 
 .exhibit
-  %main.main
-    %section.main__container.product-container
+  %main.exhibit-main
+    %section.exhibit-main__container.product-container
       -# 多分ここに？=form_for (product_function_name), html: {class: "(sell-form)"} do |f|
       .sell-upload-box
         .sell-container
@@ -16,7 +16,7 @@
               %span.form-require 必須
             %p.sell-upload__max-10 最大10枚までアップロードできます
             .sell-upload__drop-box
-              %i.fa.fa-camera
+              = icon("fa", "camera")
           %ul.has-error-text 画像がありません
         .sell-content
           .product-detail

@@ -61,7 +61,33 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# hamlを使用するため
+gem "haml-rails"
+# font-awesomeを使うため
 gem 'font-awesome-sass'
+# パンくずリストの表示
+gem 'gretel'
+# jqueryを使うため
+gem "jquery-rails"
+
+group :development, :test do
+  # 以下はvscodeのリンターを使うためのgem
+  gem "rubocop"
+  gem "ruby-debug-ide"
+  gem "debase"
+  gem "rcodetools"
+  gem "fastri"
+  gem "ruby-lint"
+  gem "reek"
+  gem "faster"
+  gem "debride"
+  gem "solargraph"
+  gem "fastri"
+
+  # pryを使うためのgem
+  gem 'pry-rails'
+end
+
 gem 'sassc', '2.1.0'
 gem 'haml-rails'
 gem 'erb2haml'

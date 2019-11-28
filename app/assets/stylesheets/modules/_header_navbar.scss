@@ -1,0 +1,93 @@
+.pc-header {
+  &__inner {
+    width: $mypage-lg-width;
+    margin: 0 auto;
+    padding-top: 8px;
+    &__top {
+      display: flex;
+      align-items: center;
+      &__logo {
+        line-height: 1;
+      }
+      &__search {
+        width: 100%;
+        margin-left: 45px;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        background-color: $mypage-bgcolor;
+        border: 1px solid $mypage-tab-dimgray;
+        border-radius: 4px;
+        &__input {
+          background-color: rgba(255, 255, 255, 0);
+          width: 100%;
+          height: $mypage-search-bar-height;
+          border: 0;
+        }
+        &__icon {
+          width: $mypage-search-bar-height;
+          height: $mypage-search-bar-height;
+          line-height: $mypage-search-bar-height;
+          text-align: center;
+          font-size: $mypage-font-size;
+        }
+      }
+    }
+    &__navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      &__menu-left {
+        display: flex;
+        &__item {
+          &:not(:first-of-type) {
+            margin-left: 22px;
+          }
+          a {
+            display: block;
+            color: $mypage-black;
+            text-decoration: none;
+            font-size: $mypage-font-size;
+            height: 44px;
+            line-height: 44px;
+            font-weight: 700;
+            i {
+              color: #ea352d;
+            }
+          }
+        }
+      }
+      &__menu-right {
+        display: flex;
+        &__item {
+          &:not(:first-of-type) {
+            margin-left: 28px;
+          }
+          a {
+            display: block;
+            color: $mypage-black;
+            text-decoration: none;
+            font-size: $mypage-font-size;
+            height: 44px;
+            line-height: 44px;
+            display: flex;
+            align-items: center;
+            i {
+              font-size: 18px;
+              color: $mypage-tab-dimgray;
+            }
+            span {
+              margin-left: 10px;
+              line-height: 1;
+            }
+            img {
+              line-height: 1;
+              border-radius: 50%;
+              background-color: grey;
+            }
+          }
+        }
+      }
+    }
+  }
+}

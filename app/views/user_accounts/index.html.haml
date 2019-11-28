@@ -1,0 +1,11 @@
+= render "shared/header_navbar"
+.mypage
+  .breadcrumb-wrapper
+    .breadcrumb-inner
+      - breadcrumb :mypage
+      = breadcrumbs separator: " &rsaquo; "
+  .main
+    .main__inner
+      = render "mypage_sidebar"
+      = render "mypage_body"
+= render "shared/footer"

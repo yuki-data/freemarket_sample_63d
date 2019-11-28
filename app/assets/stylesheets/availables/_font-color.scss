@@ -1,5 +1,17 @@
 $require-background-color: red;
-$arbitrary-background-color:gray;
+$arbitrary-background-color: gray;
+$mypage-bgcolor: #f5f5f5;
+$mypage-lg-width: 1020px;
+$mypage-black: #333;
+$mypage-white: #fff;
+$mypage-tab-dimgray: #ccc;
+$mypage-hover-dimgray: #eee;
+$mypage-hover-dimwhite: #fafafa;
+$mypage-active-tab-red: #ea352d;
+$mypage-font-size: 14px;
+$mypage-font-size-small: 12px;
+$mypage-search-bar-height: 40px;
+$mypage-sidebar-block-spacing: 40px;
 
 @mixin font($size: null, $weight: null, $color: null, $algin: null) {
   font-size: $size;

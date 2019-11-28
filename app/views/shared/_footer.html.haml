@@ -1,0 +1,92 @@
+.banner
+  .banner__inner
+    .banner__inner__promotion
+      %h2.banner__inner__promotion__title スマホでかんたんフリマアプリ
+      %h2.banner__inner__promotion__text 今すぐ無料ダウンロード！
+      .banner__inner__promotion__icons
+        .banner__inner__promotion__icons__logo
+          = image_tag 'logos/logo_red.svg', alt: 'logo_red', width: "58", height: "58"
+        %ul.banner__inner__promotion__icons__apps
+          %li.banner__inner__promotion__icons__apps__item
+            = link_to "#" do
+              = image_tag 'badges/App_Store_Badge.svg', alt: 'App_Store_Badge', width: "133", height: "40"
+          %li.banner__inner__promotion__icons__apps__item
+            = link_to "#" do
+              = image_tag 'badges/google-play-badge.png', alt: 'google-play-badge', width: "133", height: "40"
+    .banner__inner__image
+      = image_tag 'logos/logo_red.svg', alt: 'logo_gray', width: "68", width: "260", height: "260"
+.footer
+  .footer__nav
+    .footer__nav__cell
+      %h2.footer__nav__cell__title メルカリについて
+      %ul.footer__nav__cell__menu
+        %li.footer__nav__cell__menu__item
+          =link_to "会社概要（運営会社）", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "採用情報", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "プレスリリース", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "公式ブログ", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "メルカリロゴ利用ガイドライン", "#"
+        %li.footer__nav__cell__menu__item
+          %ul.footer__nav__cell__menu__item__social
+            %li
+              =link_to "#" do
+                = icon("fab", "twitter")
+            %li
+              =link_to "#" do
+                = icon("fab", "facebook-square")
+    .footer__nav__cell
+      %h2.footer__nav__cell__title ヘルプ＆ガイド
+      %ul.footer__nav__cell__menu
+        %li.footer__nav__cell__menu__item
+          =link_to "メルカリガイド", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "らくらくメルカリ便", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "ゆうゆうメルカリ便", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "大型メルカリ便", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "車体取引ガイド", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "メルカリあんしん・あんぜん宣言！", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "偽ブランド品撲滅への取り組み", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "メルカリボックス", "#"
+    .footer__nav__cell.two-columns
+      %h2.footer__nav__cell__title プライバシーと利用規約
+      .footer__nav__cell__inner
+        %ul.footer__nav__cell__menu
+          %li.footer__nav__cell__menu__item
+            =link_to "プライバシーポリシー", "#"
+          %li.footer__nav__cell__menu__item
+            =link_to "メルカリ利用規約", "#"
+          %li.footer__nav__cell__menu__item
+            =link_to "あんしんスマホサポート制度に関する利用特約", "#"
+          %li.footer__nav__cell__menu__item
+            =link_to "コンプライアンスポリシー", "#"
+        %ul.footer__nav__cell__menu
+          %li.footer__nav__cell__menu__item
+            =link_to "個人データの安全管理に係る基本方針", "#"
+          %li.footer__nav__cell__menu__item
+            =link_to "特定商取引に関する表記", "#"
+          %li.footer__nav__cell__menu__item
+            =link_to "資金決済法に基づく表示", "#"
+          %li.footer__nav__cell__menu__item
+            =link_to "法令順守と犯罪抑止のために", "#"
+    .footer__nav__cell
+      %h2.footer__nav__cell__title 国
+      %ul.footer__nav__cell__menu
+        %li.footer__nav__cell__menu__item
+          =link_to "日本", "#"
+        %li.footer__nav__cell__menu__item
+          =link_to "United States", "#"
+  .footer__bottom
+    = link_to "#", class: "footer__bottom__logo" do
+      = image_tag 'logos/fmarket_logo_custom_white.svg', alt: 'fmarket_logo_custom_white', height: '33', width: '124', style: "fill: white"
+    .footer__bottom__copyright
+      %span &copy; 2019 Mercari
