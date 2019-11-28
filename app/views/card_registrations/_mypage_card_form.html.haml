@@ -3,17 +3,19 @@
     .mypage__payment__title クレジットカード情報入力
     .mypage__payment__card-registration
       = form_with(class: "mypage__card__form") do |f|
-        = f.label :card_number, "カード番号"
-        %span 必須
-        = f.text_field :card_number, placeholder: "半角数字のみ", maxlength: "16", class: "mypage__card__form__card-num"
-        %ul.mypage__card__form__card-logos
-          %li= image_tag 'credit_card/visa.svg', alt: 'visa', height: '20'
-          %li= image_tag 'credit_card/master-card.svg', alt: 'master', height: '20'
-          %li= image_tag 'credit_card/saison-card.svg', alt: 'saison', height: '20'
-          %li= image_tag 'credit_card/american_express.svg', alt: 'american_express', height: '20'
-          %li= image_tag 'credit_card/discover.svg', alt: 'discover', height: '20'
-          %li= image_tag 'credit_card/jcb.svg', alt: 'jcb', height: '20'
-          %li= image_tag 'credit_card/dinersclub.svg', alt: 'dinersclub', height: '20'
+        .mypage__card__form__card-num
+          .mypage__card__form__card-num__title
+            = f.label :card_number, "カード番号"
+            %span 必須
+          = f.text_field :card_number, placeholder: "半角数字のみ", maxlength: "16", class: "mypage__card__form__card-num__input"
+          %ul.mypage__card__form__card-num__logos
+            %li= image_tag 'credit_card/visa.svg', alt: 'visa', height: '20'
+            %li= image_tag 'credit_card/master-card.svg', alt: 'master', height: '20'
+            %li= image_tag 'credit_card/saison-card.svg', alt: 'saison', height: '20'
+            %li= image_tag 'credit_card/american_express.svg', alt: 'american_express', height: '20'
+            %li= image_tag 'credit_card/discover.svg', alt: 'discover', height: '20'
+            %li= image_tag 'credit_card/jcb.svg', alt: 'jcb', height: '20'
+            %li= image_tag 'credit_card/dinersclub.svg', alt: 'dinersclub', height: '20'
         = f.label :exp_month, "有効期限"
         = f.select :exp_month, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
         %span 月/
