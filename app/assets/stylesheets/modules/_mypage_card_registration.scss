@@ -2,7 +2,7 @@
   .mypage__payment {
     &__card-registration {
       padding: 40px 40px 64px;
-      &__form {
+      .mypage__card__form {
         margin: 0 auto;
         max-width: 343px;
         &__card-num {
@@ -13,6 +13,15 @@
           border: 1px solid #ccc;
           background: #fff;
           line-height: 1.5;
+        }
+        &__card-logos {
+          margin-top: 8px;
+          display: flex;
+          li {
+            &:not(:first-of-type) {
+              margin-left: 8px;
+            }
+          }
         }
         &__security-code {
           width: 100%;

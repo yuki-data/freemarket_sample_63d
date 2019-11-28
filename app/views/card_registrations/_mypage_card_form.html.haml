@@ -2,11 +2,11 @@
   .mypage__payment
     .mypage__payment__title クレジットカード情報入力
     .mypage__payment__card-registration
-      = form_with(class: "mypage__payment__card-registration__form") do |f|
+      = form_with(class: "mypage__card__form") do |f|
         = f.label :card_number, "カード番号"
         %span 必須
-        = f.text_field :card_number, placeholder: "半角数字のみ", maxlength: "16", class: "mypage__payment__card-registration__form__card-num"
-        %ul.mypage__payment__card-registration__form__card-logos
+        = f.text_field :card_number, placeholder: "半角数字のみ", maxlength: "16", class: "mypage__card__form__card-num"
+        %ul.mypage__card__form__card-logos
           %li= image_tag 'credit_card/visa.svg', alt: 'visa', height: '20'
           %li= image_tag 'credit_card/master-card.svg', alt: 'master', height: '20'
           %li= image_tag 'credit_card/saison-card.svg', alt: 'saison', height: '20'
@@ -21,8 +21,8 @@
         %span 年
         %br
         = f.label :security_code, "セキュリティコード"
-        = f.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", class: "mypage__payment__card-registration__form__security-code"
-        .mypage__payment__card-registration__form__about-security-code
+        = f.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", class: "mypage__card__form__security-code"
+        .mypage__card__form__about-security-code
           = icon("fas", "question-circle")
           %span カード裏面の番号とは？
-        = f.submit "追加する", class: "mypage__payment__card-registration__form__submit-button"
+        = f.submit "追加する", class: "mypage__card__form__submit-button"
