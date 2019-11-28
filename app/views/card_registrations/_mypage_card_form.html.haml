@@ -1,10 +1,11 @@
 .main__inner__body
   .mypage__payment
     .mypage__payment__title クレジットカード情報入力
-    .mypage__payment__container
-      = form_with(class: "mypage__payment__container__form") do |f|
+    .mypage__payment__card-registration
+      = form_with(class: "mypage__payment__card-registration__form") do |f|
         = f.label :card_number, "カード番号"
-        = f.text_field :card_number, placeholder: "半角数字のみ", maxlength: "16"
+        %span 必須
+        = f.text_field :card_number, placeholder: "半角数字のみ", maxlength: "16", class: "mypage__payment__card-registration__form__card-num"
         %br
         = f.label :exp_month, "有効期限"
         = f.select :exp_month, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
@@ -13,6 +14,8 @@
         %span 年
         %br
         = f.label :security_code, "セキュリティコード"
-        = f.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4"
-        %br
-        = f.submit "追加する"
+        = f.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", class: "mypage__payment__card-registration__form__security-code"
+        .mypage__payment__card-registration__form__about-security-code
+          = icon("fas", "question-circle")
+          %span カード裏面の番号とは？
+        = f.submit "追加する", class: "mypage__payment__card-registration__form__submit-button"
