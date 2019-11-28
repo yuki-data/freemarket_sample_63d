@@ -36,4 +36,7 @@
           .mypage__card__form__security-code__about
             = icon("fas", "question-circle")
             %span カード裏面の番号とは？
+            .mypage__card__form__security-code__about__tool-tip
+              %span カードの裏面をご参照ください。
+              = image_tag 'credit_card/creditcard_back.png', alt: 'creditcard_back', width: '240'
         = f.submit "追加する", class: "mypage__card__form__submit-button"

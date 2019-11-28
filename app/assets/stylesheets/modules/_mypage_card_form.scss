@@ -108,6 +108,15 @@
             text-align: right;
             color: #0099e8;
             font-size: 14px;
+            position: relative;
+            &__tool-tip {
+              color: black;
+              background: #eee;
+              padding: 16px;
+              text-align: center;
+              position: absolute;
+              z-index: 999;
+            }
           }
         }
         &__submit-button {
