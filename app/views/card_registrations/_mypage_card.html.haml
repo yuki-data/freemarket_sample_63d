@@ -5,7 +5,7 @@
       .mypage__payment__container__card-list
         .mypage__payment__container__card-list__title クレジットカード一覧
         .mypage__payment__container__card-list__add-card
-          = link_to "#", class: "mypage__payment__container__card-list__add-card__button" do
+          = link_to new_card_registration_path, class: "mypage__payment__container__card-list__add-card__button" do
             = icon("far", "credit-card")
             %span カードを追加する
         .mypage__payment__container__card-list__about
