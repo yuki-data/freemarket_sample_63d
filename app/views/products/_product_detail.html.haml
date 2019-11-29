@@ -11,6 +11,17 @@
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title 出品者
               %td.product-detail__table__tbody__row__content
+                = link_to "山田", "#"
+                %ul.product-detail__user-rating
+                  %li.product-detail__user-rating__item
+                    = icon("fas", "smile", class: "product-detail__user-rating__item__rate--good")
+                    %span 101
+                  %li.product-detail__user-rating__item
+                    = icon("fas", "meh", class: "product-detail__user-rating__item__rate--normal")
+                    %span 56
+                  %li.product-detail__user-rating__item
+                    = icon("fas", "frown", class: "product-detail__user-rating__item__rate--bad")
+                    %span 17
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title カテゴリー
               %td.product-detail__table__tbody__row__content
