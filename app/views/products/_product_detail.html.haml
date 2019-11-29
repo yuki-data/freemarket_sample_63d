@@ -57,7 +57,11 @@
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title 発送日の目安
               %td.product-detail__table__tbody__row__content 1~2日で発送
-    .product-detail__content__price
+    .product-detail__content__price-box
+      %span.product-detail__content__price-box__price &yen;9,500
+      %span.product-detail__content__price-box__tax (税込み)
+      %span.product-detail__content__price-box__shipping-fee 送料込み
     .product-detail__content__buy
+      = link_to "購入画面に進む", "#"
     .product-detail__content__description
     .product-detail__content__buttons
