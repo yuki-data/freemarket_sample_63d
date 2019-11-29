@@ -1,0 +1,24 @@
+.product-detail {
+  &__wrapper {
+    background-color: #f5f5f5;
+    padding-top: 40px;
+  }
+
+  &__content {
+    background-color: #fff;
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+    padding: 24px 40px 40px;
+    &__title {
+      font-size: 24px;
+      text-align: center;
+      word-wrap: break-word;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    &__main {
+      margin-top: 16px;
+    }
+  }
+}
