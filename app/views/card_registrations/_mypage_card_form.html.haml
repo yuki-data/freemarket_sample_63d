@@ -2,6 +2,9 @@
   .mypage__payment
     .mypage__payment__title クレジットカード情報入力
     .mypage__payment__card-registration
+      -# クレジットカード情報を収めるmodelを使うときには、以下のように書き換えてください。
+      -# @card = Card.new のようにコントローラーで設定した上で
+      -# = form_with(model: @card, class: "mypage__card__form") do |f|
       = form_with(class: "mypage__card__form") do |f|
         .mypage__card__form__card-num
           .mypage__card__form__card-num__title
