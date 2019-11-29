@@ -41,8 +41,20 @@
               }
               &__content {
                 border: 1px solid #f5f5f5;
+                padding: 8px;
                 .product-detail__user-rating {
+                  display: flex;
+                  margin-top: 8px;
                   &__item {
+                    &:not(:first-of-type) {
+                      margin-left: 16px;
+                    }
+
+                    i {
+                      font-size: 16px;
+                    }
+                    display: flex;
+                    align-items: center;
                     &__rate {
                       &--good {
                         color: orangered;
