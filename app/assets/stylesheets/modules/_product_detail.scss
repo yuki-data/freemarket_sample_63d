@@ -19,6 +19,33 @@
     }
     &__main {
       margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      &__photo {
+        width: 300px;
+      }
+      &__details {
+        width: 300px;
+        .product-detail__table {
+          width: 100%;
+          font-size: 14px;
+          &__tbody {
+            &__row {
+              &__title {
+                width: 39%;
+                text-align: left;
+                font-weight: 400;
+                background: #fafafa;
+                border: 1px solid #f5f5f5;
+                padding: 8px;
+              }
+              &__content {
+                border: 1px solid #f5f5f5;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
