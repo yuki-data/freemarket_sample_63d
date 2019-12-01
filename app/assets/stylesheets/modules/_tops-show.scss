@@ -28,7 +28,8 @@ h2.sell-container-head__confirm{
       }
     }
       //値段
-      p.buy__price{   
+      p.buy__price{
+        margin-top: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -40,6 +41,7 @@ h2.sell-container-head__confirm{
       }
       //ポイントの有無
       .have__you__point{
+        margin-top: 10px;
         width:320px;
         height:48px;
         background: #ccc;
@@ -51,9 +53,12 @@ h2.sell-container-head__confirm{
       p.buy__error{
         width:320px;
         color: $main-red;
+        text-align: center;
+        margin-top: 10px;
       }
       //最終的な値段
       p.buy__price__result{
+        margin-top: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -63,6 +68,7 @@ h2.sell-container-head__confirm{
       }
       //購入するという表示箇所
       .item__buying{
+        margin-top: 10px;
         color:white;
         width:320px;
         height:48px;
@@ -75,9 +81,11 @@ h2.sell-container-head__confirm{
       p.Proposal{
         width:320px;
         margin: 0 auto;
+        margin-top: 10px;
       }
       //iosかアンドロイドかの広告バナーダミー、あったりなかったり?
       .store__banners{
+        margin-top: 10px;
         width:320px;
         justify-content: center;
         display: flex;
@@ -104,6 +112,7 @@ h2.sell-container-head__confirm{
       .user__address{
         width:320px;
         height:30px;
+        margin-top: 10px;
       }
       //変更する
       p.user__info{
