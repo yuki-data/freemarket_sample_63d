@@ -212,4 +212,17 @@
       }
     }
   }
+  &__nav-prev-next {
+    width: 700px;
+    margin: 24px auto;
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: #0099e8;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

@@ -114,3 +114,12 @@
       = form_with(class: "product-detail__message__post__form") do |f|
         = f.text_area :comment, rows: 4, class: "product-detail__message__post__form__text-area"
         = f.submit "コメントする", class: "product-detail__message__post__form__submit"
+  %ul.product-detail__nav-prev-next
+    %li.product-detail__nav-prev-next__prev
+      = link_to "#" do
+        = icon("fas", "chevron-left")
+        %span kindle fire 8インチ
+    %li.product-detail__nav-prev-next__next
+      = link_to "#" do
+        %span iphoneX 新品
+        = icon("fas", "chevron-right")
