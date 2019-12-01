@@ -1,0 +1,122 @@
+//haml,sass共に村上さんの担当ビューより部分的に引用
+
+h2.sell-container-head__confirm{
+  padding:16px;
+  font-size: 22px;
+  background: white;
+  text-align: center;
+  font-weight: bold;
+}
+.sell-content__confirm{
+  //内部の子要素を余白を設定し中央揃え
+  padding: 24px;
+  border-top: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: center;
+  //画像サムネと説明文
+  .product-detail{
+    .thumbnail__container{
+        display: flex;
+        width:320px;
+      .img__thumbnail{
+        img{
+          width:64px;
+        }
+      }
+      h3.confirm__thumbnail{
+        margin-left: 16px;
+      }
+    }
+      //値段
+      p.buy__price{   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:320px;
+        .item__price{
+          margin-right: 8px;
+          font-size: 22px;
+        }
+      }
+      //ポイントの有無
+      .have__you__point{
+        width:320px;
+        height:48px;
+        background: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      //警告文
+      p.buy__error{
+        width:320px;
+        color: $main-red;
+      }
+      //最終的な値段
+      p.buy__price__result{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .item__price{
+          font-size: 28px;
+        }
+      }
+      //購入するという表示箇所
+      .item__buying{
+        color:white;
+        width:320px;
+        height:48px;
+        background: #888;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      //熱いアプリ版推しキャプション
+      p.Proposal{
+        width:320px;
+        margin: 0 auto;
+      }
+      //iosかアンドロイドかの広告バナーダミー、あったりなかったり?
+      .store__banners{
+        width:320px;
+        justify-content: center;
+        display: flex;
+        a{
+          width:64px;
+          height:19px;
+          background: black;
+          display: block;
+          border-radius: 5px;
+          //最初の広告バナーにのみ右に余白
+          &:first-of-type{
+            margin:0px 5px 0px 0px;
+          }
+        }
+      }
+      //配送先と支払い方法見出し
+      h3.confirm__title{
+        display: block;
+        font-weight: bold;
+        font-size: 14px;
+        width:320px;
+      }
+      //配送先
+      .user__address{
+        width:320px;
+        height:30px;
+      }
+      //変更する
+      p.user__info{
+        text-align: right;
+        width:320px;
+        a{
+          color: $main-blue;
+          width:320px;
+          &:hover{
+            //デフォで消してるホバー時の下線を復活
+            text-decoration: underline;
+          }
+        }
+      }
+  }
+}
