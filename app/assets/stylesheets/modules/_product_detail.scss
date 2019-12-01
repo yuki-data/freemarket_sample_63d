@@ -270,4 +270,46 @@
       }
     }
   }
+  &__items-of-seller {
+    margin: 24px auto;
+    padding: 32px 0 24px;
+    width: 700px;
+    &__title {
+      font-weight: bold;
+      color: #0099e8;
+      text-decoration: none;
+      font-size: 22px;
+      margin: 24px 0 8px;
+      a {
+        color: #0099e8;
+      }
+    }
+    &__box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      &__item {
+        background-color: #fff;
+        margin-bottom: 20px;
+        &__detail {
+          &__desc {
+            padding: 16px;
+            color: black;
+            &__name {
+              font-size: 18px;
+            }
+            &__status {
+              margin-top: 8px;
+              font-size: 17px;
+              display: flex;
+              justify-content: space-between;
+              i {
+                color: #ccc;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
