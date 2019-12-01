@@ -146,4 +146,45 @@
       }
     }
   }
+  &__message {
+    background-color: #fff;
+    width: 700px;
+    margin: 8px auto;
+    padding: 24px;
+    &__comments {
+      font-size: 14px;
+      &__item {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        &__icon {
+          &__link {
+            img {
+              border-radius: 50%;
+              background-color: #eef0f4;
+            }
+            &__seller {
+              color: black;
+              background-color: #eef0f4;
+            }
+          }
+        }
+        &__main {
+          width: 600px;
+          &__user-name {
+            font-weight: bold;
+          }
+          &__content {
+            background-color: #eef0f4;
+            padding: 16px;
+            border-radius: 15px;
+            &__date {
+              margin-top: 8px;
+              color: #aaaaaa;
+            }
+          }
+        }
+      }
+    }
+  }
 }
