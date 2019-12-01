@@ -3,8 +3,20 @@
     %h1.product-detail__content__title 腕時計
     .product-detail__content__main
       .product-detail__content__main__photo
-        .product-detail__content__main__photo__show
-          = image_tag 'products_temporary/food_curryrice_white.png', alt: 'food_curryrice_white', height: '300', width: '300', class: ''
+        %ul.product-detail__content__main__photo__slide-show
+          %li= image_tag 'products_temporary/food_curryrice_white.png', alt: 'food_curryrice_white', height: '300', width: '300', class: ''
+          %li= image_tag 'products_temporary/food_gyouza_enban.png', alt: 'food_curryrice_white', height: '300', width: '300', class: ''
+          %li= image_tag 'products_temporary/food_nasu_nibitashi.png', alt: 'food_curryrice_white', height: '300', width: '300', class: ''
+          %li= image_tag 'products_temporary/food_nasu_yakinasu.png', alt: 'food_curryrice_white', height: '300', width: '300', class: ''
+          %li= image_tag 'products_temporary/food_sauce_katsudon_fukui.png', alt: 'food_curryrice_white', height: '300', width: '300', class: ''
+          %li= image_tag 'products_temporary/food_soup_okuzukake.png', alt: 'food_curryrice_white', height: '300', width: '300', class: ''
+        %ul.product-detail__content__main__photo__thumbnails
+          %li= image_tag 'products_temporary/food_curryrice_white.png', alt: 'food_curryrice_white', height: '40', width: '40', class: ''
+          %li= image_tag 'products_temporary/food_gyouza_enban.png', alt: 'food_curryrice_white', height: '40', width: '40', class: ''
+          %li= image_tag 'products_temporary/food_nasu_nibitashi.png', alt: 'food_curryrice_white', height: '40', width: '40', class: ''
+          %li= image_tag 'products_temporary/food_nasu_yakinasu.png', alt: 'food_curryrice_white', height: '40', width: '40', class: ''
+          %li= image_tag 'products_temporary/food_sauce_katsudon_fukui.png', alt: 'food_curryrice_white', height: '40', width: '40', class: ''
+          %li= image_tag 'products_temporary/food_soup_okuzukake.png', alt: 'food_curryrice_white', height: '40', width: '40', class: ''
       .product-detail__content__main__details
         %table.product-detail__table
           %tbody.product-detail__table__tbody
