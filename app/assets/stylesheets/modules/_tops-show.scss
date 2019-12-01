@@ -17,7 +17,7 @@ h2.sell-container-head__confirm{
   .product-detail{
     .thumbnail__container{
         display: flex;
-        width:320px;
+        width: $c-320;
       .img__thumbnail{
         img{
           width:64px;
@@ -33,7 +33,7 @@ h2.sell-container-head__confirm{
         display: flex;
         justify-content: center;
         align-items: center;
-        width:320px;
+        width: $c-320;
         .item__price{
           margin-right: 8px;
           font-size: 22px;
@@ -42,7 +42,7 @@ h2.sell-container-head__confirm{
       //ポイントの有無
       .have__you__point{
         margin-top: 10px;
-        width:320px;
+        width: $c-320;
         height:48px;
         background: #ccc;
         display: flex;
@@ -51,7 +51,7 @@ h2.sell-container-head__confirm{
       }
       //警告文
       p.buy__error{
-        width:320px;
+        width: $c-320;
         color: $main-red;
         text-align: center;
         margin-top: 10px;
@@ -70,7 +70,7 @@ h2.sell-container-head__confirm{
       .item__buying{
         margin-top: 10px;
         color:white;
-        width:320px;
+        width: $c-320;
         height:48px;
         background: #888;
         display: flex;
@@ -79,14 +79,14 @@ h2.sell-container-head__confirm{
       }
       //熱いアプリ版推しキャプション
       p.Proposal{
-        width:320px;
+        width: $c-320;
         margin: 0 auto;
         margin-top: 10px;
       }
       //iosかアンドロイドかの広告バナーダミー、あったりなかったり?
       .store__banners{
         margin-top: 10px;
-        width:320px;
+        width: $c-320;
         justify-content: center;
         display: flex;
         a{
@@ -106,21 +106,21 @@ h2.sell-container-head__confirm{
         display: block;
         font-weight: bold;
         font-size: 14px;
-        width:320px;
+        width: $c-320;
       }
       //配送先
       .user__address{
-        width:320px;
+        width: $c-320;
         height:30px;
         margin-top: 10px;
       }
       //変更する
       p.user__info{
         text-align: right;
-        width:320px;
+        width: $c-320;
         a{
           color: $main-blue;
-          width:320px;
+          width: $c-320;
           &:hover{
             //デフォで消してるホバー時の下線を復活
             text-decoration: underline;
