@@ -186,5 +186,30 @@
         }
       }
     }
+    &__post {
+      &__notice {
+        padding: 8px;
+        font-size: 14px;
+        background: #fff6de;
+      }
+      &__form {
+        margin-top: 8px;
+        &__text-area {
+          width: 100%;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        &__submit {
+          background: #aaa;
+          border: 1px solid #aaa;
+          color: #fff;
+          width: 100%;
+          margin: 8px 0 0;
+          font-size: 14px;
+          text-align: center;
+          line-height: 48px;
+        }
+      }
+    }
   }
 }
