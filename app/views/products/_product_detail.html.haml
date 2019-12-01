@@ -85,28 +85,28 @@
     %ul.product-detail__message__comments
       %li.product-detail__message__comments__item
         .product-detail__message__comments__item__icon
-          = link_to "#" do
-            = image_tag '/app/assets/images/mypage/boy_01.png', alt: 'boy_01', height: '40', width: '40'
+          = link_to "#", class: "product-detail__message__comments__item__icon__link" do
+            = image_tag 'mypage/boy_01.png', alt: 'boy_01', height: '40', width: '40'
         .product-detail__message__comments__item__main
           .product-detail__message__comments__item__main__user-name 山田
           .product-detail__message__comments__item__main__content
             .product-detail__message__comments__item__main__content__text
               %span コメント失礼します。値引きする予定ありますか。
             .product-detail__message__comments__item__main__content__date
-              = icon("fas", "clock")
+              = icon("far", "clock")
               %span 10時間前
       %li.product-detail__message__comments__item
         .product-detail__message__comments__item__icon
           = link_to "#", class: "product-detail__message__comments__item__icon__link" do
-            = image_tag '/app/assets/images/mypage/boy_01.png', alt: 'boy_01', height: '40', width: '40'
-            .product-detail__message__comments__item__icon__link__seller 商品者
+            = image_tag 'mypage/boy_01.png', alt: 'boy_01', height: '40', width: '40'
+            .product-detail__message__comments__item__icon__link__seller 出品者
         .product-detail__message__comments__item__main
-          .product-detail__message__comments__item__main__user-name 山田
+          .product-detail__message__comments__item__main__user-name 佐藤
           .product-detail__message__comments__item__main__content
             .product-detail__message__comments__item__main__content__text
               %span 値引きの予定はありません。
             .product-detail__message__comments__item__main__content__date
-              = icon("fas", "clock")
+              = icon("far", "clock")
               %span 8時間前
     .product-detail__message__post
       .product-detail__message__post__notice
