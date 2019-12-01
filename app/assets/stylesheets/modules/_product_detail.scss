@@ -23,15 +23,9 @@
       color: #333333;
       &__photo {
         width: 300px;
-        position: relative;
         &__slide-show {
-          height: 300px;
-          position: absolute;
-          left: 0;
-          top: 0;
         }
         &__thumbnails {
-          display: flex;
         }
       }
       &__details {
