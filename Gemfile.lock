@@ -382,9 +382,8 @@ DEPENDENCIES
   faster
   fastri
   fog-aws
-  gretel
-  fog-aws
   font-awesome-sass
+  gretel
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails

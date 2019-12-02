@@ -6,6 +6,8 @@ h2.sell-container-head__confirm{
   background: white;
   text-align: center;
   font-weight: bold;
+  width: 700px;
+  margin:0 auto;
 }
 .sell-content__confirm{
   //内部の子要素を余白を設定し中央揃え
@@ -13,6 +15,9 @@ h2.sell-container-head__confirm{
   border-top: 1px solid #f5f5f5;
   display: flex;
   justify-content: center;
+  background: white;
+  width: 700px;
+  margin: 0 auto;
   //画像サムネと説明文
   .product-detail{
     .thumbnail__container{
