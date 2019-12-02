@@ -1,18 +1,17 @@
 .product-detail {
   &__wrapper {
-    background-color: #f5f5f5;
+    background-color: $mypage-bgcolor;
     padding: 40px 0;
   }
 
   &__content {
-    background-color: #fff;
-    width: 700px;
+    background-color: $mypage-white;
+    width: $mypage-main-inner-width;
     margin: 0 auto;
     padding: 24px 40px 40px;
     &__title {
-      font-size: 24px;
+      font-size: $product-detail-font-size-title;
       text-align: center;
-      word-wrap: break-word;
       line-height: 1.4;
       font-weight: bold;
     }
@@ -20,30 +19,30 @@
       margin-top: 16px;
       display: flex;
       justify-content: space-between;
-      color: #333333;
+      color: $mypage-black;
       &__photo {
-        width: 300px;
+        width: $product-detail-photo-width;
         &__thumbnails {
           width: 300px;
         }
       }
       &__details {
-        width: 300px;
+        width: $product-detail-photo-width;
         .product-detail__table {
           width: 100%;
-          font-size: 14px;
+          font-size: $mypage-font-size;
           &__tbody {
             &__row {
               &__title {
                 width: 39%;
                 text-align: left;
                 font-weight: 400;
-                background: #fafafa;
-                border: 1px solid #f5f5f5;
+                background: $mypage-dimwhite;
+                border: 1px solid $mypage-bgcolor;
                 padding: 8px;
               }
               &__content {
-                border: 1px solid #f5f5f5;
+                border: 1px solid $mypage-bgcolor;
                 padding: 8px;
                 .product-detail__user-rating {
                   display: flex;
@@ -54,7 +53,7 @@
                     }
 
                     i {
-                      font-size: 16px;
+                      font-size: $product-detail-font-size-title;
                     }
                     display: flex;
                     align-items: center;
@@ -83,7 +82,7 @@
       }
     }
     &__price-box {
-      margin-top: 24px;
+      margin-top: $product-detail-section-spacing;
       text-align: center;
       &__price {
         font-size: 50px;
@@ -95,12 +94,11 @@
     &__buy {
       a {
         display: block;
-        background-color: red;
-        color: white;
-        font-size: 24px;
+        color: $mypage-white;
+        font-size: $product-detail-font-size-title;
         line-height: 60px;
         margin-top: 16px;
-        background: #ea352d;
+        background: $mypage-red;
         text-align: center;
         font-weight: bold;
       }
@@ -113,7 +111,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 14px;
+      font-size: $mypage-font-size;
       &__left {
         display: flex;
         &__item {
@@ -122,9 +120,8 @@
           }
           a {
             display: inline-block;
-            color: #333;
-            border: 1px solid #f5f5f5;
-            background: #f5f5f5;
+            color: $mypage-black;
+            background: $mypage-bgcolor;
             padding: 8px 16px;
             border-radius: 40px;
           }
@@ -140,12 +137,12 @@
     }
   }
   &__message {
-    background-color: #fff;
-    width: 700px;
+    background-color: $mypage-white;
+    width: $mypage-main-inner-width;
     margin: 8px auto;
     padding: 24px;
     &__comments {
-      font-size: 14px;
+      font-size: $mypage-font-size;
       &__item {
         margin-bottom: 40px;
         display: flex;
@@ -154,11 +151,11 @@
           &__link {
             img {
               border-radius: 50%;
-              background-color: #eef0f4;
+              background-color: $product-detail-dimwhite;
             }
             &__seller {
-              color: black;
-              background-color: #eef0f4;
+              color: $mypage-black;
+              background-color: $product-detail-dimwhite;
             }
           }
         }
@@ -168,12 +165,12 @@
             font-weight: bold;
           }
           &__content {
-            background-color: #eef0f4;
+            background-color: $product-detail-dimwhite;
             padding: 16px;
             border-radius: 15px;
             &__date {
               margin-top: 8px;
-              color: #aaaaaa;
+              color: $product-detail-gray;
             }
           }
         }
@@ -182,23 +179,23 @@
     &__post {
       &__notice {
         padding: 8px;
-        font-size: 14px;
+        font-size: $mypage-font-size;
         background: #fff6de;
       }
       &__form {
         margin-top: 8px;
         &__text-area {
           width: 100%;
-          font-size: 16px;
+          font-size: $product-detail-font-size-title;
           line-height: 1.5;
         }
         &__submit {
-          background: #aaa;
-          border: 1px solid #aaa;
-          color: #fff;
+          background: $product-detail-gray;
+          border: 1px solid $product-detail-gray;
+          color: $mypage-white;
           width: 100%;
           margin: 8px 0 0;
-          font-size: 14px;
+          font-size: $mypage-font-size;
           text-align: center;
           line-height: 48px;
         }
@@ -206,12 +203,12 @@
     }
   }
   &__nav-prev-next {
-    width: 700px;
-    margin: 24px auto;
+    width: $mypage-main-inner-width;
+    margin: $product-detail-section-spacing auto;
     display: flex;
     justify-content: space-between;
     a {
-      color: #0099e8;
+      color: $mypage-ultramarine;
       text-decoration: none;
       &:hover {
         text-decoration: underline;
@@ -219,10 +216,10 @@
     }
   }
   &__social-media {
-    margin: 24px auto;
+    margin: $product-detail-section-spacing auto;
     padding: 32px 0 24px;
-    width: 700px;
-    background-color: #fff;
+    width: $mypage-main-inner-width;
+    background-color: $mypage-white;
     &__icons {
       display: flex;
       justify-content: center;
@@ -233,31 +230,31 @@
           display: block;
           text-decoration: none;
           i {
-            width: 44px;
-            height: 44px;
+            width: $product-detail-social-icon-size;
+            height: $product-detail-social-icon-size;
             border-radius: 4px;
-            line-height: 44px;
+            line-height: $product-detail-social-icon-size;
           }
           .social-media-facebook {
-            color: #fff;
+            color: $mypage-white;
             background-color: #385185;
-            font-size: 30px;
+            font-size: $product-detail-social-font-size;
           }
 
           .social-media-twitter {
-            color: #fff;
+            color: $mypage-white;
             background: #5d9dc9;
-            font-size: 30px;
+            font-size: $product-detail-social-font-size;
           }
           .social-media-line {
-            color: #fff;
+            color: $mypage-white;
             background: #00c137;
-            font-size: 30px;
+            font-size: $product-detail-social-font-size;
           }
           .social-media-pinterest {
-            color: #fff;
+            color: $mypage-white;
             background: #aa262a;
-            font-size: 30px;
+            font-size: $product-detail-social-font-size;
           }
         }
       }
@@ -266,15 +263,15 @@
   &__items {
     margin: 0 auto;
     padding: 2０px 0 0;
-    width: 700px;
+    width: $mypage-main-inner-width;
     &__title {
       font-weight: bold;
-      color: #0099e8;
+      color: $mypage-ultramarine;
       text-decoration: none;
       font-size: 22px;
-      margin: 24px 0 8px;
+      margin: $product-detail-section-spacing 0 8px;
       a {
-        color: #0099e8;
+        color: $mypage-ultramarine;
       }
     }
     &__box {
@@ -282,7 +279,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       &__item {
-        background-color: #fff;
+        background-color: $mypage-white;
         margin-bottom: 20px;
         &__detail {
           &__desc {
@@ -297,7 +294,7 @@
               display: flex;
               justify-content: space-between;
               i {
-                color: #ccc;
+                color: $mypage-dimgray;
               }
             }
           }
