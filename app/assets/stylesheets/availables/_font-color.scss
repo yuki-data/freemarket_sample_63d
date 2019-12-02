@@ -6,7 +6,7 @@ $mypage-black: #333;
 $mypage-white: #fff;
 $mypage-dimgray: #ccc;
 $mypage-hover-dimgray: #eee;
-$mypage-hover-dimwhite: #fafafa;
+$mypage-dimwhite: #fafafa;
 $mypage-red: #ea352d;
 $mypage-ultramarine: #0099e8;
 $mypage-font-size: 14px;
@@ -16,6 +16,14 @@ $mypage-sidebar-block-spacing: 40px;
 $mypage-card-form-input-margin: 8px;
 $mypage-card-form-input-height: 48px;
 $mypage-card-form-section-spacing: 40px;
+$mypage-main-inner-width: 700px;
+$product-detail-dimwhite: #eef0f4;
+$product-detail-gray: #aaa;
+$product-detail-social-icon-size: 44px;
+$product-detail-social-font-size: 30px;
+$product-detail-photo-width: 300px;
+$product-detail-section-spacing: 24px;
+$product-detail-font-size-title: 24px;
 
 @mixin font($size: null, $weight: null, $color: null, $algin: null) {
   font-size: $size;
