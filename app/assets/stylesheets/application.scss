@@ -1,5 +1,10 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "./reset";
 @import "config/reset";
 @import "config/boxsizing";
+@import "libraries/slick-theme.scss";
+@import "libraries/slick.scss";
 @import "config/variables";
 @import "mixins/tops_mixins";
 @import "modules/tops";
@@ -10,12 +15,17 @@
 @import "./availables/style";
 @import "./availables/error_text";
 @import "./exhibit";
-@import "./reset";
 @import "./single/_single-header";
 @import "./single/_single-footer";
 @import "./_exhibit-attention";
+@import "mixins/mypage";
+@import "modules/header_navbar";
+@import "modules/footer";
+@import "modules/mypage";
+@import "modules/mypage_payment";
+@import "modules/mypage_card_form";
+@import "modules/product_detail";
 
-*{
+* {
   box-sizing: border-box;
 }
-

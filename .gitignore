@@ -25,3 +25,15 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# vscode設定を無視
+.vscode/
+# rubocop設定を無視
+.rubocop.yml
+# eslint設定を無視
+.eslintrc.json
+
+# mac環境で自動生成される不要なファイルを無視
+.DS_Store
+#ローカルでテスト用にアップロードしたファイルを無視:コレ効いてないっぽい
+/public/uploads/*

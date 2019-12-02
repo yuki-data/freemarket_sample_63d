@@ -1,27 +1,26 @@
-.exhibit{
+.exhibit {
   background-color: #f5f5f5;
 }
 
-.exhibi-top{
+.exhibi-top {
   height: 128px;
   text-align: center;
   margin: 0px auto;
   background-color: #f5f5f5;
 }
 
-
-.main{
+.exhibit-main {
   position: relative;
   margin: 0, auto;
   margin: 0px auto;
   width: 700px;
-  .section{
+  .section {
   }
-  &__conteiner{
+  &__conteiner {
   }
-  .sell-upload-box{
-    .sell-container{
-      .sell-container-head{
+  .sell-upload-box {
+    .sell-container {
+      .sell-container-head {
         padding: 32px 16px;
         @include font(22px, bold, null, center);
         line-height: 1.5;
@@ -29,20 +28,20 @@
       }
     }
   }
-  .sell-all-contents{
+  .sell-all-contents {
     background-color: white;
-    .sell-upload{
+    .sell-upload {
       border-top: 1px solid #eee;
       padding: 40px;
-      &__head{
+      &__head {
         @include font(16px, bold, null, null);
       }
-      &__max-10{
+      &__max-10 {
         margin-top: 8px;
         @include font(14px, null, null, null);
         line-height: 1.5;
       }
-      &__drop-box{
+      &__drop-box {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -53,27 +52,27 @@
         cursor: pointer;
       }
     }
-    .sell-content{
+    .sell-content {
       border-top: 1px solid #eee;
       padding: 40px;
       display: flex;
       flex-wrap: wrap;
-      h3{
+      h3 {
         display: inline-block;
       }
-      figure{
+      figure {
         display: inline-block;
         margin: 0px;
       }
-      &__head{
+      &__head {
         width: calc(100% - 400px);
         display: flex;
         flex-wrap: wrap;
         vertical-align: middle;
-        h3{
+        h3 {
           display: inline-block;
         }
-        figure.form-question{
+        figure.form-question {
           vertical-align: middle;
           margin: 0px;
           width: 15px;
@@ -86,58 +85,54 @@
           text-align: center;
         }
       }
-      .product-detail{
+      .product-detail {
         width: 100%;
       }
-      .sell-form-box{
+      .sell-form-box {
         width: 400px;
       }
     }
   }
 }
 
-.product-prices{
-  .product-price{
+.product-prices {
+  .product-price {
     line-height: 48px;
     flex-wrap: wrap;
-    .form-group-price{
+    .form-group-price {
       padding-bottom: 25px;
-      .product-price-input{
+      .product-price-input {
         text-align: right;
       }
-      .l-right.product-price-input{
+      .l-right.product-price-input {
         display: flex;
         justify-content: flex-end;
       }
     }
-    .profit{
+    .profit {
       padding: 24px 0px;
       height: 83px;
       @include font(16px, bold, null, null);
-      .l-right{
-        @include font(null, null, null, right)
+      .l-right {
+        @include font(null, null, null, right);
       }
     }
   }
 }
 
-.exhibit-bottom{
+.exhibit-bottom {
   bottom: 0;
 }
 
-
-
-
-
 //各台の表題
-.sell-sub-head{
+.sell-sub-head {
   @include font(14px, bold, #888, null);
 }
 
 //各入力項目表題
-.form-group{
+.form-group {
   //各入力項目の表題部分
-  label{
+  label {
     @include font(14px, 600, null, null);
     display: inline-block;
   }
@@ -146,7 +141,7 @@
     @include require-arbitrary($require-background-color);
   }
   //任意のSass
-  .form-arbitrary{
+  .form-arbitrary {
     @include require-arbitrary($arbitrary-background-color);
   }
 }
@@ -167,7 +162,7 @@
   display: inline-block;
   margin-bottom: 8px;
   @include font(16px, null, null, null);
-  &__pulldown{
+  &__pulldown {
     height: 48px;
     width: 100%;
     padding: 0px 16px;
@@ -179,7 +174,7 @@
 }
 
 //商品の詳細の入力画面
-.textarea-default{
+.textarea-default {
   height: 142px;
   width: 100%;
   @include input-select-border;
@@ -193,7 +188,7 @@
 }
 
 //rightに50％の時
-.l-right{
+.l-right {
   width: 50%;
 }
 
@@ -207,13 +202,13 @@
   }
 }
 
-.product-price .form-group .l-right{
+.product-price .form-group .l-right {
   width: 50%;
   display: flex;
   flex-direction: row;
 }
 
-.form-group .input-price{
+.form-group .input-price {
   height: 48px;
   width: 100%;
   padding: 0px 16px;
@@ -223,52 +218,52 @@
   @include font(16px, null, null, right);
 }
 
-.form-group-price{
+.form-group-price {
   display: flex;
   flex-wrap: wrap;
 }
 
-.sell-content .price-mark{
+.sell-content .price-mark {
   line-height: 48px;
   @include font(14px, 100, null, null);
 }
 
-.product-price .clearfix-commission{
+.product-price .clearfix-commission {
   display: flex;
   flex-wrap: wrap;
   padding: 24px 0px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  .l-left{
+  .l-left {
     display: inline-block;
     @include font(14px, null, null, null);
   }
-  .l-right{
+  .l-right {
     display: inline-block;
     @include font(null, null, null, right);
   }
 }
 
 //赤いボタンとグレーのボタンのscss
-.sell-button-box{
+.sell-button-box {
   line-height: 20px;
   width: 100%;
   @include font(14px, null, null, null);
-  .button-exhibit{
+  .button-exhibit {
     display: block;
     width: 100%;
     line-height: 48px;
     @include font(14px, null, null, center);
     cursor: pointer;
   }
-  .button-red{
+  .button-red {
     background: #ea352d;
     border: 1px solid #ea352d;
     color: #fff;
     @include font(null, null, #fff, null);
     margin: 40px 0 0;
   }
-  .button-gray{
+  .button-gray {
     background: #aaa;
     border: 1px solid #aaa;
     color: #fff;
