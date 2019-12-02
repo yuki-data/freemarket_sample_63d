@@ -384,6 +384,8 @@ DEPENDENCIES
   fog-aws
   font-awesome-sass
   gretel
+  fog-aws
+  font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
