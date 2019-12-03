@@ -8,6 +8,9 @@
 @import "config/variables";
 @import "mixins/tops_mixins";
 @import "modules/tops";
+@import "modules/tops-show";
+@import "font-awesome-sprockets";
+@import "./font-awesome";
 @import "./availables/font-color";
 @import "./availables/style";
 @import "./availables/error_text";
