@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validates :nickname, presence: true
+  validates :profile, presence: true
+
   has_many :products
   has_many :comments
   has_many :saling_products
