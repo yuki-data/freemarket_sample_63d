@@ -17,6 +17,11 @@ crumb :mypage_card_registration do
   parent :mypage_payment
 end
 
+crumb :logout do
+  link "ログアウト", edit_top_path
+  parent :mypage
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

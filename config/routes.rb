@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "tops#index"
-  resources :tops, only: [:index, :show]
+  resources :tops, only: [:index, :show, :edit]
   resources :cwavetests, only: [:index, :create, :new]
   resources :exhibit
   resources :user_accounts, only: [:index], path: "mypage"
