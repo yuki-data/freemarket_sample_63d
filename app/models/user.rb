@@ -11,10 +11,10 @@ class User < ApplicationRecord
   has_many :salings, through: :saling_products, source: :product
   has_many :boughts, through: :bought_products, source: :product
   has_many :solds, through: :sold_products, source: :product
-  # 購入したproductsを取得
+  # buyerが購入したproductsをbought_products経由で取得
   has_many :buying_products, class_name: "BoughtProduct", foreign_key: "buyer_id"
   has_many :buyings, through: :buying_products, source: :product
-  # 購入済みのproductsを取得
-  has_many :accepted_products, class_name: "SoldProducts", foreign_key: "buyer_id"
+  # buyerが購入済みのproductssold_products経由でを取得
+  has_many :accepted_products, class_name: "SoldProduct", foreign_key: "buyer_id"
   has_many :accepts, through: :accepted_products, source: :product
 end
