@@ -3,4 +3,5 @@ class BoughtProduct < ApplicationRecord
 
   belongs_to :product
   belongs_to :user
+  belongs_to :buyer, class_name: "User"
 end
