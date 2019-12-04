@@ -12,10 +12,10 @@ class Product < ApplicationRecord
 
   belongs_to :user
   belongs_to :category
-  has_one :saling_product
-  has_one :bought_product
-  has_one :sold_product
+  has_one :saling_product, dependent: :destroy
+  has_one :bought_product, dependent: :destroy
+  has_one :sold_product, dependent: :destroy
   belongs_to :brand
-  has_many :product_images
-  has_many :comments
+  has_many :product_images, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end
