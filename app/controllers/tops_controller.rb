@@ -3,4 +3,6 @@ class TopsController < ApplicationController
   end
   def show
   end
+  def edit
+  end
 end
