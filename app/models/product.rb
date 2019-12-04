@@ -18,4 +18,8 @@ class Product < ApplicationRecord
   belongs_to :brand
   has_many :product_images, dependent: :destroy
   has_many :comments, dependent: :destroy
+  # 購入したuser(buyer)を取得
+  has_one :buyer, through: :bought_product, source: :buyer
+  # 受け取ったuser(buyer)を取得
+  has_one :accepter, through: :sold_product, source: :buyer
 end
