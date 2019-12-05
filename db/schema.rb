@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_055615) do
+ActiveRecord::Schema.define(version: 2019_12_05_060124) do
 
   create_table "bought_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
@@ -98,6 +98,23 @@ ActiveRecord::Schema.define(version: 2019_12_05_055615) do
     t.index ["user_profile_id"], name: "index_sold_products_on_user_profile_id"
   end
 
+  create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_profile_id"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "post_number", null: false
+    t.string "prefecture", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name"
+    t.integer "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_profile_id"], name: "index_user_addresses_on_user_profile_id"
+  end
+
   create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.text "profile", null: false
@@ -142,5 +159,6 @@ ActiveRecord::Schema.define(version: 2019_12_05_055615) do
   add_foreign_key "sold_products", "products"
   add_foreign_key "sold_products", "user_profiles"
   add_foreign_key "sold_products", "user_profiles", column: "buyer_id"
+  add_foreign_key "user_addresses", "user_profiles"
   add_foreign_key "users", "user_profiles"
 end
