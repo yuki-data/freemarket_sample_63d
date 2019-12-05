@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_114750) do
+ActiveRecord::Schema.define(version: 2019_12_05_033704) do
 
   create_table "cwavetests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname", null: false
+    t.text "profile", null: false
+    t.string "avator"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
