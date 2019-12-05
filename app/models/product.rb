@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  after_create :create_saling_product
+
   with_options presence: true do
     validates :name
     validates :description
@@ -23,4 +25,17 @@ class Product < ApplicationRecord
   # 受け取ったuser(buyer)を取得
   has_one :accepter, through: :sold_product, source: :buyer
 
+  def create_saling_product
+    SalingProduct.create(user_profile_id: user_profile.id, product_id: id)
+  end
+
+  def buy_product(buyer)
+    BoughtProduct.create(user_profile_id: user_profile.id, product_id: id, buyer_id: buyer.id)
+    saling_product.destroy
+  end
+
+  def sell_out_product
+    SoldProduct.create(user_profile_id: user_profile.id, product_id: id, buyer_id: buyer.id)
+    bought_product.destroy
+  end
 end
