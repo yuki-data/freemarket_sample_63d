@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_055157) do
+ActiveRecord::Schema.define(version: 2019_12_05_055615) do
 
   create_table "bought_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2019_12_05_055157) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "user_profile_id"
+    t.text "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_comments_on_product_id"
+    t.index ["user_profile_id"], name: "index_comments_on_user_profile_id"
   end
 
   create_table "cwavetests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -121,6 +131,8 @@ ActiveRecord::Schema.define(version: 2019_12_05_055157) do
   add_foreign_key "bought_products", "products"
   add_foreign_key "bought_products", "user_profiles"
   add_foreign_key "bought_products", "user_profiles", column: "buyer_id"
+  add_foreign_key "comments", "products"
+  add_foreign_key "comments", "user_profiles"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
