@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_051508) do
+ActiveRecord::Schema.define(version: 2019_12_05_054631) do
+
+  create_table "bought_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "user_profile_id"
+    t.bigint "buyer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_bought_products_on_buyer_id"
+    t.index ["product_id"], name: "index_bought_products_on_product_id"
+    t.index ["user_profile_id"], name: "index_bought_products_on_user_profile_id"
+  end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -96,6 +107,9 @@ ActiveRecord::Schema.define(version: 2019_12_05_051508) do
     t.index ["user_profile_id"], name: "index_users_on_user_profile_id"
   end
 
+  add_foreign_key "bought_products", "products"
+  add_foreign_key "bought_products", "user_profiles"
+  add_foreign_key "bought_products", "user_profiles", column: "buyer_id"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
