@@ -1,4 +1,9 @@
-user = UserProfile.create!(nickname: "山田", profile: "こんにちは", avator: "山田の画像")
+user_registered = User.create!(
+  password: "aaaaaa", email: Faker::Internet.email, first_name: "a", last_name: "a",
+  first_name_kana: "a", last_name_kana: "a", year_of_birth: 1,
+  month_of_birth: 1, day_of_birth: 1, phone_number: 1,
+)
+user = UserProfile.create!(nickname: "山田", profile: "こんにちは", avator: "山田の画像", user_id: user_registered.id)
 brand = Brand.create!(name: "シャネル")
 category = Category.create!(name: "腕時計")
 
