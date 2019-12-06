@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :user_profile
+  has_one :user_profile
   with_options presence: true do
     validates :first_name
     validates :last_name
