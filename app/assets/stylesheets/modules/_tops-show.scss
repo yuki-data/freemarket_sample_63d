@@ -82,6 +82,18 @@ h2.sell-container-head__confirm {
       align-items: center;
       justify-content: center;
     }
+
+    .payjp-form {
+      #payjp_checkout_box > input {
+        width: 100%;
+        height: 50px;
+        color: white;
+        background-color: #888;
+        background-image: none;
+        font-size: 14px;
+        border: none;
+      }
+    }
     //熱いアプリ版推しキャプション
     p.Proposal {
       width: $c-320;
