@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :user_accounts, only: [:index], path: "mypage"
   resources :card_registrations, only: [:index, :new], path: "/mypage/card"
   resources :products, only: [:show] do
-    resources :purchases, only: [:new]
+    resources :purchases, only: [:index] do
+      collection do
+        post :pay
+      end
+    end
   end
 end
