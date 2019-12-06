@@ -116,17 +116,18 @@ ActiveRecord::Schema.define(version: 2019_12_05_060124) do
   end
 
   create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "nickname", null: false
-    t.text "profile", null: false
+    t.text "profile"
     t.string "avator"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.bigint "user_profile_id"
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
@@ -142,7 +143,6 @@ ActiveRecord::Schema.define(version: 2019_12_05_060124) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["user_profile_id"], name: "index_users_on_user_profile_id"
   end
 
   add_foreign_key "bought_products", "products"
@@ -160,5 +160,5 @@ ActiveRecord::Schema.define(version: 2019_12_05_060124) do
   add_foreign_key "sold_products", "user_profiles"
   add_foreign_key "sold_products", "user_profiles", column: "buyer_id"
   add_foreign_key "user_addresses", "user_profiles"
-  add_foreign_key "users", "user_profiles"
+  add_foreign_key "user_profiles", "users"
 end

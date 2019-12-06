@@ -73,6 +73,11 @@ gem "jquery-rails"
 gem 'devise'
 
 group :development, :test do
+  # テスト用のemailアドレスを生成するため
+  gem 'faker'
+end
+
+group :development, :test do
   # 以下はvscodeのリンターを使うためのgem
   gem "rubocop"
   gem "ruby-debug-ide"

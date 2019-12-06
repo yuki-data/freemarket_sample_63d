@@ -131,6 +131,8 @@ GEM
     erubis (2.7.0)
     excon (0.68.0)
     execjs (2.7.0)
+    faker (2.7.0)
+      i18n (>= 1.6, < 1.8)
     faster (0.0.1)
     fastri (0.3.1.1)
     ffi (1.11.3)
@@ -393,6 +395,7 @@ DEPENDENCIES
   debride
   devise
   erb2haml
+  faker
   faster
   fastri
   fog-aws
