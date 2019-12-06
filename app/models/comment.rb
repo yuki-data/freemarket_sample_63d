@@ -1,4 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :user
+  validates :comment, presence: true
+  belongs_to :user_profile
   belongs_to :product
 end

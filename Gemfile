@@ -69,6 +69,13 @@ gem 'font-awesome-sass'
 gem 'gretel'
 # jqueryを使うため
 gem "jquery-rails"
+# ユーザー認証機能のため
+gem 'devise'
+
+group :development, :test do
+  # テスト用のemailアドレスを生成するため
+  gem 'faker'
+end
 
 group :development, :test do
   # 以下はvscodeのリンターを使うためのgem

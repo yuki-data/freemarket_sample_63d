@@ -10,17 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_074601) do
+ActiveRecord::Schema.define(version: 2019_12_05_060124) do
 
-  create_table "blands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+  create_table "bought_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "user_profile_id"
+    t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_bought_products_on_buyer_id"
+    t.index ["product_id"], name: "index_bought_products_on_product_id"
+    t.index ["user_profile_id"], name: "index_bought_products_on_user_profile_id"
   end
 
-  create_table "boughat_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "bought_products", null: false
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,11 +36,13 @@ ActiveRecord::Schema.define(version: 2019_11_26_074601) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "product_id", null: false
+    t.bigint "product_id"
+    t.bigint "user_profile_id"
     t.text "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_comments_on_product_id"
+    t.index ["user_profile_id"], name: "index_comments_on_user_profile_id"
   end
 
   create_table "cwavetests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,16 +52,18 @@ ActiveRecord::Schema.define(version: 2019_11_26_074601) do
   end
 
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id", null: false
+    t.bigint "product_id"
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_images_on_product_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_profile_id"
+    t.bigint "category_id"
+    t.bigint "brand_id"
     t.string "name", null: false
-    t.integer "category_id", null: false
-    t.integer "brand_id"
     t.text "description", null: false
     t.integer "status", null: false
     t.integer "who_charge_shipping", null: false
@@ -65,20 +73,92 @@ ActiveRecord::Schema.define(version: 2019_11_26_074601) do
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["user_profile_id"], name: "index_products_on_user_profile_id"
   end
 
   create_table "saling_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "saling_products", null: false
+    t.bigint "product_id"
+    t.bigint "user_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_saling_products_on_product_id"
+    t.index ["user_profile_id"], name: "index_saling_products_on_user_profile_id"
   end
 
   create_table "sold_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "sold_products", null: false
+    t.bigint "product_id"
+    t.bigint "user_profile_id"
+    t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_sold_products_on_buyer_id"
+    t.index ["product_id"], name: "index_sold_products_on_product_id"
+    t.index ["user_profile_id"], name: "index_sold_products_on_user_profile_id"
   end
 
+  create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_profile_id"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "post_number", null: false
+    t.string "prefecture", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name"
+    t.integer "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_profile_id"], name: "index_user_addresses_on_user_profile_id"
+  end
+
+  create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "nickname", null: false
+    t.text "profile"
+    t.string "avator"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_profiles_on_user_id"
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.integer "year_of_birth", null: false
+    t.integer "month_of_birth", null: false
+    t.integer "day_of_birth", null: false
+    t.integer "phone_number", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "bought_products", "products"
+  add_foreign_key "bought_products", "user_profiles"
+  add_foreign_key "bought_products", "user_profiles", column: "buyer_id"
+  add_foreign_key "comments", "products"
+  add_foreign_key "comments", "user_profiles"
+  add_foreign_key "product_images", "products"
+  add_foreign_key "products", "brands"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "user_profiles"
+  add_foreign_key "saling_products", "products"
+  add_foreign_key "saling_products", "user_profiles"
+  add_foreign_key "sold_products", "products"
+  add_foreign_key "sold_products", "user_profiles"
+  add_foreign_key "sold_products", "user_profiles", column: "buyer_id"
+  add_foreign_key "user_addresses", "user_profiles"
+  add_foreign_key "user_profiles", "users"
 end

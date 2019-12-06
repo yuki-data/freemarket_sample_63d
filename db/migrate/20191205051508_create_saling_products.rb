@@ -1,8 +1,8 @@
 class CreateSalingProducts < ActiveRecord::Migration[5.2]
   def change
     create_table :saling_products do |t|
-      t.integer :product_id, null:false, foreign_key: true
-      t.integer :saling_products, null:false
+      t.references :product, foreign_key: true
+      t.references :user_profile, foreign_key: true
       t.timestamps
     end
   end
