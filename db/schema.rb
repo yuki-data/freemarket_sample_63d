@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_060124) do
 
   create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
-    t.text "profile", null: false
+    t.text "profile"
     t.string "avator"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
