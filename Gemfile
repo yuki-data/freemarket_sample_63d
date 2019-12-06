@@ -71,6 +71,8 @@ gem 'gretel'
 gem "jquery-rails"
 # ユーザー認証機能のため
 gem 'devise'
+# payjpでの決済のため
+gem 'payjp'
 
 group :development, :test do
   # テスト用のemailアドレスを生成するため
