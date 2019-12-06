@@ -2,12 +2,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|foreign_key: true|
 |nickname|string|null: false|
 |profile|text||
 |avator|string||
 
 ### Association
-- has_one :user
+- belongs_to :user
 - has_one :user_address
 - has_many :products
 - has_many :comments, dependent: :destroy
@@ -27,7 +28,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_profile_id|integer|foreign_key: true|
 |email|string|null: false|
 |password|string|null: false|
 |first_name|string|null: false|
@@ -40,7 +40,7 @@
 |phone_number|integer|null: false|
 
 ### Association
-- belongs_to :user_profile
+- has_one :user_profile
 
 ## user_addressテーブル
 
