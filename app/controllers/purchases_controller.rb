@@ -1,4 +1,7 @@
 class PurchasesController < ApplicationController
+  # 購入画面はログインユーザーのみに表示
+  before_action :authenticate_user!
+
   def index
   end
 
