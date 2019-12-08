@@ -56,6 +56,11 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+  .field
+    .field-label
+      %label{for: "nickname"} ニックネーム
+    .field-input
+      %input{name: :nickname, type: "text"}
   .actions
     = f.submit "Sign up"
 = render "users/shared/links"
