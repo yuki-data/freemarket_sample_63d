@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :user_registration_one, only: [:new]
   resources :user_registration_two, only: [:new]
   resources :user_registration_three, only: [:new]
+  resources :user_registration_four, only: [:new]
   resources :user_registration_seven, only: [:new]
   resources :cwavetests, only: [:index, :create, :new]
   resources :exhibit
