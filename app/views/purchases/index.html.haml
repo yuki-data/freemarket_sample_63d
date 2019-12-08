@@ -16,13 +16,12 @@
           .product-detail
             .thumbnail__container
               %div.img__thumbnail
-                = image_tag 'http://ochiai.lolipop.jp/portsitenew/img/jigazonew.png', alt: 'alternative'
+                = image_tag @product.product_images.first.image.to_s, alt: @product.name
               %h3.confirm__thumbnail
-                【最終お値下げ！！】【美品】トップスUTグレッチUNIQLOコラボTシャツ
-
+                = @product.name
             %p.buy__price
               %span.item__price
-                ¥999
+                = number_to_currency(@product.price, unit: "￥", precision: 0)
               %span.item__caption
                 送料込み
             .have__you__point
@@ -30,7 +29,7 @@
             %p.buy__price__result
               支払い金額
               %span.item__price
-                ¥999
+                = number_to_currency(@product.price, unit: "￥", precision: 0)
             %p.buy__error
               この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
             -# .item__buying
