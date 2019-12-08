@@ -1,0 +1,118 @@
+= render "shared/registration_header"
+
+.registration__page__wrapper
+  .registration__page__container
+    %h2.registration__page__title
+      会員情報入力
+    .registration__form__group
+      %p.registration__label
+        %label{for: ""}
+          ニックネーム
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）アイウエオ太郎", type: "text", value: ""}
+      %p.registration__label
+        %label{for: ""}
+          メールアドレス
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "PC、携帯どちらでも可", type: "text", value: ""}
+      %p.registration__label
+        %label{for: ""}
+          パスワード
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "最大7文字", type: "text", value: ""}
+      .registration__check__wrapper
+        .registration__input__wrapper
+          %input.registration__check{name: "", type: "checkbox", value: ""}
+            パスワードを表示する
+          %p
+            %span
+              本人確認
+            %br
+            情報の登録にご協力ください。第三者に公開されることはありません。      
+      %p.registration__label
+        %label{for: ""}
+          お名前（全角）
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）山田", type: "text", value: ""}
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）太郎", type: "text", value: ""}
+      %p.registration__label
+        %label{for: ""}
+          お名前（カナ全角）
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）ヤマダ", type: "text", value: ""}
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）タロウ", type: "text", value: ""}
+      %p.registration__label
+        %label{for: ""}
+          生年月日
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %select.registration__birthday__year
+          %option{value: "2009"} 2009
+          %option{value: "2010"} 2010
+          %option{value: "2011"} 2011
+          %option{value: "2012"} 2012
+          %option{value: "2013"} 2013
+          %option{value: "2014"} 2014
+          %option{value: "2015"} 2015
+          %option{value: "2016"} 2016
+          %option{value: "2017"} 2017
+          %option{value: "2018"} 2018
+          %option{value: "2019"} 2019
+          %option{value: "2020"} 2020
+        %i.icon-arrow-bottom
+        %span
+          年
+        %select.registration__birthday__month
+          %option{value: "01"} 01
+          %option{value: "02"} 02
+          %option{value: "03"} 03
+          %option{value: "04"} 04
+          %option{value: "05"} 05
+          %option{value: "06"} 06
+          %option{value: "07"} 07
+          %option{value: "08"} 08
+          %option{value: "09"} 09
+          %option{value: "10"} 10
+          %option{value: "11"} 11
+          %option{value: "12"} 12
+        %i.icon-arrow-bottom
+        %span
+          月
+        %select.registration__birthday__day
+          %option{value: "01"} 01
+          %option{value: "02"} 02
+          %option{value: "03"} 03
+          %option{value: "04"} 04
+          %option{value: "05"} 05
+          %option{value: "06"} 06
+          %option{value: "07"} 07
+          %option{value: "08"} 08
+          %option{value: "09"} 09
+          %option{value: "10"} 10
+          %option{value: "11"} 11
+          %option{value: "12"} 12
+        %i.icon-arrow-bottom
+        %span
+          日
+      %div.im__not__robot
+        %input.registration__check{name: "", type: "checkbox", value: ""}
+        私はロボットではありません。
+      %p.registration__text
+        次へ進むボタンを押すことにより
+        %span
+          利用規約に同意したとみなします。
+      = link_to "", class: "registration__push__next" do
+        次へ進む
+      = link_to "", class: "registration__attention" do
+        本人情報への登録について ＞

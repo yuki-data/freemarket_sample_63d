@@ -1,0 +1,14 @@
+%header
+  = render "shared/header_navbar"
+  .mypage
+    .breadcrumb-wrapper
+      .breadcrumb-inner
+        - breadcrumb :registrationfinish
+        = breadcrumbs separator: " &rsaquo; "
+    .main
+      .main__inner
+        = render "user_accounts/mypage_sidebar"
+        = render "user_registration_seven/registration_finish"
+%footer
+  = render "shared/footer"
+  = render "tops/exibit_button"
