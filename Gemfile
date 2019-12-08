@@ -109,6 +109,10 @@ end
 gem 'sassc', '2.1.0'
 gem 'haml-rails'
 gem 'erb2haml'
+# gem 'font-awesome-rails'
+# gem 'ancestry'
+# gem "jquery-rails"
+gem 'jp_prefecture'
 
 #####################################
 ####### Unicornを本番環境に追加 ########
