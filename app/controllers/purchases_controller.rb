@@ -11,17 +11,22 @@ class PurchasesController < ApplicationController
         currency: 'jpy'
       )
     rescue Payjp::CardError => e
-      redirect_back(fallback_location: root_path, alert: 'カードが無効であるか支払額が限度を超えています')
+      redirect_with_flash("カードが無効であるか支払額が限度を超えています")
     rescue Payjp::InvalidRequestError => e
-      redirect_back(fallback_location: root_path, alert: '入力に間違いがあります')
+      redirect_with_flash("入力に間違いがあります")
     rescue Payjp::AuthenticationError => e
-      redirect_back(fallback_location: root_path, alert: '認証に失敗しました')
+      redirect_with_flash("認証に失敗しました")
     rescue Payjp::APIConnectionError => e
-      redirect_back(fallback_location: root_path, alert: '通信に失敗しました')
+      redirect_with_flash("通信に失敗しました")
     rescue Payjp::PayjpError => e
-      redirect_back(fallback_location: root_path, alert: '決済に失敗しました。窓口に問い合わせてください。')
+      redirect_with_flash("決済に失敗しました。窓口に問い合わせてください。")
     rescue => e
-      redirect_back(fallback_location: root_path, alert: '決済に失敗しました。窓口に問い合わせてください。')
+      redirect_with_flash("決済に失敗しました。窓口に問い合わせてください。")
     end
+  end
+
+  def redirect_with_flash(alert_message)
+    flash[:payment_alert] = alert_message
+    redirect_to product_purchases_path(params[:product_id])
   end
 end
