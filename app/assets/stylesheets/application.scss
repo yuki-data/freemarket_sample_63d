@@ -15,7 +15,10 @@
 @import "./availables/font-color";
 @import "./availables/style";
 @import "./availables/error_text";
+// ここが削除されている
 @import "./exhibit";
+// ここが追記された
+@import "./product";
 @import "./single/_single-header";
 @import "./single/_single-footer";
 @import "./_exhibit-attention";
