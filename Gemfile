@@ -77,6 +77,10 @@ gem 'payjp'
 group :development, :test do
   # テスト用のemailアドレスを生成するため
   gem 'faker'
+
+  # 単体テストに使用する
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development, :test do
