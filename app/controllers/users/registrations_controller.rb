@@ -10,9 +10,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    devise_parameter_sanitizer.permit(
+      :sign_up,
+      keys: [
+        :name,
+        :first_name,
+        :last_name,
+        :first_name_kana,
+        :last_name_kana,
+        :year_of_birth,
+        :month_of_birth,
+        :day_of_birth,
+        :phone_number
+      ]
+    )
+    super
+  end
 
   # GET /resource/edit
   # def edit
