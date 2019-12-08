@@ -16,7 +16,8 @@
           .product-detail
             .thumbnail__container
               %div.img__thumbnail
-                = image_tag @product.product_images.first.image.to_s, alt: @product.name
+                - if @product.product_images.present?
+                  = image_tag @product.product_images.first.image.to_s, alt: @product.name
               %h3.confirm__thumbnail
                 = @product.name
             %p.buy__price
