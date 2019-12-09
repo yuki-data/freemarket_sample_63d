@@ -81,6 +81,7 @@ group :development, :test do
   # 単体テストに使用する
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development, :test do
