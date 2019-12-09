@@ -64,4 +64,6 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   # rspecでdeviseを使うための設定
   config.include Devise::Test::ControllerHelpers, :type => :controller
+  require File.expand_path("spec/support/controller_macros.rb")
+  config.include ControllerMacros, type: :controller
 end
