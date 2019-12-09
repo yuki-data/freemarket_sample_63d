@@ -1,0 +1,84 @@
+= render "shared/registration_header_three"
+
+.registration__page__wrapper
+  .registration__page__container
+    %h2.registration__page__title
+      発注先・お届け先住所入力
+
+    .registration__form__group
+
+      %p.registration__label
+        %label{for: ""}
+          お名前（全角）
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input.cmb{"data-input-type": "", maxlength: "", placeholder: "例）山田", type: "text", value: ""}
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）太郎", type: "text", value: ""}
+      
+      %p.registration__label
+        %label{for: ""}
+          お名前（カナ全角）
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input.cmb{"data-input-type": "", maxlength: "", placeholder: "例）ヤマダ", type: "text", value: ""}
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）タロウ", type: "text", value: ""}
+      
+      %p.registration__label
+        %label{for: ""}
+          郵便番号
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）123-4567", type: "text", value: ""}
+      
+      %p.registration__label
+        %label{for: ""}
+          都道府県
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %select.registration__Prefectures
+          %option{value: "東京"} 東京
+          %option{value: "神奈川"} 神奈川
+          %option{value: "茨城"} 茨城
+          %option{value: "埼玉"} 埼玉
+          %option{value: "栃木"} 栃木
+          %option{value: "群馬"} 群馬
+        %i.icon-arrow-bottom
+
+      %p.registration__label
+        %label{for: ""}
+          市区町村
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）アイウエオ市", type: "text", value: ""}
+            
+      %p.registration__label
+        %label{for: ""}
+          番地
+        %span.registration__card
+          必須
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）0-0-0", type: "text", value: ""}
+      
+      %p.registration__label
+        %label{for: ""}
+          建物名
+        %span.registration__card__gray
+          任意
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）アイウエオアパート", type: "text", value: ""}
+      
+      %p.registration__label
+        %label{for: ""}
+          電話
+        %span.registration__card__gray
+          任意
+      .registration__input__wrapper
+        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）000-0000-0000", type: "text", value: ""}
+
+      = link_to "", class: "registration__push__next" do
+        次へ進む
