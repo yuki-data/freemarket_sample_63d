@@ -44,7 +44,7 @@ class PurchasesController < ApplicationController
   end
 
   def redirect_if_already_bought
-    if @product.bought_product.present?
+    if @product.bought_product.present? || @product.saling_product.blank?
       redirect_to root_path
     end
   end
