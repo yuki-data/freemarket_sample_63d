@@ -7,7 +7,7 @@ FactoryBot.define do
     way_of_shipping { rand(1..10) }
     shipping_region { rand(1..10) }
     how_long_shipping { rand(1..10) }
-    price { Faker::Commerce.price }
+    price { rand(100..1000000) }
     user_profile
     brand
     category
