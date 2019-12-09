@@ -62,4 +62,6 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   # FactoryBotを使用するための設定
   config.include FactoryBot::Syntax::Methods
+  # rspecでdeviseを使うための設定
+  config.include Devise::Test::ControllerHelpers, :type => :controller
 end
