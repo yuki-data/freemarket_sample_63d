@@ -44,7 +44,8 @@ class PurchasesController < ApplicationController
 
   def redirect_if_already_bought
     if @product.bought_product.present? || @product.saling_product.blank?
-      redirect_to root_path
+      flash[:payment_alert] = "既に商品は品切れになっています。"
+      redirect_to product_path(params[:product_id])
     end
   end
 end
