@@ -66,27 +66,19 @@ describe PurchasesController do
           expect(response).to redirect_to product_path(product.id)
         end
       end
+
       context "商品が出品中の場合（売り切れていない場合）" do
         context "pay-jpのトークンが存在しない場合" do
           it "ログインページにリダイレクトする" do
             post :pay, params: { product_id: product.id }
             expect(response).to redirect_to product_purchases_path(product.id)
           end
-        end
 
-        context "pay-jpのトークンが適性なテストカードのものの場合" do
-          it "ログインページにリダイレクトする" do
-            post :pay, params: { product_id: product.id, "payjp-token": "tok_f0cc3315d0766e60d0c0ede165d1" }
-            expect(response).to redirect_to product_purchases_path(product.id)
+          it "@productが定義されている" do
+            post :pay, params: { product_id: product.id }
+            expect(assigns(:product)).to eq product
           end
         end
-        # it "render #index" do
-        #   expect(response).to render_template :index
-        # end
-
-        # it "@productが定義されている" do
-        #   expect(assigns(:product)).to eq product
-        # end
       end
     end
   end
