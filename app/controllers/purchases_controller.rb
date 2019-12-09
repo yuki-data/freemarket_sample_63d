@@ -16,6 +16,8 @@ class PurchasesController < ApplicationController
         card: params['payjp-token'],
         currency: 'jpy'
       )
+      @product.buy_product(current_user.user_profile)
+      redirect_to root_path, notice: "購入しました"
     rescue Payjp::CardError => e
       redirect_with_flash("カードが無効であるか支払額が限度を超えています")
     rescue Payjp::InvalidRequestError => e
@@ -29,9 +31,6 @@ class PurchasesController < ApplicationController
     rescue => e
       redirect_with_flash("決済に失敗しました。窓口に問い合わせてください。")
     end
-
-    @product.buy_product(current_user.user_profile)
-    redirect_to root_path, notice: "購入しました"
   end
 
   def redirect_with_flash(alert_message)
