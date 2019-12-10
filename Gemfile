@@ -75,6 +75,8 @@ gem 'devise'
 gem 'payjp'
 # 都道府県データを保持するため
 gem 'active_hash'
+# カテゴリーの階層構造を作るため
+gem 'ancestry'
 
 group :development, :test do
   # テスト用のemailアドレスを生成するため
