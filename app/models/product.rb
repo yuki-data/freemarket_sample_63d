@@ -62,4 +62,8 @@ class Product < ApplicationRecord
     SoldProduct.create(user_profile_id: user_profile.id, product_id: id, buyer_id: buyer.id)
     bought_product.destroy
   end
+
+  def humanize_shipping_region
+    Prefecture.find(shipping_region).name
+  end
 end
