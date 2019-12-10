@@ -4,17 +4,9 @@
     .product-detail__content__main
       .product-detail__content__main__photo
         %ul.product-detail__content__main__photo__slide-show
-          %li= image_tag 'products_temporary/food_curryrice_white.png', alt: 'food_curryrice_white', height: '300', width: '300'
-          %li= image_tag 'products_temporary/food_gyouza_enban.png', alt: 'food_curryrice_white', height: '300', width: '300'
-          %li= image_tag 'products_temporary/food_nasu_nibitashi.png', alt: 'food_curryrice_white', height: '300', width: '300'
-          %li= image_tag 'products_temporary/food_nasu_yakinasu.png', alt: 'food_curryrice_white', height: '300', width: '300'
-          %li= image_tag 'products_temporary/food_sauce_katsudon_fukui.png', alt: 'food_curryrice_white', height: '300', width: '300'
+          = render partial: "products/product_detail_thumbnail", locals: { height: "300", width: "300" }, collection: @product.product_images.limit(5), as: :img
         %ul.product-detail__content__main__photo__thumbnails
-          %li= image_tag 'products_temporary/food_curryrice_white.png', alt: 'food_curryrice_white', height: '60', width: '60'
-          %li= image_tag 'products_temporary/food_gyouza_enban.png', alt: 'food_curryrice_white', height: '60', width: '60'
-          %li= image_tag 'products_temporary/food_nasu_nibitashi.png', alt: 'food_curryrice_white', height: '60', width: '60'
-          %li= image_tag 'products_temporary/food_nasu_yakinasu.png', alt: 'food_curryrice_white', height: '60', width: '60'
-          %li= image_tag 'products_temporary/food_sauce_katsudon_fukui.png', alt: 'food_curryrice_white', height: '60', width: '60'
+          = render partial: "products/product_detail_thumbnail", locals: { height: "60", width: "60" }, collection: @product.product_images.limit(5), as: :img
       .product-detail__content__main__details
         %table.product-detail__table
           %tbody.product-detail__table__tbody
