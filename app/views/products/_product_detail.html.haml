@@ -58,7 +58,7 @@
               %th.product-detail__table__tbody__row__title 配送元地域
               %td.product-detail__table__tbody__row__content
                 = link_to "#" do
-                  %span=@product.shipping_region
+                  %span=@product.humanize_shipping_region
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title 発送日の目安
               %td.product-detail__table__tbody__row__content=@product.how_long_shipping
