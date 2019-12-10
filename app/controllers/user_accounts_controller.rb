@@ -4,4 +4,7 @@ class UserAccountsController < ApplicationController
 
   def top_page
   end
+
+  def logout
+  end
 end

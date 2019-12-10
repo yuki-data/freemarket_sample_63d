@@ -1,3 +1,4 @@
+= render partial: "shared/product_flash"
 .exhibit-top
   =render 'single/single-header'
 
@@ -10,18 +11,18 @@
           %h2.sell-container-head__confirm
             購入内容の確認
       %div.sell-all-contents
-        
+
         .sell-content__confirm
           .product-detail
             .thumbnail__container
               %div.img__thumbnail
-                = image_tag 'http://ochiai.lolipop.jp/portsitenew/img/jigazonew.png', alt: 'alternative'
+                - if @product.product_images.present?
+                  = image_tag @product.product_images.first.image.to_s, alt: @product.name
               %h3.confirm__thumbnail
-                【最終お値下げ！！】【美品】トップスUTグレッチUNIQLOコラボTシャツ
-
+                = @product.name
             %p.buy__price
               %span.item__price
-                ¥999
+                = number_to_currency(@product.price, unit: "￥", precision: 0)
               %span.item__caption
                 送料込み
             .have__you__point
@@ -29,11 +30,17 @@
             %p.buy__price__result
               支払い金額
               %span.item__price
-                ¥999
+                = number_to_currency(@product.price, unit: "￥", precision: 0)
             %p.buy__error
               この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-            .item__buying
-              購入する
+            -# .item__buying
+            -# 購入する
+            = form_with url: pay_product_purchases_path, method: :post, class: "payjp-form" do
+              %script{ type:"text/javascript",
+                src: "https://checkout.pay.jp",
+                class: "payjp-button ",
+                "data-text": "購入する",
+                "data-key": @PAYJP_PUBLIC_KEY}
             %p.Proposal アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
             .store__banners
               = link_to do
