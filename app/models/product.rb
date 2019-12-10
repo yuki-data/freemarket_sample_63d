@@ -12,6 +12,27 @@ class Product < ApplicationRecord
     validates :price
   end
 
+  enum status: {
+    "新品、未使用": 0,
+    "未使用に近い": 1,
+    "目立った汚れや傷なし": 2,
+    "やや汚れや傷あり": 3,
+    "傷や汚れあり": 4,
+    "全体的に状態が悪い": 5
+  }
+
+  enum who_charge_shipping: {
+    "送料込み（出品者負担）": 0, "着払い（購入者負担）": 1
+  }
+
+  enum way_of_shipping: {
+    "未定": 0, "らくらくメルカリ便": 1, "ゆうメール": 2, "レターパック": 3
+  }
+
+  enum how_long_shipping: {
+    "1-2日で発送": 0, "2-3日で発送": 1, "4-7日で発送": 2
+  }
+
   belongs_to :user_profile
   belongs_to :category
   has_one :saling_product, dependent: :destroy
