@@ -73,6 +73,8 @@ gem "jquery-rails"
 gem 'devise'
 # payjpでの決済のため
 gem 'payjp'
+# 都道府県データを保持するため
+gem 'active_hash'
 
 group :development, :test do
   # テスト用のemailアドレスを生成するため
