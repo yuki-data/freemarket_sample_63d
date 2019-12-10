@@ -1,6 +1,6 @@
 .product-detail__wrapper
   .product-detail__content
-    %h1.product-detail__content__title 腕時計
+    %h1.product-detail__content__title=@product.name
     .product-detail__content__main
       .product-detail__content__main__photo
         %ul.product-detail__content__main__photo__slide-show
@@ -21,7 +21,8 @@
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title 出品者
               %td.product-detail__table__tbody__row__content
-                = link_to "山田", "#"
+                = link_to "#" do
+                  %span=@product.user_profile.nickname
                 %ul.product-detail__user-rating
                   %li.product-detail__user-rating__item
                     = icon("fas", "smile", class: "product-detail__user-rating__item__rate--good")
@@ -46,35 +47,37 @@
                   %li.product-detail__category__item
                     = link_to "#" do
                       = icon("fas", "chevron-right")
-                      %span 腕時計
+                      %span=@product.category.name
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title ブランド
               %td.product-detail__table__tbody__row__content
-                = link_to "シャネル", "#"
+                = link_to "#" do
+                  %span=@product.brand.name
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title 商品の状態
-              %td.product-detail__table__tbody__row__content 目立った汚れや傷なし
+              %td.product-detail__table__tbody__row__content=@product.status
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title 配送料の負担
-              %td.product-detail__table__tbody__row__content 送料込み
+              %td.product-detail__table__tbody__row__content=@product.who_charge_shipping
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title 配送の方法
-              %td.product-detail__table__tbody__row__content らくらくメルカリ便
+              %td.product-detail__table__tbody__row__content=@product.way_of_shipping
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title 配送元地域
               %td.product-detail__table__tbody__row__content
-                = link_to "千葉県", "#"
+                = link_to "#" do
+                  %span=@product.shipping_region
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title 発送日の目安
-              %td.product-detail__table__tbody__row__content 1~2日で発送
+              %td.product-detail__table__tbody__row__content=@product.how_long_shipping
     .product-detail__content__price-box
-      %span.product-detail__content__price-box__price &yen;9,500
+      %span.product-detail__content__price-box__price=number_to_currency(@product.price, unit: "￥", precision: 0)
       %span.product-detail__content__price-box__tax (税込み)
       %span.product-detail__content__price-box__shipping-fee 送料込み
     .product-detail__content__buy
-      = link_to "購入画面に進む", "#"
+      = link_to "購入画面に進む", product_purchases_path(@product.id)
     .product-detail__content__description
-      %p.product-detail__content__description__inner 【商品名】 ナイキ ビッグスウォッシュ スウェットパンツ 【商品状態】 新品・未使用品 【color】 ブラック 【size】 M 【ウエスト ヒップ   股上    股下  もも周り すそ周り】 (76)        (93)    (33)   (67.5)   (59)        (25) ※ あくまで自宅保管の為USED品に ご理解頂ける方のご入札でお願い致します。
+      %p.product-detail__content__description__inner=simple_format(@product.description)
     .product-detail__content__buttons
       .product-detail__content__buttons__left
         .product-detail__content__buttons__left__item
