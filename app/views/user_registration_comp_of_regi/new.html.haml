@@ -1,19 +1,13 @@
 = render "shared/registration_header_five"
-
 .registration__page__wrapper
-  .registration__page__container
-    %h2.registration__page__title
+  .registration__page__wrapper__container
+    %h2.registration__page__wrapper__container__page__title
       会員登録完了
-    .registration__form__group
-      
-      
+    .registration__page__wrapper__container__form__group
       %p.registration__text.t-center
         ありがとうございます
         %br
         会員登録が完了しました。
       = link_to "", class: "registration__push__next cmb" do
         メルカリを始める
-    
     = render "shared/footer_img_only"
-      
-      

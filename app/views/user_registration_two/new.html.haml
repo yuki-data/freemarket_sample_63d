@@ -1,10 +1,9 @@
 = render "shared/registration_header"
-
 .registration__page__wrapper
-  .registration__page__container
-    %h2.registration__page__title
+  .registration__page__wrapper__container
+    %h2.registration__page__wrapper__container__page__title
       会員情報入力
-    .registration__form__group
+    .registration__page__wrapper__container__form__group
       %p.registration__label
         %label{for: ""}
           ニックネーム
@@ -42,7 +41,7 @@
           必須
       .registration__input__wrapper
         %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）山田", type: "text", value: ""}
-        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）太郎", type: "text", value: ""}
+        %input.registration__input.cmt{"data-input-type": "", maxlength: "", placeholder: "例）太郎", type: "text", value: ""}
       %p.registration__label
         %label{for: ""}
           お名前（カナ全角）
@@ -50,7 +49,7 @@
           必須
       .registration__input__wrapper
         %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）ヤマダ", type: "text", value: ""}
-        %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）タロウ", type: "text", value: ""}
+        %input.registration__input.cmt{"data-input-type": "", maxlength: "", placeholder: "例）タロウ", type: "text", value: ""}
       %p.registration__label
         %label{for: ""}
           生年月日

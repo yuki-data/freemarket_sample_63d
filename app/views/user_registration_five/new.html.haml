@@ -1,12 +1,9 @@
 = render "shared/registration_header_three"
-
 .registration__page__wrapper
-  .registration__page__container
-    %h2.registration__page__title
+  .registration__page__wrapper__container
+    %h2.registration__page__wrapper__container__page__title
       発注先・お届け先住所入力
-
-    .registration__form__group
-
+    .registration__page__wrapper__container__form__group
       %p.registration__label
         %label{for: ""}
           お名前（全角）
@@ -15,7 +12,6 @@
       .registration__input__wrapper
         %input.registration__input.cmb{"data-input-type": "", maxlength: "", placeholder: "例）山田", type: "text", value: ""}
         %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）太郎", type: "text", value: ""}
-      
       %p.registration__label
         %label{for: ""}
           お名前（カナ全角）
@@ -24,7 +20,6 @@
       .registration__input__wrapper
         %input.registration__input.cmb{"data-input-type": "", maxlength: "", placeholder: "例）ヤマダ", type: "text", value: ""}
         %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）タロウ", type: "text", value: ""}
-      
       %p.registration__label
         %label{for: ""}
           郵便番号
@@ -32,7 +27,6 @@
           必須
       .registration__input__wrapper
         %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）123-4567", type: "text", value: ""}
-      
       %p.registration__label
         %label{for: ""}
           都道府県
@@ -47,7 +41,6 @@
           %option{value: "栃木"} 栃木
           %option{value: "群馬"} 群馬
         %i.icon-arrow-bottom
-
       %p.registration__label
         %label{for: ""}
           市区町村
@@ -55,7 +48,6 @@
           必須
       .registration__input__wrapper
         %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）アイウエオ市", type: "text", value: ""}
-            
       %p.registration__label
         %label{for: ""}
           番地
@@ -63,7 +55,6 @@
           必須
       .registration__input__wrapper
         %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）0-0-0", type: "text", value: ""}
-      
       %p.registration__label
         %label{for: ""}
           建物名
@@ -71,7 +62,6 @@
           任意
       .registration__input__wrapper
         %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）アイウエオアパート", type: "text", value: ""}
-      
       %p.registration__label
         %label{for: ""}
           電話
@@ -79,6 +69,5 @@
           任意
       .registration__input__wrapper
         %input.registration__input{"data-input-type": "", maxlength: "", placeholder: "例）000-0000-0000", type: "text", value: ""}
-
       = link_to "", class: "registration__push__next" do
         次へ進む

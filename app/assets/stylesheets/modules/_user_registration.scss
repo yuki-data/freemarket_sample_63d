@@ -1,242 +1,182 @@
 //新規会員登録ページ1
-.registration__container{
-  h2.registration__title{
-    padding: 32px;
-    font-size: 22px;
-    background: white;
-    text-align: center;
-    font-weight: bold;
-    width: 700px;
-    margin: 0 auto;
-  }
-  .registration__contents{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 40px 64px;
-    border-top: 1px solid #f5f5f5;
-    background: white;
-    width: 700px;
-    margin: 0 auto;
-    a.btn__mail{
-      @include display__layout;
-      border-radius: 5px;
-      color: #fff;
-      width:343px;
-      height:50px;
-      background-color: $main-red;
-    }
-    a.btn__facebook{
-      @include display__layout;
-      border-radius: 5px;
-      color: #fff;
-      width:343px;
-      height:50px;
-      background-color: #385185;
-      margin:16px 0px 0px;
-    }
-    a.btn__google{
-      @include display__layout;
-      border-radius: 5px;
-      color:$main-black;
-      width:343px;
-      height:50px;
-      background-color:white;
-      border:1px solid #333;
-      margin:16px 0px 0px;
-    }
-  }
-}
-//新規会員登録ページ2
-.registration__page__header__wrapper{
-  background: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  .registration__page__header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width:800px;
-    font-size: 22px;
-    padding: 32px;
-    .phased__caption__and__registration{
-      ul.phased__caption{
-        display: flex;
-        font-size: 0.8rem;
-        li.phased__caption__one{
-          margin-left: 5px;
-        }
-        li.phased__caption__two{
-          margin-left: 45px;
-        }
-        li.phased__caption__three{
-          margin-left: 22px;
-        }
-        li.phased__caption__four{
-          margin-left: 27px;
-        }
-        li.phased__caption__five{
-          margin-left: 64px;
-        }
-      }
-      .phased__registration{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width:500px;
-        .circle__check__object--gray{
-          width:15px;
-          height:15px;
-          background: #b5b5b5;
-          border-radius: 50%;
-        }
-        .circle__check__object--red{
-          width:15px;
-          height:15px;
-          background: $main-red;
-          border-radius: 50%;
-        }
-        .line__check__object--gray{
-          width: 95px;
-          border-top: 2px solid #b5b5b5;
-        }
-        .line__check__object--red{
-          width: 95px;
-          border-top: 2px solid $main-red;
-        }
-      }
-    }
-  }
-}
-.registration__page__wrapper{
-  background: #f5f5f5;
-  padding-bottom:100px;
-  .registration__page__container{
-    width:700px;
-    margin: 0 auto;
-    background: white;
-    h2.registration__page__title{
-      padding: 32px 16px;
+.registration{
+  &__container{
+    &__title{
+      padding: 32px;
       font-size: 22px;
-      font-weight: bold;
+      background: white;
       text-align: center;
-      line-height: 1.5;
-      background-color: white;
-      border-bottom:1px solid #f5f5f5;
+      font-weight: bold;
+      width: 700px;
+      margin: 0 auto;
     }
-    .registration__form__group{
-      padding: 20px 100px 50px;
-      p.registration__label{
-        font-weight:bold;
-        width: 400px;
-        margin: auto;
-        label{
-          margin-right: 5px;
-        }
-        span.registration__card{
-          background: $main-red;
-          padding:2px;
-          border-radius:2px;
-          color:white;
-          font-size:0.8em;
-        }
+    &__contents{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 40px 64px;
+      border-top: 1px solid #f5f5f5;
+      background: white;
+      width: 700px;
+      margin: 0 auto;
+      a.btn__mail{
+        @include display__layout;
+        border-radius: 5px;
+        color: #fff;
+        width:343px;
+        height:50px;
+        background-color: $main-red;
       }
-      .registration__input__wrapper{
-        width:400px;
-        margin:0 auto;
-        p.registration__please{
-          margin:10px 0px;
-          span{
-            font-weight: bold;
+      a.btn__facebook{
+        @include display__layout;
+        border-radius: 5px;
+        color: #fff;
+        width:343px;
+        height:50px;
+        background-color: #385185;
+        margin:16px 0px 0px;
+      }
+      a.btn__google{
+        @include display__layout;
+        border-radius: 5px;
+        color:$main-black;
+        width:343px;
+        height:50px;
+        background-color:white;
+        border:1px solid #333;
+        margin:16px 0px 0px;
+      }
+    }
+  }
+}
+
+//新規会員登録ページ2
+.registration{
+  &__page__wrapper{
+    background: #f5f5f5;
+    padding-bottom:100px;
+    &__container{
+      width:700px;
+      margin: 0 auto;
+      background: white;
+      &__page__title{
+        padding: 32px 16px;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.5;
+        background-color: white;
+        border-bottom:1px solid #f5f5f5;
+      }
+      &__form__group{
+        padding: 20px 100px 50px;
+        p.registration__label{
+          font-weight:bold;
+          width: 400px;
+          margin: auto;
+          label{
+            margin-right: 5px;
+          }
+          span.registration__card{
+            background: $main-red;
+            padding:2px;
+            border-radius:2px;
+            color:white;
+            font-size:0.8em;
           }
         }
-        input.registration__input{
+        .registration__input__wrapper{
+          width:400px;
+          margin:0 auto;
+          p.registration__please{
+            margin:10px 0px;
+            span{
+              font-weight: bold;
+            }
+          }
+          input.registration__input{
+            height: 48px;
+            width:100%;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            margin: 10px 0px;
+            display: box;
+          }
+        }
+        select.registration__birthday__year{
           height: 48px;
-          width:100%;
-          padding: 10px 16px 8px;
+          width:25%;
+          padding: 10px;
           border-radius: 4px;
           border: 1px solid #ccc;
           background: #fff;
           line-height: 1.5;
           font-size: 16px;
           margin: 10px 0px;
-          display: box;
         }
-      }
-      select.registration__birthday__year{
-        height: 48px;
-        width:25%;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
-        line-height: 1.5;
-        font-size: 16px;
-        margin: 10px 0px;
-      }
-      select.registration__birthday__month{
-        height: 48px;
-        width:25%;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
-        line-height: 1.5;
-        font-size: 16px;
-      }
-      select.registration__birthday__day{
-        height: 48px;
-        width:25%;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
-        line-height: 1.5;
-        font-size: 16px;
-      }
-      div.im__not__robot{
-        padding:20px;
-        width:400px;
-        border-radius: 5px;
-        background: #f5f5f5;
-        margin-bottom:10px;
-        border: 1px solid #ccc;
-        margin:0 auto;
-      }
-      p.registration__text{
-        width:400px;
-        margin:auto;
-        padding:10px;
-      }
-      .registration__push__next{
-        margin: 0 auto;
-        background-color: $main-red;
-        text-decoration: none;
-        display: block;
-        width: 400px;
-        line-height: 48px;
-        text-align: center;
-        font-size: 14px;
-        margin-bottom:10px;
-        color: white;
-      }
-      a.registration__attention{
-        text-align: right;
-        color: $main-blue;
-        width: 100%;
-        display: block;
+        select.registration__birthday__month{
+          height: 48px;
+          width:25%;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+        select.registration__birthday__day{
+          height: 48px;
+          width:25%;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+        .im__not__robot{
+          padding:20px;
+          width:400px;
+          border-radius: 5px;
+          background: #f5f5f5;
+          margin-bottom:10px;
+          border: 1px solid #ccc;
+          margin:0 auto;
+        }
+        p.registration__text{
+          width:400px;
+          margin:auto;
+          padding:10px;
+        }
+        .registration__push__next{
+          margin: 0 auto;
+          background-color: $main-red;
+          text-decoration: none;
+          display: block;
+          width: 400px;
+          line-height: 48px;
+          text-align: center;
+          font-size: 14px;
+          margin-bottom:10px;
+          color: white;
+        }
+        a.registration__attention{
+          text-align: right;
+          color: $main-blue;
+          width: 100%;
+          display: block;
+        }
       }
     }
   }
 }
-//新規会員登録ページ3
-
-//新規会員登録ページ4
 
 //新規会員登録ページ5
-
 select.registration__Prefectures{
-
   height: 48px;
   width: 100%;
   padding: 10px 16px 8px;
@@ -246,9 +186,7 @@ select.registration__Prefectures{
   line-height: 1.5;
   font-size: 16px;
   margin: 10px 0px;
-
 }
-
 span.registration__card__gray{
   background: gray;
   padding:2px;
@@ -257,19 +195,16 @@ span.registration__card__gray{
   font-size:0.8em;
 }
 
-
-//新規会員登録ページ6
-
 //新規会員登録ページ7
 .registration__finish__container{
   background: white;
-  h2.registration__finish__title{
+  &__title{
     text-align: center;
     font-size: 24px;
     padding: 32px;
     font-weight: bold;
   }
-  .registration__finish__information{
+  &__information{
     border-top: 1px solid #f5f5f5;
     padding: 32px;
   }
