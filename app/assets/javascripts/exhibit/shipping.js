@@ -58,7 +58,6 @@ $(document).on("turbolinks:load", function() {
                             </div>
                           </div>`;
         $(".way_of_shipping").append(methodGroupHtml);
-        console.log(methodGroupHtml);
       });
     } else {
       $("#shipping-method").remove();
