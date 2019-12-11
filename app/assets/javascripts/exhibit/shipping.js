@@ -50,7 +50,7 @@ $(document).on("turbolinks:load", function() {
                               <span class =  'form-require'>必須</span>
                             </label>
                             <div class = 'select-wrap'>
-                              <select class = 'select-wrap__pulldown'>
+                              <select class = 'select-wrap__pulldown' name="product[way_of_shipping]">
                                 <option value = '---'>---</option>
                                 ${insertHTML}
                               </select>
