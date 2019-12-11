@@ -1,0 +1,42 @@
+.mypage{  
+  &__profile__container{
+    background: white;
+    &__title{
+      text-align: center;
+      font-size: 24px;
+      padding: 8px 0;
+      font-weight: bold;
+    }
+    &__image{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 72px 16px 24px;
+      background: repeating-linear-gradient(45deg, #2affd0, #2affd0 10px, #27e0b7 0, #27e0b7 20px);
+      figure.my__image{
+        margin:0;
+        margin-right:10px;
+        background: $main-gray;
+        width:60px;
+        height:60px;
+        border-radius: 50%;
+      }
+    }
+    &__information{
+      padding: 40px 16px;
+      %textarea.textarea-default{
+      }
+      a.profile__change{
+        margin: 0 auto;
+        background-color: $main-red;
+        text-decoration: none;
+        display: block;
+        line-height: 48px;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        margin: 16px 0 0;
+      }
+    }
+  }
+}

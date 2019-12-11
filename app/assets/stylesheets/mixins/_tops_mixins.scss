@@ -33,3 +33,10 @@
     clear: both;
   }
 }
+
+//displayflexの上下左右中央揃え
+@mixin display__layout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

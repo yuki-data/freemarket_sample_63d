@@ -22,6 +22,16 @@ crumb :logout do
   parent :mypage
 end
 
+crumb :profile do
+  link "プロフィール", edit_top_path
+  parent :mypage
+end
+
+crumb :registrationfinish do
+  link "メール/パスワード", root_path
+  parent :mypage
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
