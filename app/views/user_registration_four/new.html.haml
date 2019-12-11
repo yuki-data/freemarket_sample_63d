@@ -1,0 +1,37 @@
+= render "shared/registration_header__two"
+.registration__page__wrapper
+  .registration__page__wrapper__container
+    %h2.registration__page__wrapper__container__page__title
+      電話番号認証
+    .registration__page__wrapper__container__form__group
+      %p.registration__label
+        %label{for: ""}
+          認証番号
+      .registration__input__wrapper
+        %input.registration__input.cmb{"data-input-type": "", maxlength: "", placeholder: "認証番号を入力", type: "text", value: ""}
+      %p.registration__text.cpl
+        SMSで届いた認証番号を入力してください
+      = link_to "", class: "registration__push__next" do
+        次へ進む
+    .registration__page__wrapper__container__form__group.add__linet
+      %p.registration__label
+        %label{for: ""}
+          30秒たっても認識番号が届かない方へ
+        %p.registration__text.cpall
+          SMSで届いた認証番号を入力してください
+      .registration__input__wrapper
+        %input.registration__input.cmb{"data-input-type": "", maxlength: "", placeholder: "携帯電話の番号を入力", type: "text", value: ""}
+      %p.registration__text.cpl
+        電話で認証番号を聞くこともできます。
+      = link_to "", class: "registration__push__next" do
+        次へ進む
+    .registration__page__wrapper__container__form__group.add__linet
+      %p.registration__label
+        %label{for: ""}
+          認証番号を再送することもできます。
+        %p.registration__text.f__blue
+          = link_to "", class: "f__blue" do
+            電話番号を再度入力する。
+        %p.registration__text.cpall
+          認証番号を確認できない場合は、sms受信設定を確認して、
+          もう一度電話番号を入力してください。

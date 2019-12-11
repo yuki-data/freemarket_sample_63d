@@ -1,0 +1,2 @@
+class UserRegistrationThreeController < ApplicationController
+end

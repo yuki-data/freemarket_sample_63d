@@ -40,3 +40,81 @@
   justify-content: center;
   align-items: center;
 }
+
+//余白除去
+.cmt{
+  margin-top:0 !important;
+}
+//余白除去
+.cmr{
+  margin-right:0 !important;
+}
+//余白除去
+.cmb{
+  margin-bottom:0 !important;
+}
+//余白除去
+.cml{
+  margin-left:0 !important;
+}
+//余白除去
+.cmall{
+  margin:0 !important;
+}
+//余白除去
+.cpt{
+  padding-top:0 !important;
+}
+//余白除去
+.cpr{
+  padding-right:0 !important;
+}
+//余白除去
+.cpb{
+  padding-bottom:0 !important;
+}
+//余白除去
+.cpl{
+  padding-left:0 !important;
+}
+//余白除去
+.cpall{
+  padding:0 !important;
+}
+
+//罫線
+.add__linet{
+  border-top: 1px solid #f5f5f5;
+}
+.add__lineb{
+  border-bottom: 1px solid #f5f5f5;
+}
+
+//文字色
+.f__red{
+  color:$main-red;
+}
+.f__blue{
+  color:$main-blue;
+}
+.f__gray{
+  color:$main-gray;
+}
+.f__white{
+  color:white;
+}
+
+//横幅強制変形
+.woh{
+  width: 100% !important;
+}
+
+//横幅強制変形
+.wth{
+  width: 20% !important;
+}
+
+//横幅強制変形
+.t-center{
+  text-align: center !important;
+}

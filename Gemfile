@@ -138,3 +138,6 @@ gem 'fog-aws'
 
 #AWS上でrails routesする為
 gem 'listen', '~> 3.1.5'
+
+#都道府県データ作成
+gem 'active_hash'
