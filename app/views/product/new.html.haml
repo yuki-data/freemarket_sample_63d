@@ -81,13 +81,13 @@
                 .select-wrap
                   = f.select :who_charge_shipping, Product.who_charge_shippings.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown', id: 'shipping-method'}
                   %ul.has-error-text 選択してください
-              .form-group
-                %label
-                  発送方法
-                  %span.form-require 必須
-                .select-wrap
-                  = f.select :way_of_shipping, Product.way_of_shippings.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown'}
-                  %ul.has-error-text 選択してください
+              -# .form-group
+              -#   %label
+              -#     発送方法
+              -#     %span.form-require 必須
+              -#   .select-wrap
+              -#     = f.select :way_of_shipping, Product.way_of_shippings.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown'}
+              -#     %ul.has-error-text 選択してください
               .form-group
                 %label
                   発送元の地域
