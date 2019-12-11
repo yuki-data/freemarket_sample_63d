@@ -86,7 +86,7 @@
                   発送元の地域
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :shipping_region, Product.shipping_regions.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown'}
+                  = f.collection_select :shipping_region, Prefecture.all, :id, :name, {prompt: '---'}, {class: 'select-wrap__pulldown'}
                   %ul.has-error-text 選択してください
               .form-group
                 %label
