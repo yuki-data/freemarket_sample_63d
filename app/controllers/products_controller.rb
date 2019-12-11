@@ -1,16 +1,18 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :category_select_function, only: [:new, :create, :edit, :update]
+  before_action :set_new_product, only: [:new, :create]
 
   def show
     @product = Product.find(params[:id])
   end
 
-  def new
+  def set_new_product
     @product = Product.new
     @product.product_images.build
+  end
 
-    # 配送者によって配送方法の選択肢を変化させる。
+  def new
   end
 
 
