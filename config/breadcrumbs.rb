@@ -18,7 +18,7 @@ crumb :mypage_card_registration do
 end
 
 crumb :logout do
-  link "ログアウト", edit_top_path
+  link "ログアウト", logout_user_accounts_path
   parent :mypage
 end
 
