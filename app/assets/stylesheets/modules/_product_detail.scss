@@ -136,6 +136,33 @@
       }
     }
   }
+  &__edit {
+    width: $mypage-main-inner-width;
+    background-color: $mypage-white;
+    margin: 8px auto;
+    padding: 24px;
+    %__item {
+      line-height: 50px;
+      margin: 8px 0;
+      text-align: center;
+    }
+    a {
+      color: $mypage-white;
+    }
+    &__item {
+      &--edit {
+        @extend %__item;
+        background-color: $mypage-red;
+      }
+      &--separator {
+        text-align: center;
+      }
+      &--remove {
+        @extend %__item;
+        background-color: $product-detail-gray;
+      }
+    }
+  }
   &__message {
     background-color: $mypage-white;
     width: $mypage-main-inner-width;
