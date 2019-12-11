@@ -61,13 +61,14 @@
                 %label
                   ブランド
                   %span.form-arbitrary 任意
-              = f.text_field :brand_id, placeholder: "例) シャネル",autocomplete: 'off',value: "", class: "input-default", id: "brand_search"
+              -# = f.text_field :brand_id, placeholder: "例) シャネル",autocomplete: 'off',value: "", class: "input-default", id: "brand_search"
+              = f.text_field :brand, placeholder: "例) シャネル",autocomplete: 'off',value: "", class: "input-default", id: "brand_search"
               .form-group
                 %label
                   商品の状態
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :status, Product.statuses, {prompt: '---'}, {class: 'select-wrap__pulldown'}
+                  = f.select :status, Product.statuses.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown'}
                   %ul.has-error-text 選択してください
           .sell-content
             .sell-content__head
@@ -79,22 +80,28 @@
                   配送料の負担
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :who_charge_shipping, Product.who_charge_shippings, {prompt: '---'}, {class: 'select-wrap__pulldown', id: 'shipping-method'}
+                  = f.select :who_charge_shipping, Product.who_charge_shippings.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown', id: 'shipping-method'}
                   %ul.has-error-text 選択してください
-
+              .form-group
+                %label
+                  発送方法
+                  %span.form-require 必須
+                .select-wrap
+                  = f.select :way_of_shipping, Product.way_of_shippings.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown'}
+                  %ul.has-error-text 選択してください
               .form-group
                 %label
                   発送元の地域
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :shipping_region, Product.shipping_regions, {prompt: '---'}, {class: 'select-wrap__pulldown'}
+                  = f.select :shipping_region, Product.shipping_regions.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown'}
                   %ul.has-error-text 選択してください
               .form-group
                 %label
                   発送までの日数
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :how_long_shipping, Product.how_long_shippings, {prompt: '---'}, {class: 'select-wrap__pulldown'}
+                  = f.select :how_long_shipping, Product.how_long_shippings.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown'}
                   %ul.has-error-text 選択してください
 
           .sell-content.product-prices
@@ -109,7 +116,7 @@
                     %span.form-require 必須
                   .l-right.product-price-input
                     %p.price-mark ¥
-                    = f.text_field :price, class: 'input-price', id: 'input-price', value: @product.price, placeholder: '例) 300'
+                    = f.number_field :price, class: 'input-price', id: 'input-price', value: @product.price, placeholder: '例) 300'
                 %ul.has-error-text 入力してください
                 .clearfix-commission.form-group
                   .l-left 販売手数料（10%）
