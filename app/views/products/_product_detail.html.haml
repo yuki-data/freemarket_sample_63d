@@ -66,8 +66,9 @@
       %span.product-detail__content__price-box__price=number_to_currency(@product.price, unit: "￥", precision: 0)
       %span.product-detail__content__price-box__tax (税込み)
       %span.product-detail__content__price-box__shipping-fee 送料込み
-    .product-detail__content__buy
-      = link_to "購入画面に進む", product_purchases_path(@product.id)
+    - unless user_signed_in? && current_user == @product.user_profile.user
+      .product-detail__content__buy
+        = link_to "購入画面に進む", product_purchases_path(@product.id)
     .product-detail__content__description
       %p.product-detail__content__description__inner=simple_format(@product.description)
     .product-detail__content__buttons
