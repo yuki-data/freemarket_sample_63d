@@ -33,14 +33,10 @@
         %span.registration__card
           必須
       .registration__input__wrapper
-        %select.registration__Prefectures
-          %option{value: "東京"} 東京
-          %option{value: "神奈川"} 神奈川
-          %option{value: "茨城"} 茨城
-          %option{value: "埼玉"} 埼玉
-          %option{value: "栃木"} 栃木
-          %option{value: "群馬"} 群馬
-        %i.icon-arrow-bottom
+        %select.registration__input__wrapper__input
+          - @address.each do |address|
+            %option{value: ""}
+              = address.name
       %p.registration__label
         %label{for: ""}
           市区町村
