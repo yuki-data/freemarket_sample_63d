@@ -27,7 +27,7 @@ $(document).on("turbolinks:load", function() {
     shippingParentCategory = document.getElementById("shipping-method").value;
     if (shippingParentCategory != "---") {
       $.ajax({
-        url: "/product/get_shipping_method",
+        url: "/products/get_shipping_method",
         type: "GET",
         data: { parent_name: shippingParentCategory },
         dataType: "json"
