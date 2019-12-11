@@ -14,6 +14,6 @@ class User < ApplicationRecord
     validates :day_of_birth
     validates :phone_number
   end
-  #ユーザー登録時に複数のテーブルに保存できるように親=>子へネストさせる(この記述はあとで逆になる)
+  #ユーザー登録時に複数のテーブルに保存できるように親=>子へネストさせる
   accepts_nested_attributes_for :user_profile
 end
