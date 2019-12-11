@@ -89,14 +89,12 @@
             %span 安心・安全への取り組み
   - if user_signed_in? && current_user == @product.user_profile.user
     .product-detail__edit
-      .product-detail__edit__item--edit
-        = link_to "#" do
-          %span 商品情報の編集
+      = link_to "#", class: "product-detail__edit__item--edit" do
+        %span 商品の編集
       .product-detail__edit__item--separator
         %span or
-      .product-detail__edit__item--remove
-        = link_to "#" do
-          %span この商品を削除する
+      = link_to "#", class: "product-detail__edit__item--remove" do
+        %span この商品を削除する
   .product-detail__message
     %ul.product-detail__message__comments
       %li.product-detail__message__comments__item
