@@ -39,7 +39,7 @@ $(document).on("turbolinks:load", function() {
     //親カテゴリが初期値出ないことを確認
     if (parentCategory != "---") {
       $.ajax({
-        url: "get_category_children",
+        url: "/products/get_category_children",
         type: "GET",
         data: { parent_name: parentCategory },
         dataType: "json"
@@ -74,7 +74,7 @@ $(document).on("turbolinks:load", function() {
     //子カテゴリーが初期値ではない確認
     if (childId != "---") {
       $.ajax({
-        url: "get_category_grandchildren",
+        url: "/products/get_category_grandchildren",
         type: "GET",
         data: { child_id: childId },
         dataType: "json"
