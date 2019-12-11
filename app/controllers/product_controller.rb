@@ -1,5 +1,5 @@
 class ProductController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :category_select_function, only: [:new, :create, :edit, :update]
 
   def show
