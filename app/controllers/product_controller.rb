@@ -14,22 +14,26 @@ class ProductController < ApplicationController
 
 
   def create
-    @product = Product.new(product_parameter)
+    brand = Brand.create(name: params.require(:product)[:brand])
+    category = Category.find_by(name: params.require(:product)[:category])
+    product_params = product_parameter.merge(
+      brand_id: brand.id,
+      category_id: category.id,
+      user_profile_id: current_user.user_profile.id
+    )
+    @product = Product.new(product_params)
+
     respond_to do |format|
       if @product.save
         params[:product_images][:image].each do |image|
           @product.product_images.create(image: image, product_id: @product.id)
         end
-      format.html{redirect_to root_path}
+        format.html{redirect_to root_path}
       else
         @product.product_images.build
-        format.html{render action: 'new'}
+        format.html{render :new}
       end
     end
-  end
-
-  def product_parameter
-    params.require(:product).permit(product_images_attributes: [:image])
   end
 
   # 以下全て、formatはjsonのみ
@@ -52,7 +56,11 @@ class ProductController < ApplicationController
   #出品に必要なデータ型の指定
   def product_parameter
     #最後に、.merge(user_id: current_user.id)をユーザー設定終わったらつける
-    params.require(:product).permit(:name, :description, :category_id, :status, :who_charge_shippin, :way_of_shipping, :shipping_region, :how_long_shipping, :price, product_images_attributes: [:image])
+    params.require(:product).permit(
+      :name, :description, :status, :who_charge_shipping,
+      :way_of_shipping, :shipping_region, :how_long_shipping, :price,
+      product_images_attributes: [:image]
+    )
   end
 
   #カテゴリー選択機能
