@@ -50,6 +50,9 @@
         border: 1px dashed #ccc;
         @include font(o, null, null, center);
         cursor: pointer;
+        input:not(:first-of-type) {
+          display: none;
+        }
       }
     }
     .sell-content {
