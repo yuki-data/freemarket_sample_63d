@@ -7,6 +7,12 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   def set_new_product
     @product = Product.new
     @product.product_images.build
