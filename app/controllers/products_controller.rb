@@ -17,8 +17,12 @@ class ProductsController < ApplicationController
 
 
   def create
-    brand = Brand.create(name: params.require(:product)[:brand])
+    brand = Brand.new(name: params.require(:product)[:brand])
     category = Category.find_by(name: params.require(:product)[:category])
+    if !brand.save || !category
+      redirect_to new_product_path and return
+    end
+
     product_params = product_parameter.merge(
       brand_id: brand.id,
       category_id: category.id,
@@ -33,8 +37,7 @@ class ProductsController < ApplicationController
         end
         format.html{redirect_to root_path}
       else
-        @product.product_images.build
-        format.html{render :new}
+        format.html{redirect_to new_product_path}
       end
     end
   end
