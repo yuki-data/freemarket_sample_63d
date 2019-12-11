@@ -4,7 +4,8 @@
 .exhibit
   %main.main
     %section.section__container.product-container
-      = form_for (@product), url: product_index_url do |f|
+      -# = form_for (@product), url: product_index_url do |f|
+      = form_with model: @product, local: true do |f|
         .sell-upload-box
           .sell-container
             %h2.sell-container-head 商品の情報の入力
