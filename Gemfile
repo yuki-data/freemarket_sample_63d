@@ -71,10 +71,17 @@ gem 'gretel'
 gem "jquery-rails"
 # ユーザー認証機能のため
 gem 'devise'
+# payjpでの決済のため
+gem 'payjp'
 
 group :development, :test do
   # テスト用のemailアドレスを生成するため
   gem 'faker'
+
+  # 単体テストに使用する
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development, :test do

@@ -80,12 +80,12 @@
 ### Association
 - belongs_to :user_profile
 - belongs_to :category
-- belongs_to :saling_product
-- belongs_to :bought_product
-- belongs_to :sold_product
+- has_one :saling_product, dependent: :destroy
+- has_one :bought_product, dependent: :destroy
+- has_one :sold_product, dependent: :destroy
 - belongs_to :brand
-- has_many :product_images
-- has_many :comments
+- has_many :product_images, dependent: :destroy
+- has_many :comments, dependent: :destroy
 - has_one :buyer, through: :bought_product, source: :buyer
 - has_one :accepter, through: :sold_product, source: :buyer
 

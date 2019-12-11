@@ -30,6 +30,9 @@ class Product < ApplicationRecord
   end
 
   def buy_product(buyer)
+    if buyer.instance_of?(User)
+      buyer = buyer.user_profile
+    end
     BoughtProduct.create(user_profile_id: user_profile.id, product_id: id, buyer_id: buyer.id)
     saling_product.destroy
   end
