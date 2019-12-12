@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resources :signup, only: [:create] do
     collection do
       get 'step1'
+      get 'signup_test'
     end
   end
 

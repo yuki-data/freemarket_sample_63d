@@ -5,6 +5,11 @@ class SignupController < ApplicationController
     @user.build_user_profile
   end
 
+  def signup_test
+    @user = User.new
+    @user.build_user_profile
+  end
+
   def create
       @user = User.new(user_params)
       @user.build_user_profile(user_params[:user_profile_attributes])
@@ -30,7 +35,7 @@ class SignupController < ApplicationController
       :month_of_birth,
       :day_of_birth,
       :phone_number,
-      user_profile_attributes: [:id, :nickname, :avator, :profile]
+      user_profile_attributes: [:id, :nickname]
     )
   end
 
