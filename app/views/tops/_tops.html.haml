@@ -1,8 +1,11 @@
 %ul.new__item
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
+  - @products.each do |product|
+    = link_to do
+      %li.item
+        - product.product_images.each do |product_image| 
+          .item__picture{style: "background-image: url(#{product_image.image});"}
+            .item__capital
+              ¥
+              = product.price
+            .item__caption
+              = product.name
