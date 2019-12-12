@@ -1,55 +1,65 @@
-= form_for @user, url: signup_index_path, method: :post do |f|
-  .field
-    %p email
-    = f.email_field :email, placeholder: 'xxx@yyy.com'
-  .field
-    %p firstname
-    = f.text_field :first_name, placeholder: '例 メルカリ'
-  .field
-    %p firstname_kana
-    = f.text_field :first_name_kana, placeholder: '例 めるかり'
-  .field
-    %p lastname
-    = f.text_field :last_name, placeholder: '例 太郎'
-  .field
-    %p lastname_kana
-    = f.text_field :last_name_kana, placeholder: '例 タロウ'
-  .field
-    %p pass
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    %p pass-conf
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    %p phone-num
-    = f.password_field :phone_number, autocomplete: "phone_number"
-  .field
-    %p birth-date
-    = f.select :year_of_birth, [["1990", "1990"], ["1991", "1991"],  ["1992", "1992"], ["1993", "1993"], ["1994", "1994"], ["1995", "1995"], ["1996", "1996"], ["1997", "1997"], ["1998", "1998"], ["1999", "1999"], ["2000", "2000"], ["2001", "2001"], ["2002", "2002"], ["2003", "2003"], ["2004", "2004"]], prompt: "--"
-    年
-    = f.select :month_of_birth,[["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"] ],  prompt: "--"
-    月
-    = f.select :day_of_birth,[["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"],["5", "5"] ],  prompt: "--"
-    日
-    -# 後でDB再設計する場合を考慮し下記残しておきます。
-  -# .field
-  -#   %p birth-date
-  -#   = f.date_select :year_of_birth, start_year: 1930, end_year: Time.now.year
-  .field
-    = f.fields_for :user_profile do |up|
-      %p user-nickname
-      = up.text_field :nickname
-      %p user-profile
-      = up.text_field :profile
-      %p user-avator
-      = up.text_field :avator
-  .actions
-    = f.submit "register"
-  .field
-    = link_to "logout", destroy_user_session_path, method: :delete
-  .field
-    - if user_signed_in?
-      user is here.
-    - else
-      user is not here.
+=render 'single/single-header'
+.registration__page__wrapper
+  .registration__page__wrapper__container
+    %h2.registration__page__wrapper__container__page__title
+      会員情報入力
+    .registration__page__wrapper__container__form__group
+      = form_for @user, url: signup_index_path, method: :post do |f|
+        %p.registration__label
+          %label{for: ""}
+            ニックネーム
+          %span.registration__card
+            必須
+        .field
+          = f.email_field :email, placeholder: 'xxx@yyy.com', class: 'registration__input__wrapper'
+        .field
+          %p firstname
+          = f.text_field :first_name, placeholder: '例 メルカリ'
+        .field
+          %p firstname_kana
+          = f.text_field :first_name_kana, placeholder: '例 めるかり'
+        .field
+          %p lastname
+          = f.text_field :last_name, placeholder: '例 太郎'
+        .field
+          %p lastname_kana
+          = f.text_field :last_name_kana, placeholder: '例 タロウ'
+        .field
+          %p pass
+          = f.password_field :password, autocomplete: "new-password"
+        .field
+          %p pass-conf
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+        .field
+          %p phone-num
+          = f.password_field :phone_number, autocomplete: "phone_number"
+        .field
+          %p birth-date
+          = f.select :year_of_birth, [["1990", "1990"], ["1991", "1991"],  ["1992", "1992"], ["1993", "1993"], ["1994", "1994"], ["1995", "1995"], ["1996", "1996"], ["1997", "1997"], ["1998", "1998"], ["1999", "1999"], ["2000", "2000"], ["2001", "2001"], ["2002", "2002"], ["2003", "2003"], ["2004", "2004"]], prompt: "--"
+          年
+          = f.select :month_of_birth,[["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"] ],  prompt: "--"
+          月
+          = f.select :day_of_birth,[["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"],["5", "5"] ],  prompt: "--"
+          日
+          -# 後でDB再設計する場合を考慮し下記残しておきます。
+        -# .field
+        -#   %p birth-date
+        -#   = f.date_select :year_of_birth, start_year: 1930, end_year: Time.now.year
+        .field
+          = f.fields_for :user_profile do |up|
+            %p user-nickname
+            = up.text_field :nickname
+            %p user-profile
+            = up.text_field :profile
+            %p user-avator
+            = up.text_field :avator
+        .actions
+          = f.submit "register"
+        .field
+          = link_to "logout", destroy_user_session_path, method: :delete
+        .field
+          - if user_signed_in?
+            user is here.
+          - else
+            user is not here.
 
