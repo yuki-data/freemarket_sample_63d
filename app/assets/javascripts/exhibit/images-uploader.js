@@ -10,6 +10,18 @@ $(document).on("turbolinks:load", function() {
   var preview = $("#preview");
   var preview2 = $("#preview2");
 
+  function removeAssociatedInput(data_id) {
+    var associatedInput = $(`input[value="${data_id}"]`);
+    associatedInput.remove();
+  }
+
+  $(document).on("click", ".delete-preview-image", function() {
+    var img_preview = $(this).parent();
+    var num_default_image = img_preview.data("default-image");
+    removeAssociatedInput(num_default_image);
+    img_preview.remove();
+  });
+
   //ファイルを読み込んでプレビュー画面を作成
   $(document).on("change", 'input[type="file"].upload-image', function(event) {
     var file = $(this).prop("files")[0];
