@@ -71,10 +71,19 @@ gem 'gretel'
 gem "jquery-rails"
 # ユーザー認証機能のため
 gem 'devise'
+# payjpでの決済のため
+gem 'payjp'
+# 都道府県データを保持するため
+gem 'active_hash'
 
 group :development, :test do
   # テスト用のemailアドレスを生成するため
   gem 'faker'
+
+  # 単体テストに使用する
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development, :test do
@@ -129,3 +138,6 @@ gem 'fog-aws'
 
 #AWS上でrails routesする為
 gem 'listen', '~> 3.1.5'
+
+#都道府県データ作成
+gem 'active_hash'

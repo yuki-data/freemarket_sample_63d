@@ -1,0 +1,23 @@
+= render "shared/registration_header__two"
+.registration__page__wrapper
+  .registration__page__wrapper__container
+    %h2.registration__page__wrapper__container__page__title
+      電話番号登録の確認
+    .registration__page__wrapper__container__form__group
+      %p.registration__label
+        %label{for: ""}
+          携帯電話の番号
+      .registration__input__wrapper
+        %input.registration__input.cmb{"data-input-type": "", maxlength: "", placeholder: "携帯電話の番号を入力", type: "text", value: ""}
+      %p.registration__text
+        本人確認のため、
+        %br
+        携帯電話のsmsを利用して認証を行います。
+      = link_to "", class: "registration__push__next cmb" do
+        次へ進む
+      %p.registration__text
+        電話番号は本人確認のためにのみ使用します。
+        %br
+        第三者に情報を提供することはありません。
+      = link_to "", class: "registration__attention" do
+        電話番号の確認が必要な理由 ＞

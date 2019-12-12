@@ -1,0 +1,2 @@
+class UserRegistrationCompOfRegiController < ApplicationController
+end

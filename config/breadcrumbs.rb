@@ -18,7 +18,17 @@ crumb :mypage_card_registration do
 end
 
 crumb :logout do
-  link "ログアウト", edit_top_path
+  link "ログアウト", logout_user_accounts_path
+  parent :mypage
+end
+
+crumb :profile do
+  link "プロフィール", edit_top_path
+  parent :mypage
+end
+
+crumb :registrationfinish do
+  link "メール/パスワード", root_path
   parent :mypage
 end
 

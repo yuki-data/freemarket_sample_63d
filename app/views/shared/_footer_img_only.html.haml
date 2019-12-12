@@ -1,0 +1,17 @@
+.banner
+  .banner__inner
+    .banner__inner__promotion
+      %h2.banner__inner__promotion__title スマホでかんたんフリマアプリ
+      %h2.banner__inner__promotion__text 今すぐ無料ダウンロード！
+      .banner__inner__promotion__icons
+        .banner__inner__promotion__icons__logo
+          = image_tag 'logos/logo_red.svg', alt: 'logo_red', width: "58", height: "58"
+        %ul.banner__inner__promotion__icons__apps
+          %li.banner__inner__promotion__icons__apps__item
+            = link_to "#" do
+              = image_tag 'badges/App_Store_Badge.svg', alt: 'App_Store_Badge', width: "133", height: "40"
+          %li.banner__inner__promotion__icons__apps__item
+            = link_to "#" do
+              = image_tag 'badges/google-play-badge.png', alt: 'google-play-badge', width: "133", height: "40"
+    .banner__inner__image
+      = image_tag 'logos/logo_red.svg', alt: 'logo_gray', width: "68", width: "260", height: "260"

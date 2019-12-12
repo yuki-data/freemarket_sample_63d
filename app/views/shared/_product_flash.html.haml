@@ -1,0 +1,4 @@
+.flash
+  - flash.each do |key, value|
+    - if key == "payment_alert"
+      = content_tag(:div, value, class: "flash__message--alert")
