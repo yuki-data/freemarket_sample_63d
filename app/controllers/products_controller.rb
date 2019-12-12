@@ -22,7 +22,6 @@ class ProductsController < ApplicationController
   def new
   end
 
-
   def create
     brand = Brand.new(name: params.require(:product)[:brand])
     category = Category.find_by(name: params.require(:product)[:category])

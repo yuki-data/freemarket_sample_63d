@@ -23,6 +23,7 @@
                     = image.label :image, class: 'drop-box' do
                       .input_area
                         = image.file_field :image, multiple: true, name: 'product_images[image][]', id:'upload-iamge', class: 'upload-image','data-image': 0
+                        = image.hidden_field :id
                       %p ここをクリックしてください
                   #preview2
                   .sell-upload__drop-area2
@@ -62,7 +63,11 @@
                 %label
                   ブランド
                   %span.form-arbitrary 任意
-              = f.text_field :brand, placeholder: "例) シャネル",autocomplete: 'off',value: "", class: "input-default", id: "brand_search"
+              - if @product.brand.present?
+                = f.fields_for :brand, @product.brand do |brand|
+                  = brand.text_field :name, autocomplete: 'off', class: "input-default", id: "brand_search", placeholder: "例) シャネル"
+              - else
+                = f.text_field :brand, placeholder: "例) シャネル",autocomplete: 'off',value: "", class: "input-default", id: "brand_search"
               .form-group
                 %label
                   商品の状態
