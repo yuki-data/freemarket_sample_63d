@@ -24,7 +24,9 @@ class ProductsController < ApplicationController
 
   def create
     brand = Brand.new(name: params.require(:product)[:brand])
-    category = Category.find_by(name: params.require(:product)[:category])
+    category_name = params[:category] || params.require(:product)[:category]
+    category = Category.find_by(name: category_name)
+    binding.pry
     if !brand.save || !category
       redirect_to new_product_path and return
     end
