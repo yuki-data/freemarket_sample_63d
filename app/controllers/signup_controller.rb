@@ -5,26 +5,9 @@ class SignupController < ApplicationController
     @user.build_user_profile
   end
 
-  def step2
-
-  end
-
-  def step3
-
-  end
-
-  def step4
-
-  end
-
-  def done
-
-  end
-
   def create
       @user = User.new(user_params)
       @user.build_user_profile(user_params[:user_profile_attributes])
-      # binding.pry
     if @user.save
       @user.save
       redirect_to user_accounts_path
