@@ -25,9 +25,15 @@ class ProductsController < ApplicationController
     )
     product = Product.find(params[:id])
     if product.update(product_params)
-      (params.require(:product)["product_images_attributes"] || []).each do |attr|
-        unless product.product_image_ids.include?(attr[1][:id].to_i)
-          product.product_images.destroy(attr[1][:id].to_i)
+      if params.require(:product)["product_images_attributes"].present?
+        image_ids = []
+        params.require(:product)["product_images_attributes"].each do |index, dict|
+          image_ids << dict[:id].to_i
+        end
+        product.product_image_ids.each do |i|
+          unless image_ids.include?(i)
+            ProductImage.destroy(i)
+          end
         end
       end
       if params[:product_images]
