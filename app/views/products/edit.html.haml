@@ -49,7 +49,6 @@
                   %span.form-require 必須
                 = f.text_area :description, class: 'textarea-default', placeholder: '商品の説明(必須 1,000文字以内)(色、素材、重さ、定価、注意点など)例)       2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', rows: '5'
                 %ul.has-error-text 入力してください
-
           .sell-content
             .sell-content__head
               %h3.sell-sub-head 商品の詳細
@@ -64,10 +63,10 @@
                     = f.select :category, options_for_select(@category_parent_array.map{|c|[c, {}]}, @product.category.parent.parent.name), {}, {class: 'select-wrap__pulldown', id: 'parent_category'}
                 .category__added#children_group
                   .select-wrap
-                    = f.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @product.category.parent.id), {}, {class: 'select-wrap__pulldown', id: 'child_category'}
+                    = f.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id], 'value'=>c[:name] }]}, @product.category.parent.id), {}, {class: 'select-wrap__pulldown', id: 'child_category'}
                 .category__added#grandChildren_group
                   .select-wrap
-                    = f.select :category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @product.category.id), {}, {class: 'select-wrap__pulldown', id: 'grandchild_category'}
+                    = f.select :category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id], 'value'=>c[:name] }]}, @product.category.id), {}, {class: 'select-wrap__pulldown', id: 'grandchild_category'}
               .form-group.bland_group
                 %label
                   ブランド

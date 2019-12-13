@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
         end
         product.product_image_ids.each do |i|
           unless image_ids.include?(i)
-            ProductImage.destroy(i)
+            product.product_images.destroy(i)
           end
         end
       end
