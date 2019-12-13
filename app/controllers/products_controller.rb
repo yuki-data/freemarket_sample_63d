@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :category_select_function, only: [:new, :create]
   before_action :set_new_product, only: [:new, :create]
-  before_action :set_existing_product, only: [:show, :edit]
+  before_action :set_existing_product, only: [:show, :edit, :update]
 
   def show
   end
@@ -28,22 +28,21 @@ class ProductsController < ApplicationController
       category_id: category.id,
       user_profile_id: current_user.user_profile.id
     )
-    product = Product.find(params[:id])
-    if product.update(product_params)
+    if @product.update(product_params)
       if params.require(:product)["product_images_attributes"].present?
         image_ids = []
         params.require(:product)["product_images_attributes"].each do |index, dict|
           image_ids << dict[:id].to_i
         end
-        product.product_image_ids.each do |i|
+        @product.product_image_ids.each do |i|
           unless image_ids.include?(i)
-            product.product_images.destroy(i)
+            @product.product_images.destroy(i)
           end
         end
       end
       if params[:product_images]
         params[:product_images][:image].each do |image|
-          ProductImage.create(image: image, product_id: product.id)
+          ProductImage.create(image: image, product_id: @product.id)
         end
       end
       redirect_to product_path(params[:id])
