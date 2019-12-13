@@ -12,6 +12,30 @@ class ProductsController < ApplicationController
   end
 
   def update
+    brand = Brand.new(name: params.require(:product)[:brand][:name])
+    category_name = params[:category] || params.require(:product)[:category]
+    category = Category.find_by(name: category_name)
+    if !brand.save || !category
+      redirect_to edit_product_path(params[:id]) and return
+    end
+    product_params = product_parameter.merge(
+      brand_id: brand.id,
+      category_id: category.id,
+      user_profile_id: current_user.user_profile.id
+    )
+    product = Product.find(params[:id])
+
+    if product.update(product_params)
+      (params.require(:product)["product_images_attributes"] || []).each do |attr|
+        unless product.product_image_ids.include?(attr[1][:id].to_i)
+          product.product_images.destroy(attr[1][:id].to_i)
+        end
+      end
+
+      redirect_to edit_product_path(params[:id])
+    else
+      redirect_to edit_product_path(params[:id])
+    end
   end
 
   def set_new_product
@@ -26,7 +50,6 @@ class ProductsController < ApplicationController
     brand = Brand.new(name: params.require(:product)[:brand])
     category_name = params[:category] || params.require(:product)[:category]
     category = Category.find_by(name: category_name)
-    binding.pry
     if !brand.save || !category
       redirect_to new_product_path and return
     end
@@ -73,7 +96,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(
       :name, :description, :status, :who_charge_shipping,
       :way_of_shipping, :shipping_region, :how_long_shipping, :price,
-      product_images_attributes: [:image]
+      # product_images_attributes: [:image]
     )
   end
 
