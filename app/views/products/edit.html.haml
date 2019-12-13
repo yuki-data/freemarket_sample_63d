@@ -27,6 +27,7 @@
                     .input_area
                       = f.fields_for :product_images do |image|
                         = image.file_field :image, multiple: true, name: 'product_images[image][]', id:'upload-iamge', class: 'upload-image'
+                      %input{type: "file", multiple: true, name: 'product_images[image][]', id:'upload-iamge', class: 'upload-image','data-image': 0}
                     %p ここをクリックしてください
                 #preview2
                 .sell-upload__drop-area2
