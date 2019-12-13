@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :category_select_function, only: [:new, :create, :edit, :update]
+  before_action :category_select_function, only: [:new, :create]
   before_action :set_new_product, only: [:new, :create]
 
   def show
@@ -9,6 +9,12 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+    @category_child_array = @product.category.parent.parent.children
+    @category_grandchild_array = @product.category.parent.children
   end
 
   def update
