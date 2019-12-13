@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_033032) do
+ActiveRecord::Schema.define(version: 2019_12_12_122430) do
 
   create_table "bought_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_033032) do
     t.integer "year_of_birth", null: false
     t.integer "month_of_birth", null: false
     t.integer "day_of_birth", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
