@@ -24,11 +24,15 @@ class ProductsController < ApplicationController
       user_profile_id: current_user.user_profile.id
     )
     product = Product.find(params[:id])
-
     if product.update(product_params)
       (params.require(:product)["product_images_attributes"] || []).each do |attr|
         unless product.product_image_ids.include?(attr[1][:id].to_i)
           product.product_images.destroy(attr[1][:id].to_i)
+        end
+      end
+      if params[:product_images]
+        params[:product_images][:image].each do |image|
+          ProductImage.create(image: image, product_id: product.id)
         end
       end
 
