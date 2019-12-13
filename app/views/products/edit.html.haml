@@ -61,7 +61,13 @@
                   %span.form-require 必須
                 .category
                   .select-wrap
-                    = f.select :category, @category_parent_array, {}, {class: 'select-wrap__pulldown', id: 'parent_category'}
+                    = f.select :category, options_for_select(@category_parent_array.map{|c|[c, {}]}, @product.category.parent.parent.name), {}, {class: 'select-wrap__pulldown', id: 'parent_category'}
+                .category__added#children_group
+                  .select-wrap
+                    = f.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @product.category.parent.id), {}, {class: 'select-wrap__pulldown', id: 'child_category'}
+                .category__added#grandChildren_group
+                  .select-wrap
+                    = f.select :category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @product.category.id), {}, {class: 'select-wrap__pulldown', id: 'grandchild_category'}
               .form-group.bland_group
                 %label
                   ブランド
