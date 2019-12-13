@@ -47,8 +47,7 @@ class ProductsController < ApplicationController
           ProductImage.create(image: image, product_id: product.id)
         end
       end
-
-      redirect_to edit_product_path(params[:id])
+      redirect_to product_path(params[:id])
     else
       redirect_to edit_product_path(params[:id])
     end
