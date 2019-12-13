@@ -147,3 +147,6 @@ gem 'listen', '~> 3.1.5'
 
 #都道府県データ作成
 gem 'active_hash'
+
+#本番環境で伊藤さんの用意したコマンドdb:seed:allを利用するために必要（使い方などはPR#33 or lib/tasks/seed.rake参照されたし)
+gem 'faker'
