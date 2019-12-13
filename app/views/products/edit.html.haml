@@ -14,7 +14,6 @@
                 出品画像
                 %span.form-require 必須
               %p.sell-upload__max-10 最大10枚までアップロードできます
-
               .sell-upload__conteiner
                 #preview-default
                   - @product.product_images.each do |image|
@@ -109,7 +108,6 @@
                 .select-wrap
                   = f.select :how_long_shipping, Product.how_long_shippings.keys.to_a, {prompt: '---'}, {class: 'select-wrap__pulldown'}
                   %ul.has-error-text 選択してください
-
           .sell-content.product-prices
             .sell-content__head
               %h3.sell-sub-head 販売価格(300~9,999,999)
@@ -130,15 +128,11 @@
                 .bold.form-group-price.profit
                   .l-left.gain 販売利益
                   = f.label '-', class: 'l-right total-right profits'
-
         .sell-content
           .sell-button-box
             = f.submit '出品する', class: 'button-exhibit button-red',data: { disable_with: "送信中..." }
             .button-exhibit.button-gray
-            -# = link_to "もどる", root_path, class: ".button-exhibit.button-gray"
-
         .exhibit-attention
           =render 'exhibit-attention'
-
 .exhibit-bottom
   =render 'single/single-footer'
