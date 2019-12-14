@@ -1,0 +1,67 @@
+.exhibit-top
+  =render 'single/single-header'
+.exhibit-center
+  .exhibit-center__main
+    %h2.exhibit-center__main__title
+    %section.exhibit-center__main__images
+      .exhibit-center__main__images__explanation
+        .exhibit-center__main__images__explanation__title
+          %span 出品画像
+          %span 必須
+        %p.exhibit-center__main__images__explanation__text 最大5枚までアップロードできます
+      .exhibit-center__main__images__upload
+        %ul.exhibit-center__main__images__upload__preview
+          %li.exhibit-center__main__images__upload__preview__item
+            .exhibit-center__main__images__upload__preview__item__image
+              = image_tag 'credit_card/jcb.svg', alt: 'jcb', height: '100'
+            .exhibit-center__main__images__upload__preview__item__button-delete
+              %span 削除
+          %li.exhibit-center__main__images__upload__preview__item
+        .exhibit-center__main__images__upload__residue
+          .exhibit-center__main__images__upload__residue__explanation
+            .exhibit-center__main__images__upload__residue__explanation__icon
+              = icon("fas", "camera")
+            %p.exhibit-center__main__images__upload__residue__explanation__text クリックしてアップロード
+    %section.exhibit-center__main__description
+      .exhibit-center__main__description__product-name
+        .exhibit-center__main__description__product-name__title
+          %span 商品名
+          %span 必須
+        .exhibit-center__main__description__product-name__form
+          %input{placeholder: "商品の名前（必須、４０文字以内）"}
+      .exhibit-center__main__description__product-desc
+        .exhibit-center__main__description__product-desc__title
+          %span 商品の説明
+          %span 必須
+        .exhibit-center__main__description__product-desc__form
+          %textarea{placeholder: "商品の説明（必須、１０００文字以内）"}
+    %section.exhibit-center__main__details
+      %h3.exhibit-center__main__details__title 商品の詳細
+      .exhibit-center__main__details__product-category
+        .exhibit-center__main__details__product-category__title
+          %span カテゴリー
+          %span 必須
+        %ul.exhibit-center__main__details__product-category__form-group
+          %li.exhibit-center__main__details__product-category__form-group__item
+            = select_tag :category_base, options_for_select([["a","A"],["b","B"]])
+          %li.exhibit-center__main__details__product-category__form-group__item
+            = select_tag :category_child, options_for_select([["a","A"],["b","B"]])
+          %li.exhibit-center__main__details__product-category__form-group__item
+            = select_tag :category_grandchild, options_for_select([["a","A"],["b","B"]])
+      .exhibit-center__main__details__product-brand
+        .exhibit-center__main__details__product-brand__title
+          %span ブランド
+          %span 必須
+        .exhibit-center__main__details__product-brand__form
+          %input{placeholder: "例）シャネル「"}
+      .exhibit-center__main__details__product-status
+        .exhibit-center__main__details__product-status__title
+          %span 商品の状態
+          %span 必須
+        .exhibit-center__main__details__product-status__form
+          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+    %section.exhibit-center__main__shippments
+    %section.exhibit-center__main__price
+    %section.exhibit-center__main__exhibit
+.exhibit-bottom
+  =render 'single/single-footer'
