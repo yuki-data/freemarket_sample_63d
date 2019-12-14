@@ -64,3 +64,7 @@
 #本番環境用セッティング
 
 server '3.115.205.148', user: 'ec2-user', roles: %w{app db web}
+
+#Unicronに現在の環境を本番環境として認識させる。BASIC認証用に記述
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
