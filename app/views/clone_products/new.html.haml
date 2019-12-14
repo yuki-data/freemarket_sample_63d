@@ -22,46 +22,83 @@
             .exhibit-center__main__images__upload__residue__explanation__icon
               = icon("fas", "camera")
             %p.exhibit-center__main__images__upload__residue__explanation__text クリックしてアップロード
-    %section.exhibit-center__main__description
-      .exhibit-center__main__description__product-name
-        .exhibit-center__main__description__product-name__title
+    %section.exhibit-center__main__form-section
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
           %span 商品名
           %span 必須
-        .exhibit-center__main__description__product-name__form
+        .exhibit-center__main__form-section__group__form
           %input{placeholder: "商品の名前（必須、４０文字以内）"}
-      .exhibit-center__main__description__product-desc
-        .exhibit-center__main__description__product-desc__title
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
           %span 商品の説明
           %span 必須
-        .exhibit-center__main__description__product-desc__form
+        .exhibit-center__main__form-section__group__form
           %textarea{placeholder: "商品の説明（必須、１０００文字以内）"}
-    %section.exhibit-center__main__details
-      %h3.exhibit-center__main__details__title 商品の詳細
-      .exhibit-center__main__details__product-category
-        .exhibit-center__main__details__product-category__title
+    %section.exhibit-center__main__form-section
+      %h3.exhibit-center__main__form-section__title 商品の詳細
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
           %span カテゴリー
           %span 必須
-        %ul.exhibit-center__main__details__product-category__form-group
-          %li.exhibit-center__main__details__product-category__form-group__item
+        %ul.exhibit-center__main__form-section__group-list
+          %li.exhibit-center__main__form-section__group__form
             = select_tag :category_base, options_for_select([["a","A"],["b","B"]])
-          %li.exhibit-center__main__details__product-category__form-group__item
+          %li.exhibit-center__main__form-section__group__form
             = select_tag :category_child, options_for_select([["a","A"],["b","B"]])
-          %li.exhibit-center__main__details__product-category__form-group__item
+          %li.exhibit-center__main__form-section__group__form
             = select_tag :category_grandchild, options_for_select([["a","A"],["b","B"]])
-      .exhibit-center__main__details__product-brand
-        .exhibit-center__main__details__product-brand__title
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
           %span ブランド
           %span 必須
-        .exhibit-center__main__details__product-brand__form
+        .exhibit-center__main__form-section__group__form
           %input{placeholder: "例）シャネル「"}
-      .exhibit-center__main__details__product-status
-        .exhibit-center__main__details__product-status__title
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
           %span 商品の状態
           %span 必須
-        .exhibit-center__main__details__product-status__form
+        .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
-    %section.exhibit-center__main__shippments
-    %section.exhibit-center__main__price
-    %section.exhibit-center__main__exhibit
+    %section.exhibit-center__main__form-section
+      %h3.exhibit-center__main__form-section__title 配送について
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
+          %span 配送料の負担
+          %span 必須
+        .exhibit-center__main__form-section__group__form
+          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
+          %span 配送の方法
+          %span 必須
+        .exhibit-center__main__form-section__group__form
+          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
+          %span 発送元の地域
+          %span 必須
+        .exhibit-center__main__form-section__group__form
+          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
+          %span 発送までの日数
+          %span 必須
+        .exhibit-center__main__form-section__group__form
+          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+    %section.exhibit-center__main__form-section
+      %h3.exhibit-center__main__form-section__title 販売価格
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
+          %span 価格
+          %span 必須
+        .exhibit-center__main__form-section__group__form
+          %input{placeholder: "例）300"}
+      .exhibit-center__main__form-section__caluculate
+        .exhibit-center__main__form-section__caluculate__text 販売手数料 (10%)
+        .exhibit-center__main__form-section__caluculate__result
+      .exhibit-center__main__form-section__caluculate
+        .exhibit-center__main__form-section__caluculate__text 販売利益
+        .exhibit-center__main__form-section__caluculate__result
 .exhibit-bottom
   =render 'single/single-footer'
