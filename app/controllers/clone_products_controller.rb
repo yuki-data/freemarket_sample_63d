@@ -1,0 +1,2 @@
+class CloneProductsController < ApplicationController
+end
