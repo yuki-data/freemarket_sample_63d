@@ -6,7 +6,7 @@
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product_images, "出品画像"
+          = f.label :productimages, "出品画像"
           %span 必須
         %p.exhibit-center__main__form-section__group__text 最大5枚までアップロードできます
       .exhibit-center__main__form-section__images
@@ -27,9 +27,12 @@
             .exhibit-center__main__form-section__images__preview__item__button-delete
               %span 削除
         .exhibit-center__main__form-section__images__residue
-          .exhibit-center__main__form-section__images__residue__icon
-            = icon("fas", "camera")
-          .exhibit-center__main__form-section__images__residue__text クリックしてアップロード
+          = f.fields_for :product_images do |image|
+            = image.file_field :image, multiple: true
+            = image.label :image do
+              .exhibit-center__main__form-section__images__residue__icon
+                = icon("fas", "camera")
+              .exhibit-center__main__form-section__images__residue__text クリックしてアップロード
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
