@@ -6,7 +6,7 @@
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span 出品画像
+          = f.label :product_images, "出品画像"
           %span 必須
         %p.exhibit-center__main__form-section__group__text 最大5枚までアップロードできます
       .exhibit-center__main__form-section_images
@@ -25,13 +25,13 @@
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span 商品名
+          = f.label :product, "商品名"
           %span 必須
         .exhibit-center__main__form-section__group__form
           %input{placeholder: "商品の名前（必須、４０文字以内）"}
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span 商品の説明
+          = f.label :product, "商品の説明"
           %span 必須
         .exhibit-center__main__form-section__group__form
           %textarea{placeholder: "商品の説明（必須、１０００文字以内）"}
@@ -39,7 +39,7 @@
       %h3.exhibit-center__main__form-section__title 商品の詳細
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span カテゴリー
+          = f.label :product, "カテゴリー"
           %span 必須
         %ul.exhibit-center__main__form-section__group-list
           %li.exhibit-center__main__form-section__group__form
@@ -50,13 +50,13 @@
             = select_tag :category_grandchild, options_for_select([["a","A"],["b","B"]])
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span ブランド
+          = f.label :product, "ブランド"
           %span 必須
         .exhibit-center__main__form-section__group__form
           %input{placeholder: "例）シャネル「"}
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span 商品の状態
+          = f.label :product, "商品の状態"
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
@@ -64,25 +64,25 @@
       %h3.exhibit-center__main__form-section__title 配送について
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span 配送料の負担
+          = f.label :product, "配送料の負担"
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span 配送の方法
+          = f.label :product, "配送の方法"
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span 発送元の地域
+          = f.label :product, "発送元の地域"
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span 発送までの日数
+          = f.label :product, "発送までの日数"
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
@@ -90,7 +90,7 @@
       %h3.exhibit-center__main__form-section__title 販売価格
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          %span 価格
+          = f.label :product, "価格"
           %span 必須
         .exhibit-center__main__form-section__group__form
           %input{placeholder: "例）300"}
