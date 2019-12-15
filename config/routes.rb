@@ -14,7 +14,13 @@ Rails.application.routes.draw do
 
   resources :signup, only: [:new, :create]
 
-    resources :products, only: [:show, :new, :create] do
+  resources :products, only: [:show, :new, :create] do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'get_shipping_method'
+      end
+    resources :purchases, only: [:index] do
       collection do
         get 'get_category_children', defaults: { format: 'json' }
         get 'get_category_grandchildren', defaults: { format: 'json' }
@@ -25,5 +31,6 @@ Rails.application.routes.draw do
           post :pay
         end
       end
+     end
   end
 end
