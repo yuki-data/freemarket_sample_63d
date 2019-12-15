@@ -73,6 +73,8 @@
           %span
             日
           = f.submit "登録", class: "registration__push__next"
+          .field
+          = link_to "logout", destroy_user_session_path, method: :delete
           - if user_signed_in?
             user is here.
           - else

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     collection do
       get 'step1'
       get 'signup_test'
+      get 'auto_login'
     end
   end
 

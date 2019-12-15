@@ -15,11 +15,21 @@ class SignupController < ApplicationController
       @user.build_user_profile(user_params[:user_profile_attributes])
     if @user.save
       # binding.pry
+      # mypageを表示できるようにする（ユーザー情報をDBからもってきて、ここのユーザーページ）
+      # コントローラ上でリダイレクトじょうけんぶんき
+      # user_signed_inしてたら遷移させる
+      # 表示確認できたら条件分岐をしてcurrent_user_idとそのmypageのidが一緒か参照させる
       sign_in User.find(@user.id) unless user_signed_in?
+      # redirect_to auto_login_signup_index_path
       redirect_to user_accounts_path
     else
       redirect_to root_path
     end
+  end
+
+  def auto_login
+    # binding.pry
+    sign_in User.find(12) unless user_signed_in?
   end
 
   private
