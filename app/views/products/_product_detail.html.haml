@@ -93,8 +93,14 @@
         %span 商品の編集
       .product-detail__edit__item--separator
         %span or
-      = link_to "#", class: "product-detail__edit__item--remove" do
+
+
+
+      = link_to product_path(@product.id), method: :delete, class: "product-detail__edit__item--remove", data: {confirm: "確認\n削除すると二度と復活しません。\n削除する代わりに停止することもできます。\n\n本当に削除しますか?"}  do
         %span この商品を削除する
+
+
+
   .product-detail__message
     %ul.product-detail__message__comments
       %li.product-detail__message__comments__item
