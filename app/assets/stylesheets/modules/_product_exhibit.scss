@@ -65,6 +65,28 @@
               top: 18px;
             }
           }
+          %__button {
+            line-height: 50px;
+            margin: 8px 0;
+            text-align: center;
+            display: block;
+            width: 100%;
+          }
+          &__button {
+            &--submit {
+              @extend %__button;
+              color: $mypage-white;
+              background-color: $mypage-red;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+            &--cancel {
+              @extend %__button;
+              color: $mypage-white;
+              background-color: $product-detail-gray;
+            }
+          }
         }
       }
     }

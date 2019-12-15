@@ -114,5 +114,9 @@
         %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
         %p また、出品をもちまして加盟店規約に同意したことになります。
       .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__form
+          = f.submit "出品する", class: "exhibit-center__main__form-section__group__form__button--submit"
+          = link_to "#", class: "exhibit-center__main__form-section__group__form__button--cancel" do
+            %span 戻る
 .exhibit-bottom
   =render 'single/single-footer'
