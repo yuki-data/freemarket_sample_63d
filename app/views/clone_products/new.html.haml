@@ -3,25 +3,25 @@
 .exhibit-center
   = form_with(class: "exhibit-center__main") do |f|
     %h2.exhibit-center__main__title 商品の情報を入力
-    %section.exhibit-center__main__images
-      .exhibit-center__main__images__explanation
-        .exhibit-center__main__images__explanation__title
+    %section.exhibit-center__main__form-section
+      .exhibit-center__main__form-section__group
+        .exhibit-center__main__form-section__group__title
           %span 出品画像
           %span 必須
-        %p.exhibit-center__main__images__explanation__text 最大5枚までアップロードできます
-      .exhibit-center__main__images__upload
-        %ul.exhibit-center__main__images__upload__preview
-          %li.exhibit-center__main__images__upload__preview__item
-            .exhibit-center__main__images__upload__preview__item__image
+        %p.exhibit-center__main__form-section__group__text 最大5枚までアップロードできます
+      .exhibit-center__main__form-section_images
+        %ul.exhibit-center__main__form-section_images__preview
+          %li.exhibit-center__main__form-section_images__preview__item
+            .exhibit-center__main__form-section_images__preview__item__image
               = image_tag 'credit_card/jcb.svg', alt: 'jcb', height: '100'
-            .exhibit-center__main__images__upload__preview__item__button-delete
+            .exhibit-center__main__form-section_images__preview__item__button-delete
               %span 削除
-          %li.exhibit-center__main__images__upload__preview__item
-        .exhibit-center__main__images__upload__residue
-          .exhibit-center__main__images__upload__residue__explanation
-            .exhibit-center__main__images__upload__residue__explanation__icon
+          %li.exhibit-center__main__form-section_images__preview__item
+        .exhibit-center__main__form-section_images__residue
+          .exhibit-center__main__form-section_images__residue__explanation
+            .exhibit-center__main__form-section_images__residue__explanation__icon
               = icon("fas", "camera")
-            %p.exhibit-center__main__images__upload__residue__explanation__text クリックしてアップロード
+            %p.exhibit-center__main__form-section_images__residue__explanation__text クリックしてアップロード
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
