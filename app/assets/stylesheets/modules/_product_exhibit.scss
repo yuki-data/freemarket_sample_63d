@@ -11,9 +11,21 @@
       line-height: 1.4;
       font-weight: bold;
     }
-    &__images {
-    }
     &__form-section {
+      &__group {
+        &__title {
+          label {
+            font-weight: bold;
+          }
+          span {
+            background-color: $mypage-red;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: $mypage-white;
+            font-size: $mypage-font-size-small;
+          }
+        }
+      }
     }
   }
 }
