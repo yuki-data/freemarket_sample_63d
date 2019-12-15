@@ -14,6 +14,27 @@
     &__form-section {
       border-top: 2px solid $mypage-bgcolor;
       padding: 24px 40px 40px;
+      &__images {
+        display: flex;
+        background-color: $mypage-bgcolor;
+        &__preview {
+          display: flex;
+          &__item {
+            width: 120px;
+            &:not(:first-of-type) {
+              margin-left: 5px;
+            }
+          }
+        }
+        &__residue {
+          flex-grow: 1;
+          flex-shrink: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
       &__group {
         padding-top: 20px;
         &__title {
