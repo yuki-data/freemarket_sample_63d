@@ -43,65 +43,65 @@
           %span 必須
         %ul.exhibit-center__main__form-section__group-list
           %li.exhibit-center__main__form-section__group__form--select
-            = select_tag :category_base, options_for_select([["a","A"],["b","B"]])
+            = f.select :category_base, options_for_select([["a","A"],["b","B"]])
             = icon("fas", "chevron-down")
           %li.exhibit-center__main__form-section__group__form--select
-            = select_tag :category_child, options_for_select([["a","A"],["b","B"]])
+            = f.select :category_child, options_for_select([["a","A"],["b","B"]])
             = icon("fas", "chevron-down")
           %li.exhibit-center__main__form-section__group__form--select
-            = select_tag :category_grandchild, options_for_select([["a","A"],["b","B"]])
+            = f.select :category_grandchild, options_for_select([["a","A"],["b","B"]])
             = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "ブランド"
+          = f.label :brand, "ブランド"
           %span 必須
         .exhibit-center__main__form-section__group__form
-          %input{placeholder: "例）シャネル「"}
+          = f.text_field :brand, placeholder: "例）シャネル", maxlength: "40", class: "exhibit-center__main__form-section__group__form__input"
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "商品の状態"
+          = f.label :status, "商品の状態"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = f.select :status, options_for_select([["a","A"],["b","B"]])
           = icon("fas", "chevron-down")
     %section.exhibit-center__main__form-section
       %h3.exhibit-center__main__form-section__title 配送について
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "配送料の負担"
+          = f.label :who_charge_shipping, "配送料の負担"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = f.select :who_charge_shipping, options_for_select([["a","A"],["b","B"]])
           = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "配送の方法"
+          = f.label :way_of_shipping, "配送の方法"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = f.select :way_of_shipping, options_for_select([["a","A"],["b","B"]])
           = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "発送元の地域"
+          = f.label :shipping_region, "発送元の地域"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = f.select :shipping_region, options_for_select([["a","A"],["b","B"]])
           = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "発送までの日数"
+          = f.label :how_long_shipping, "発送までの日数"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = f.select :how_long_shipping, options_for_select([["a","A"],["b","B"]])
           = icon("fas", "chevron-down")
     %section.exhibit-center__main__form-section
       %h3.exhibit-center__main__form-section__title 販売価格
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "価格"
+          = f.label :price, "価格"
           %span 必須
         .exhibit-center__main__form-section__group__form
-          %input{placeholder: "例）300"}
+          = f.text_field :price, placeholder: "例）300", class: "exhibit-center__main__form-section__group__form__input"
       .exhibit-center__main__form-section__caluculate
         .exhibit-center__main__form-section__caluculate__text 販売手数料 (10%)
         .exhibit-center__main__form-section__caluculate__result
