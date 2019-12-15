@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    confirmations: 'users/confirmations',
-    passwords:     'users/passwords',
-    registrations: 'users/registrations',
-    sessions:      'users/sessions',
-  }
+  devise_for :users
   root to: "tops#index"
   resources :tops, only: [:index, :show, :edit]
   resources :userprofile, only: [:edit]
@@ -24,11 +19,16 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: [:show] do
-    resources :purchases, only: [:index] do
+    resources :products, only: [:show, :new, :create] do
       collection do
-        post :pay
+        get 'get_category_children', defaults: { format: 'json' }
+        get 'get_category_grandchildren', defaults: { format: 'json' }
+        get 'get_shipping_method'
+       end
+      resources :purchases, only: [:index] do
+        collection do
+          post :pay
+        end
       end
-    end
   end
 end

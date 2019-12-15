@@ -2,9 +2,8 @@
   =render 'single/single-header'
 
 .exhibit
-  %main.exhibit-main
-    %section.exhibit-main__container.product-container
-      -# 多分ここに？=form_for (product_function_name), html: {class: "(sell-form)"} do |f|
+  %main.main
+    %section.main__container.product-container
       .sell-upload-box
         .sell-container
           %h2.sell-container-head 商品の情報の入力
@@ -16,7 +15,7 @@
               %span.form-require 必須
             %p.sell-upload__max-10 最大10枚までアップロードできます
             .sell-upload__drop-box
-              = icon("fa", "camera")
+              %i.fa.fa-camera
           %ul.has-error-text 画像がありません
         .sell-content
           .product-detail
@@ -62,7 +61,7 @@
                 商品の状態
                 %span.form-require 必須
               .select-wrap
-                %select.select-wrap__pulldown
+                -# = f.select :status, Product.status.keys.to_a, {}, class: 'select-wrap__pulldown'
                 %ul.has-error-text 選択してください
         .sell-content
           .sell-content__head

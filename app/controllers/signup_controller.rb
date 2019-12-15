@@ -1,5 +1,5 @@
 class SignupController < ApplicationController
-
+  protect_from_forgery
   def step1
     @user = User.new
     @user.build_user_profile
