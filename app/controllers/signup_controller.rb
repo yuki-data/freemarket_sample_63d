@@ -14,6 +14,8 @@ class SignupController < ApplicationController
       @user = User.new(user_params)
       @user.build_user_profile(user_params[:user_profile_attributes])
     if @user.save
+      # binding.pry
+      sign_in User.find(@user.id) unless user_signed_in?
       redirect_to user_accounts_path
     else
       redirect_to root_path
