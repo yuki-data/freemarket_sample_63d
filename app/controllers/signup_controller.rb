@@ -7,7 +7,7 @@ class SignupController < ApplicationController
     #   @user.build_user_profile
     # end
 
-  def signup
+  def new
     @user = User.new
     @user.build_user_profile
   end
@@ -17,7 +17,7 @@ class SignupController < ApplicationController
       @user.build_user_profile(user_params[:user_profile_attributes])
     if @user.save
       sign_in(User.find(@user.id), scope: :user) unless user_signed_in?
-      redirect_to user_accounts_path
+      redirect_to root_path
       # 下記は今後セッション使う場合に必要な為残してます。
       # session[:id] = @user.id
       # redirect_to auto_login_signup_index_path(user_id: @user.id)

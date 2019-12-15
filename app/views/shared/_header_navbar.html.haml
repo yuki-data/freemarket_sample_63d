@@ -31,6 +31,9 @@
             = icon("fas", "check")
             %span やることリスト
         %li.pc-header__inner__navbar__menu-right__item
-          = link_to "#" do
-            = image_tag 'mypage/boy_01.png', alt: 'user_icon', height: '32', width: '32'
-            %span マイページ
+          - if user_signed_in?
+            = link_to destroy_user_session_path, method: :delete do
+              = image_tag 'mypage/boy_01.png', alt: 'user_icon', height: '32', width: '32'
+              %span #{current_user.user_profile.nickname}
+          - else
+            = link_to "新規登録", new_signup_path

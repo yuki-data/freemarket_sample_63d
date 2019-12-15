@@ -12,11 +12,7 @@ Rails.application.routes.draw do
   end
   resources :card_registrations, only: [:index, :new], path: "/mypage/card"
 
-  resources :signup, only: [:create] do
-    collection do
-      get 'signup'
-    end
-  end
+  resources :signup, only: [:new, :create]
 
     resources :products, only: [:show, :new, :create] do
       collection do
