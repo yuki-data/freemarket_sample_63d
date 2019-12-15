@@ -93,14 +93,11 @@ class ProductsController < ApplicationController
   def destroy
     # sailing_product = SalingProduct.find_by(product_id: params[:id])
     # sailing_product.destroy
-    product_image = ProductImage.find_by(params[:id])
-    product_image.destroy
+    # product_image = ProductImage.find_by(params[:id])
+    # product_image.destroy
     product = Product.find(params[:id])
     product.destroy
     redirect_to user_accounts_path
-
-    # find_byでセイリングプロダクトの外部キー取得
-    # createするsoldproductを
   end
 
   # 以下全て、formatはjsonのみ
