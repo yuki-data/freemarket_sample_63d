@@ -9,19 +9,28 @@
           = f.label :product_images, "出品画像"
           %span 必須
         %p.exhibit-center__main__form-section__group__text 最大5枚までアップロードできます
-      .exhibit-center__main__form-section_images
-        %ul.exhibit-center__main__form-section_images__preview
-          %li.exhibit-center__main__form-section_images__preview__item
-            .exhibit-center__main__form-section_images__preview__item__image
+      .exhibit-center__main__form-section__images
+        %ul.exhibit-center__main__form-section__images__preview
+          %li.exhibit-center__main__form-section__images__preview__item
+            .exhibit-center__main__form-section__images__preview__item__image
               = image_tag 'credit_card/jcb.svg', alt: 'jcb', height: '100'
-            .exhibit-center__main__form-section_images__preview__item__button-delete
+            .exhibit-center__main__form-section__images__preview__item__button-delete
               %span 削除
-          %li.exhibit-center__main__form-section_images__preview__item
-        .exhibit-center__main__form-section_images__residue
-          .exhibit-center__main__form-section_images__residue__explanation
-            .exhibit-center__main__form-section_images__residue__explanation__icon
+          %li.exhibit-center__main__form-section__images__preview__item
+            .exhibit-center__main__form-section__images__preview__item__image
+              = image_tag 'credit_card/jcb.svg', alt: 'jcb', height: '100'
+            .exhibit-center__main__form-section__images__preview__item__button-delete
+              %span 削除
+          %li.exhibit-center__main__form-section__images__preview__item
+            .exhibit-center__main__form-section__images__preview__item__image
+              = image_tag 'credit_card/jcb.svg', alt: 'jcb', height: '100'
+            .exhibit-center__main__form-section__images__preview__item__button-delete
+              %span 削除
+        .exhibit-center__main__form-section__images__residue
+          .exhibit-center__main__form-section__images__residue__explanation
+            .exhibit-center__main__form-section__images__residue__explanation__icon
               = icon("fas", "camera")
-            %p.exhibit-center__main__form-section_images__residue__explanation__text クリックしてアップロード
+            %p.exhibit-center__main__form-section__images__residue__explanation__text クリックしてアップロード
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
