@@ -4,16 +4,20 @@
     background-color: $mypage-white;
     width: $mypage-main-inner-width;
     margin: 0 auto;
-    padding: 24px 40px 40px;
     &__title {
       font-size: $product-detail-font-size-title;
       text-align: center;
       line-height: 1.4;
       font-weight: bold;
+      padding: 24px 40px;
     }
     &__form-section {
+      border-top: 2px solid $mypage-bgcolor;
+      padding: 24px 40px 40px;
       &__group {
+        padding-top: 20px;
         &__title {
+          margin-bottom: 5px;
           label {
             font-weight: bold;
           }
