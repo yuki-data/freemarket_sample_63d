@@ -35,5 +35,5 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :clone_products, only: [:new]
+  resources :clone_products, only: [:new, :create]
 end
