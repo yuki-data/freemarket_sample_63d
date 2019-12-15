@@ -25,29 +25,32 @@
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "商品名"
+          = f.label :name, "商品名"
           %span 必須
         .exhibit-center__main__form-section__group__form
-          %input{placeholder: "商品の名前（必須、４０文字以内）"}
+          = f.text_field :name, placeholder: "商品の名前（必須、４０文字以内）", maxlength: "40", class: "exhibit-center__main__form-section__group__form__input"
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "商品の説明"
+          = f.label :description, "商品の説明"
           %span 必須
         .exhibit-center__main__form-section__group__form
-          %textarea{placeholder: "商品の説明（必須、１０００文字以内）"}
+          = f.text_area :description, rows: 4, placeholder: "商品の説明（必須、１０００文字以内）", class: "exhibit-center__main__form-section__group__form__textarea"
     %section.exhibit-center__main__form-section
       %h3.exhibit-center__main__form-section__title 商品の詳細
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
-          = f.label :product, "カテゴリー"
+          = f.label :category, "カテゴリー"
           %span 必須
         %ul.exhibit-center__main__form-section__group-list
           %li.exhibit-center__main__form-section__group__form
             = select_tag :category_base, options_for_select([["a","A"],["b","B"]])
           %li.exhibit-center__main__form-section__group__form
+            = icon("fas", "chevron-down")
             = select_tag :category_child, options_for_select([["a","A"],["b","B"]])
           %li.exhibit-center__main__form-section__group__form
+            = icon("fas", "chevron-down")
             = select_tag :category_grandchild, options_for_select([["a","A"],["b","B"]])
+            = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :product, "ブランド"
@@ -60,6 +63,7 @@
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = icon("fas", "chevron-down")
     %section.exhibit-center__main__form-section
       %h3.exhibit-center__main__form-section__title 配送について
       .exhibit-center__main__form-section__group
@@ -68,24 +72,28 @@
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :product, "配送の方法"
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :product, "発送元の地域"
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :product, "発送までの日数"
           %span 必須
         .exhibit-center__main__form-section__group__form
           = select_tag :status, options_for_select([["a","A"],["b","B"]])
+          = icon("fas", "chevron-down")
     %section.exhibit-center__main__form-section
       %h3.exhibit-center__main__form-section__title 販売価格
       .exhibit-center__main__form-section__group
