@@ -27,12 +27,11 @@
             .exhibit-center__main__form-section__images__preview__item__button-delete
               %span 削除
         .exhibit-center__main__form-section__images__residue
-          = f.fields_for :product_images do |image|
-            = image.file_field :image, multiple: true
-            = image.label :image do
-              .exhibit-center__main__form-section__images__residue__icon
-                = icon("fas", "camera")
-              .exhibit-center__main__form-section__images__residue__text クリックしてアップロード
+          = f.file_field :image, multiple: true
+          = f.label :image do
+            .exhibit-center__main__form-section__images__residue__icon
+              = icon("fas", "camera")
+            .exhibit-center__main__form-section__images__residue__text クリックしてアップロード
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title

@@ -29,10 +29,21 @@
         &__residue {
           flex-grow: 1;
           flex-shrink: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          input {
+            display: none;
+          }
+          label {
+            display: block;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
       }
       &__group {
