@@ -43,9 +43,7 @@ class SignupController < ApplicationController
       :first_name_kana,
       :last_name,
       :last_name_kana,
-      :year_of_birth,
-      :month_of_birth,
-      :day_of_birth,
+      :birth_day,
       :phone_number,
       user_profile_attributes: [:id, :nickname]
     )

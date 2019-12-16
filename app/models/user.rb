@@ -9,9 +9,7 @@ class User < ApplicationRecord
     validates :last_name
     validates :first_name_kana
     validates :last_name_kana
-    validates :year_of_birth
-    validates :month_of_birth
-    validates :day_of_birth
+    validates :birth_day
     validates :phone_number
   end
   #ユーザー登録時に複数のテーブルに保存できるように親=>子へネストさせる
