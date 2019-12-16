@@ -92,11 +92,11 @@ class ProductsController < ApplicationController
 
   def destroy
     product = Product.find(params[:id])
-    product.destroy
-    redirect_to user_accounts_path
-    # product = Product.find(params[:id])
-    # product.destroy
-    # redirect_to user_accounts_path
+    if product.destroy
+      redirect_to user_accounts_path
+    else
+      redirect_to product_path(params[:id])
+    end
   end
 
   # 以下全て、formatはjsonのみ
