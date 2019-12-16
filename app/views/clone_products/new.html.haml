@@ -106,7 +106,7 @@
           = f.select :how_long_shipping, options_for_select([["a","A"],["b","B"]])
           = icon("fas", "chevron-down")
     %section.exhibit-center__main__form-section
-      %h3.exhibit-center__main__form-section__title 販売価格
+      %h3.exhibit-center__main__form-section__title 販売価格(300〜9,999,999)
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :price, "価格"
@@ -115,10 +115,12 @@
           = f.text_field :price, placeholder: "例）300", class: "exhibit-center__main__form-section__group__form__input"
       .exhibit-center__main__form-section__calculate
         .exhibit-center__main__form-section__calculate__text 販売手数料 (10%)
-        .exhibit-center__main__form-section__calculate__result
+        .exhibit-center__main__form-section__calculate__result--fee
+          %span ---
       .exhibit-center__main__form-section__calculate
         .exhibit-center__main__form-section__calculate__text 販売利益
-        .exhibit-center__main__form-section__calculate__result
+        .exhibit-center__main__form-section__calculate__result--profit
+          %span ---
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__explanation
         %p 禁止されている出品、行為を必ずご確認ください。
