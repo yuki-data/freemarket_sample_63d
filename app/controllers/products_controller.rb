@@ -91,10 +91,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    # sailing_product = SalingProduct.find_by(product_id: params[:id])
-    # sailing_product.destroy
-    # product_image = ProductImage.find_by(params[:id])
-    # product_image.destroy
     product = Product.find(params[:id])
     product.destroy
     redirect_to user_accounts_path
