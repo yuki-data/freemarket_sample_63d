@@ -94,6 +94,9 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     product.destroy
     redirect_to user_accounts_path
+    # product = Product.find(params[:id])
+    # product.destroy
+    # redirect_to user_accounts_path
   end
 
   # 以下全て、formatはjsonのみ
