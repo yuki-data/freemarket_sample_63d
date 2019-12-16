@@ -73,6 +73,10 @@ gem "jquery-rails"
 gem 'devise'
 # payjpでの決済のため
 gem 'payjp'
+# 都道府県データを保持するため
+gem 'active_hash'
+# カテゴリーの階層構造を作るため
+gem 'ancestry'
 
 group :development, :test do
   # テスト用のemailアドレスを生成するため
@@ -105,6 +109,10 @@ end
 gem 'sassc', '2.1.0'
 gem 'haml-rails'
 gem 'erb2haml'
+# gem 'font-awesome-rails'
+# gem 'ancestry'
+# gem "jquery-rails"
+gem 'jp_prefecture'
 
 #####################################
 ####### Unicornを本番環境に追加 ########
@@ -139,3 +147,6 @@ gem 'listen', '~> 3.1.5'
 
 #都道府県データ作成
 gem 'active_hash'
+
+#本番環境で伊藤さんの用意したコマンドdb:seed:allを利用するために必要（使い方などはPR#33 or lib/tasks/seed.rake参照されたし)
+gem 'faker'

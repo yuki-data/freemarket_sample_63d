@@ -24,6 +24,8 @@
     }
     &__information{
       padding: 40px 16px;
+      %textarea.textarea-default{
+      }
       a.profile__change{
         margin: 0 auto;
         background-color: $main-red;
