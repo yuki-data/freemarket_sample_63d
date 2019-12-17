@@ -2,10 +2,9 @@
   - @products.each do |product|
     = link_to do
       %li.item
-        - product.product_images.each do |product_image| 
-          .item__picture{style: "background-image: url(#{product_image.image});"}
-            .item__capital
-              ¥
-              = product.price
-            .item__caption
-              = product.name
+        .item__picture{style: "background-image: url(#{product.product_images.first.image});"}
+          .item__capital
+            ¥
+            = product.price
+          .item__caption
+            = product.name
