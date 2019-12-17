@@ -1,0 +1,6 @@
+<li class="exhibit-center__main__form-section__group__form--select" id="select_<%= @name %>">
+  <%= select_tag "product[#{@name}]",
+    options_for_select(category_array.map{ |c| [c[:name], c[:id]] }),
+    id: "product_#{@name}" %>
+  <%= icon("fas", "chevron-down") %>
+</li>
