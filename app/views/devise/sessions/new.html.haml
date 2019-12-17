@@ -1,0 +1,24 @@
+=render 'single/single-header'
+.registration__page__wrapper
+  .registration__page__wrapper__container
+    %h2.registration__page__wrapper__container__page__title
+      ログイン
+    .registration__page__wrapper__container__form__group
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        %p.registration__label
+          %label
+            メールアドレス
+          %span.registration__card
+            必須
+        .registration__input__wrapper
+          = f.email_field :email, placeholder: 'PC、携帯どちらでも可', class: 'registration__input'
+        %p.registration__label
+          %label
+            パスワード
+          %span.registration__card
+            必須
+        .registration__input__wrapper
+          = f.password_field :password, autocomplete: "new-password", class: 'registration__input'
+          = f.submit "ログイン", class: "registration__push__next"
+          = link_to "新規登録", new_signup_path
+

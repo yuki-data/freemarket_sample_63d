@@ -1,0 +1,62 @@
+%h2 Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :passwordf
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .field
+    = f.label :名前
+    %br/
+    = f.text_field :first_name, autocomplete: "first_name"
+  .field
+    = f.label :苗字
+    %br/
+    = f.text_field :last_name, autocomplete: "last_name"
+  .feld
+    = f.label :名前_カナ
+    %br/
+    = f.text_field :first_name_kana, autocomplete: "first_name"
+  .field
+    = f.label :苗字_カナ
+    %br/
+    = f.text_field :last_name_kana, autocomplete: "last_name"
+  .field
+    = f.label :電話番号
+    %br/
+    = f.text_field :phone_number, autocomplete: "phone_number"
+  .field
+    = f.select :year_of_birth, [["1990", "1990"], ["1991", "1991"],  ["1992", "1992"], ["1993", "1993"],["1994", "1994"] ],  :prompt => "--"
+    年
+  .field
+    = f.select :month_of_birth, [["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"],["5", "5"] ],  :prompt => "--"
+    月
+  .field
+    = f.select :day_of_birth, [["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"],["5", "5"] ],  :prompt => "--"
+    日
+  .field
+    = f.fields_for :user_profile do |p|
+      nickname
+      \#{p.text_field :nickname}
+  .field
+    = f.fields_for :user_profile do |p|
+      profile
+      \#{p.text_field :profile}
+  .field
+    = f.fields_for :user_profile do |p|
+      avator
+      \#{p.text_field :avator}
+  .actions
+    = f.submit "登録"
+= render "devise/shared/links"
