@@ -20,3 +20,5 @@
         .registration__input__wrapper
           = f.password_field :password, autocomplete: "new-password", class: 'registration__input'
           = f.submit "ログイン", class: "registration__push__next"
+          = link_to "新規登録", new_signup_path
+
