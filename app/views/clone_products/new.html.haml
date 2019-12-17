@@ -73,7 +73,7 @@
           = f.label :status, "商品の状態"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = f.select :status, options_for_select([["a","A"],["b","B"]])
+          = f.select :status, Product.statuses.keys.to_a, { prompt: '---' }
           = icon("fas", "chevron-down")
     %section.exhibit-center__main__form-section
       %h3.exhibit-center__main__form-section__title 配送について
@@ -82,28 +82,28 @@
           = f.label :who_charge_shipping, "配送料の負担"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = f.select :who_charge_shipping, options_for_select([["a","A"],["b","B"]])
+          = f.select :who_charge_shipping, Product.who_charge_shippings.keys.to_a, { prompt: '---' }
           = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :way_of_shipping, "配送の方法"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = f.select :way_of_shipping, options_for_select([["a","A"],["b","B"]])
+          = f.select :way_of_shipping, Product.way_of_shippings.keys.to_a, { prompt: '---' }
           = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :shipping_region, "発送元の地域"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = f.select :shipping_region, options_for_select([["a","A"],["b","B"]])
+          = f.collection_select :shipping_region, Prefecture.all, :id, :name, { prompt: '---' }
           = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :how_long_shipping, "発送までの日数"
           %span 必須
         .exhibit-center__main__form-section__group__form--select
-          = f.select :how_long_shipping, options_for_select([["a","A"],["b","B"]])
+          = f.select :how_long_shipping, Product.how_long_shippings.keys.to_a, { prompt: '---' }
           = icon("fas", "chevron-down")
     %section.exhibit-center__main__form-section
       %h3.exhibit-center__main__form-section__title 販売価格(300〜9,999,999)
