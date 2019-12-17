@@ -1,10 +1,54 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :category_select_function, only: [:new, :create, :edit, :update]
+  before_action :category_select_function, only: [:new, :create]
   before_action :set_new_product, only: [:new, :create]
+  before_action :set_existing_product, only: [:show, :edit, :update]
 
   def show
-    @product = Product.find(params[:id])
+  end
+
+  def edit
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+    @category_child_array = @product.category.parent.parent.children
+    @category_grandchild_array = @product.category.parent.children
+  end
+
+  def update
+    brand = Brand.new(name: params.require(:product)[:brand][:name])
+    category_name = params[:category] || params.require(:product)[:category]
+    category = Category.find_by(name: category_name)
+    if !brand.save || !category
+      redirect_to edit_product_path(params[:id]) and return
+    end
+    product_params = product_parameter.merge(
+      brand_id: brand.id,
+      category_id: category.id,
+      user_profile_id: current_user.user_profile.id
+    )
+    if @product.update(product_params)
+      if params.require(:product)["product_images_attributes"].present?
+        image_ids = []
+        params.require(:product)["product_images_attributes"].each do |index, dict|
+          image_ids << dict[:id].to_i
+        end
+        @product.product_image_ids.each do |i|
+          unless image_ids.include?(i)
+            @product.product_images.destroy(i)
+          end
+        end
+      end
+      if params[:product_images]
+        params[:product_images][:image].each do |image|
+          ProductImage.create(image: image, product_id: @product.id)
+        end
+      end
+      redirect_to product_path(params[:id])
+    else
+      redirect_to edit_product_path(params[:id])
+    end
   end
 
   def set_new_product
@@ -12,13 +56,17 @@ class ProductsController < ApplicationController
     @product.product_images.build
   end
 
+  def set_existing_product
+    @product = Product.find(params[:id])
+  end
+
   def new
   end
 
-
   def create
     brand = Brand.new(name: params.require(:product)[:brand])
-    category = Category.find_by(name: params.require(:product)[:category])
+    category_name = params[:category] || params.require(:product)[:category]
+    category = Category.find_by(name: category_name)
     if !brand.save || !category
       redirect_to new_product_path and return
     end
@@ -65,7 +113,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(
       :name, :description, :status, :who_charge_shipping,
       :way_of_shipping, :shipping_region, :how_long_shipping, :price,
-      product_images_attributes: [:image]
+      # product_images_attributes: [:image]
     )
   end
 

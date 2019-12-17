@@ -14,18 +14,24 @@
                 出品画像
                 %span.form-require 必須
               %p.sell-upload__max-10 最大10枚までアップロードできます
-              = f.fields_for :product_images do |image|
-                .sell-upload__conteiner
-                  #preview
-                  .sell-upload__drop-area
-                    = image.label :image, class: 'drop-box' do
-                      .input_area
-                        = image.file_field :image, multiple: true, name: 'product_images[image][]', id:'upload-iamge', class: 'upload-image','data-image': 0
-                      %p ここをクリックしてください
-                  #preview2
-                  .sell-upload__drop-area2
-                    = image.label :image, class: "drop-box", for: "upload-image" do
-                      %p ここをクリックしてください
+              .sell-upload__conteiner
+                #preview-default
+                  - @product.product_images.each do |image|
+                    .img_preview{ data: { "default-image": "#{image.id}" } }
+                      = image_tag image.image_url, alt: image.image.identifier, width: 200
+                      .delete-preview-image 削除
+                #preview
+                .sell-upload__drop-area
+                  = label :image, class: 'drop-box' do
+                    .input_area
+                      = f.fields_for :product_images do |image|
+                        = image.file_field :image, multiple: true, name: 'product_images[image][]', id:'upload-iamge', class: 'upload-image'
+                      %input{type: "file", multiple: true, name: 'product_images[image][]', id:'upload-iamge', class: 'upload-image','data-image': 0}
+                    %p ここをクリックしてください
+                #preview2
+                .sell-upload__drop-area2
+                  = label :image, class: "drop-box", for: "upload-image" do
+                    %p ここをクリックしてください
             %ul.has-error-text 画像がありません
           .sell-content
             .product-detail
@@ -53,12 +59,22 @@
                   %span.form-require 必須
                 .category
                   .select-wrap
-                    = f.select :category, @category_parent_array, {}, {class: 'select-wrap__pulldown', id: 'parent_category'}
+                    = f.select :category, options_for_select(@category_parent_array.map{|c|[c, {}]}, @product.category.parent.parent.name), {}, {class: 'select-wrap__pulldown', id: 'parent_category'}
+                .category__added#children_group
+                  .select-wrap
+                    = f.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id], 'value'=>c[:name] }]}, @product.category.parent.id), {}, {class: 'select-wrap__pulldown', id: 'child_category'}
+                .category__added#grandChildren_group
+                  .select-wrap
+                    = f.select :category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id], 'value'=>c[:name] }]}, @product.category.id), {}, {class: 'select-wrap__pulldown', id: 'grandchild_category'}
               .form-group.bland_group
                 %label
                   ブランド
                   %span.form-arbitrary 任意
-              = f.text_field :brand, placeholder: "例) シャネル",autocomplete: 'off',value: "", class: "input-default", id: "brand_search"
+              - if @product.brand.present?
+                = f.fields_for :brand, @product.brand do |brand|
+                  = brand.text_field :name, autocomplete: 'off', class: "input-default", id: "brand_search", placeholder: "例) シャネル"
+              - else
+                = f.text_field :brand, placeholder: "例) シャネル",autocomplete: 'off',value: "", class: "input-default", id: "brand_search"
               .form-group
                 %label
                   商品の状態
