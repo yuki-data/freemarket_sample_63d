@@ -1,9 +1,5 @@
 class TopsController < ApplicationController
   def index
-    @products = Product.all 
-  end
-  def show
-  end
-  def edit
+    @products = Product.all
   end
 end
