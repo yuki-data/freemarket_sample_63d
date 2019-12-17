@@ -41,6 +41,8 @@ class Product < ApplicationRecord
   has_one :sold_product, dependent: :destroy
   belongs_to :brand
   has_many :product_images, dependent: :destroy
+  accepts_nested_attributes_for :product_images
+
   has_many :comments, dependent: :destroy
   # 購入したuser(buyer)を取得
   has_one :buyer, through: :bought_product, source: :buyer
