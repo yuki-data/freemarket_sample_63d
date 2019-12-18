@@ -29,6 +29,9 @@ class CloneProductsController < ApplicationController
     @category_grandchild = category_path[2]
   end
 
+  def update
+  end
+
   #カテゴリー選択機能
   def category_select_function
     @category_parent_array = [{ name: "---", id: "" }]
@@ -92,8 +95,20 @@ class CloneProductsController < ApplicationController
   def extract_product_images
     images_array = []
     product_image_param.each do |index, image|
-      images_array << image[:image][0]
+      if image[:image]
+        images_array << image[:image][0]
+      end
     end
     images_array
+  end
+
+  def extract_existing_product_images
+    images_ids_array = []
+    product_image_param.each do |index, image|
+      if image[:id]
+        images_ids_array << image[:id]
+      end
+    end
+    images_ids_array
   end
 end
