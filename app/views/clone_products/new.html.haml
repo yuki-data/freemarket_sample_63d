@@ -54,13 +54,7 @@
           %span 必須
         %ul.exhibit-center__main__form-section__group-list
           %li.exhibit-center__main__form-section__group__form--select
-            = f.select :category, options_for_select([["a","A"],["b","B"]])
-            = icon("fas", "chevron-down")
-          %li.exhibit-center__main__form-section__group__form--select
-            = f.select :category_child, options_for_select([["a","A"],["b","B"]])
-            = icon("fas", "chevron-down")
-          %li.exhibit-center__main__form-section__group__form--select
-            = f.select :category_grandchild, options_for_select([["a","A"],["b","B"]])
+            = f.select :category, options_for_select(@category_parent_array.map{ |c| [c[:name], c[:id]] })
             = icon("fas", "chevron-down")
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
