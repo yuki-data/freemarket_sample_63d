@@ -1,14 +1,13 @@
 %ul.new__item
   - @products.each do |product|
-    -# - binding.pry
     - if product.bought_product.present?
       = link_to product_path(product.id) do
         %li.item
-          .item__picture{style: "background-image: url(#{product.product_images.first.image});"}
-            .item__capital
+          .item__picture--bought{style: "background-image: url(#{product.product_images.first.image});"}
+            .item__capital--bought
               ¥
               = product.price
-            .item__caption
+            .item__caption--bought
               = product.name + ' sold'
     - else
       = link_to product_path(product.id) do

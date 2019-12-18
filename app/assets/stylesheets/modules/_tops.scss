@@ -80,11 +80,57 @@ ul.new__item{
   flex-wrap:wrap;
   /////商品画像掲載を梱包/////
   li.item{
-    padding:10px 0px;
-    /////商品画像/////
+    .item__picture--bought{
+      width:188px;
+      height:252px;
+      margin-top: 10px;
+      margin-right: 10px;
+      background: $main-white;
+      position: relative;
+      @include boxSet;
+      /////画像にカーソルが乗ったら罫線表示/////
+      &:hover{
+        border: 1px solid $main-blue;
+      }
+      /////商品値段/////
+      .item__capital--bought{
+        position: absolute;
+        bottom: 50px;
+        left:0px;
+        @include boxSet__capital;
+      }
+      /////商品画像キャプション/////
+      .item__caption--bought{
+        position: absolute;
+        bottom: 0px;
+        @include boxSet__caption;
+      }
+    }
+    .item__picture--bought::before {
+      content: "";
+      top: 0;
+      left:0;
+      border-bottom: 4em solid transparent;
+      border-left: 4em solid $main-red;
+      position: absolute;
+      z-index: 100;
+
+    }
+    .item__picture--bought::after {
+      content: "SOLD";
+      display: block;
+      top: 10px;
+      left:0;
+      transform: rotate(-45deg);
+      color: $main-white;
+      position: absolute;
+      z-index: 101;
+    }
+    /////商品画像(sailing_products時)/////
     .item__picture{
       width:188px;
       height:252px;
+      margin-top: 10px;
       margin-right: 10px;
       background: $main-white;
       position: relative;
