@@ -1,14 +1,3 @@
-// Place all the styles related to the tops controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-/////↓ブレイクポイント各種、使うときだけコピーしてもっていく↓/////
-
-//@media (min-width: 576px) {}
-//@media (min-width: 768px) {}
-//@media (min-width: 992px) {}
-//@media (min-width: 1200px) {}
-
 //////スライダーのダミー/////
 .slider{
   height:50vh;
@@ -21,22 +10,22 @@
   font-size: 5vw;
   text-shadow:0px 0px 6px #000000;
   a{
-    color:white;
+    color: $main-white;
   }
 }
 
 //////人気商品カテゴリー/////
-.popularity{ 
+.popularity{
   padding-top: 5vh;
   width: 100%;
   padding-bottom: 5vh;
-  background:white;
+  background: $main-white;
   //////人気商品カテゴリー見出し/////
   h2{text-align: center;
     margin-bottom: 16px;
     font-size:2vw;
     font-weight: 600;
-    background:white;
+    background: $main-white;
     color:$main-black;
   }
   //////人気商品カテゴリー一覧/////
@@ -53,7 +42,7 @@
         color:$main-black;
       }
     }
-  } 
+  }
 }
 
 //////商品見出し梱包/////
@@ -88,17 +77,62 @@ ul.new__item{
   width:1000px;
   margin:0 auto;
   display: flex;
-  //justify-content: center;
-  justify-content: space-between;
   flex-wrap:wrap;
   /////商品画像掲載を梱包/////
-  li.item{  
-    padding:10px 0px;
-    /////商品画像/////
+  li.item{
+    .item__picture--bought{
+      width:188px;
+      height:252px;
+      margin-top: 10px;
+      margin-right: 10px;
+      background: $main-white;
+      position: relative;
+      @include boxSet;
+      /////画像にカーソルが乗ったら罫線表示/////
+      &:hover{
+        border: 1px solid $main-blue;
+      }
+      /////商品値段/////
+      .item__capital--bought{
+        position: absolute;
+        bottom: 50px;
+        left:0px;
+        @include boxSet__capital;
+      }
+      /////商品画像キャプション/////
+      .item__caption--bought{
+        position: absolute;
+        bottom: 0px;
+        @include boxSet__caption;
+      }
+    }
+    .item__picture--bought::before {
+      content: "";
+      top: 0;
+      left:0;
+      border-bottom: 4em solid transparent;
+      border-left: 4em solid $main-red;
+      position: absolute;
+      z-index: 100;
+
+    }
+    .item__picture--bought::after {
+      content: "SOLD";
+      display: block;
+      top: 10px;
+      left:0;
+      transform: rotate(-45deg);
+      color: $main-white;
+      position: absolute;
+      z-index: 101;
+    }
+    /////商品画像(sailing_products時)/////
     .item__picture{
       width:188px;
       height:252px;
-      background:white;
+      margin-top: 10px;
+      margin-right: 10px;
+      background: $main-white;
       position: relative;
       @include boxSet;
       /////画像にカーソルが乗ったら罫線表示/////
@@ -118,15 +152,15 @@ ul.new__item{
         bottom: 0px;
         @include boxSet__caption;
       }
-    } 
-  }  
+    }
+  }
 }
 
 /////広告バーダミー/////
 .news__bar {
   height: 200px;
   background:$main-blue;
-  width: 100%;  
+  width: 100%;
 }
 
 /////フッター/////
@@ -145,7 +179,7 @@ footer{
   position:fixed;
   right:30px;
   bottom:30px;
-  color:white;
+  color: $main-white;
   text-align: center;
   font-weight: bold;
   font-size:22px;
@@ -159,35 +193,5 @@ footer{
     font-size: 80px;
     position: relative;
     top: 15px;
-  }
-}
-/////ここからブレイクポイント指定//////////ここからブレイクポイント指定//////////ここからブレイクポイント指定/////
-
-/////768px以下のデバイスで見た場合ボタンが縮小/////
-@media (max-width: 768px) {
-  .red__button{
-    width:80px;
-    height:80px;
-    background:$main-red;
-    border-radius: 50%;
-    position:fixed;
-    right:30px;
-    bottom:30px;
-    color:white;
-    text-align: center;
-    font-weight: bold;
-    font-size:2rem;
-    /////出品という文字/////
-    &__caption{
-      position: relative;
-      top:12px;
-      font-size:0.4em;
-    }
-    /////カメラアイコン/////
-    &__icon{
-      font-size:1em;
-      position:relative;
-      top:10px;
-    }
   }
 }

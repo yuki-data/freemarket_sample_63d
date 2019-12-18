@@ -1,9 +1,18 @@
 %ul.new__item
   - @products.each do |product|
-    = link_to do
-      %li.item
-        - product.product_images.each do |product_image| 
-          .item__picture{style: "background-image: url(#{product_image.image});"}
+    - if product.bought_product.present?
+      = link_to product_path(product.id) do
+        %li.item
+          .item__picture--bought{style: "background-image: url(#{product.product_images.first.image});"}
+            .item__capital--bought
+              ¥
+              = product.price
+            .item__caption--bought
+              = product.name + ' sold'
+    - else
+      = link_to product_path(product.id) do
+        %li.item
+          .item__picture{style: "background-image: url(#{product.product_images.first.image});"}
             .item__capital
               ¥
               = product.price
