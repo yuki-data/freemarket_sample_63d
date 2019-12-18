@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :clone_products, only: [:new, :create] do
+  resources :clone_products, only: [:new, :create, :edit, :update] do
     collection do
       get 'get_category_children', defaults: { format: 'js' }
       get 'get_category_grandchildren', defaults: { format: 'js' }
