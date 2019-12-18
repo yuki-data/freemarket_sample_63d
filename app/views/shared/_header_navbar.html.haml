@@ -1,7 +1,7 @@
 .pc-header
   .pc-header__inner
     .pc-header__inner__top
-      = link_to "#", class: "pc-header__inner__top__logo" do
+      = link_to root_path, class: "pc-header__inner__top__logo" do
         = image_tag 'logos/fmarket_logo_red.svg', alt: 'fmarket_logo', height: '36', width: '134'
       %form.pc-header__inner__top__search
         %input{ type: "search", placeholder: "何かお探しですか？", class: "pc-header__inner__top__search__input" }
@@ -31,6 +31,9 @@
             = icon("fas", "check")
             %span やることリスト
         %li.pc-header__inner__navbar__menu-right__item
-          = link_to "#" do
-            = image_tag 'mypage/boy_01.png', alt: 'user_icon', height: '32', width: '32'
-            %span マイページ
+          - if user_signed_in?
+            = link_to destroy_user_session_path, method: :delete do
+              = image_tag 'mypage/boy_01.png', alt: 'user_icon', height: '32', width: '32'
+              %span #{current_user.user_profile.nickname}
+          - else
+            = link_to "新規登録", new_signup_path

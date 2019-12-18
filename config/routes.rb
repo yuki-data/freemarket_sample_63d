@@ -17,10 +17,10 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_shipping_method'
       end
-    resources :purchases, only: [:index] do
-      collection do
-        post :pay
-      end
-    end
+      resources :purchases, only: [:index] do
+        collection do
+          post :pay
+        end
+     end
   end
 end

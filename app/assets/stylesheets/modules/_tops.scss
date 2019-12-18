@@ -85,7 +85,7 @@
 
 /////商品画像一覧について設定各種/////
 ul.new__item{
-  width:80%;
+  width:1000px;
   margin:0 auto;
   display: flex;
   //justify-content: center;
@@ -100,7 +100,6 @@ ul.new__item{
       height:252px;
       background:white;
       position: relative;
-      background-image: url(http://ochiai.lolipop.jp/portsitenew/img/jigazonew.png);
       @include boxSet;
       /////画像にカーソルが乗ったら罫線表示/////
       &:hover{
