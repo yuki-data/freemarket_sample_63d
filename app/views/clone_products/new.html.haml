@@ -11,21 +11,6 @@
         %p.exhibit-center__main__form-section__group__text 最大5枚までアップロードできます
       .exhibit-center__main__form-section__images
         %ul.exhibit-center__main__form-section__images__preview
-          %li.exhibit-center__main__form-section__images__preview__item
-            .exhibit-center__main__form-section__images__preview__item__image
-              = image_tag 'credit_card/jcb.svg', alt: 'jcb', width: '120'
-            .exhibit-center__main__form-section__images__preview__item__button-delete
-              %span 削除
-          %li.exhibit-center__main__form-section__images__preview__item
-            .exhibit-center__main__form-section__images__preview__item__image
-              = image_tag 'credit_card/jcb.svg', alt: 'jcb', width: '120'
-            .exhibit-center__main__form-section__images__preview__item__button-delete
-              %span 削除
-          %li.exhibit-center__main__form-section__images__preview__item
-            .exhibit-center__main__form-section__images__preview__item__image
-              = image_tag 'credit_card/jcb.svg', alt: 'jcb', width: '120'
-            .exhibit-center__main__form-section__images__preview__item__button-delete
-              %span 削除
         .exhibit-center__main__form-section__images__residue
           = f.fields_for :product_images do |image|
             = image.file_field :image, multiple: true, class: "exhibit-center__main__form-section__images__residue__input"
