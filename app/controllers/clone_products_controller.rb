@@ -1,12 +1,26 @@
 class CloneProductsController < ApplicationController
+  before_action :authenticate_user!
   before_action :category_select_function, only: [:new]
+
   def new
     @product = Product.new
-    # 5.times { @product.product_images.build }
+    @product.product_images.build
   end
 
   def create
-    binding.pry
+    @product = Product.new(product_params)
+    if @product.save
+      extract_product_images.each do |image|
+        @product.product_images.create(image: image, product_id: @product.id)
+      end
+      flash[:exhibit_notice] = "出品しました"
+      redirect_to new_clone_product_path
+    else
+      flash[:exhibit_errors] = @product.errors.messages
+      redirect_to new_clone_product_path
+    end
+  end
+
   #カテゴリー選択機能
   def category_select_function
     @category_parent_array = [{ name: "---", id: "" }]
@@ -43,5 +57,35 @@ class CloneProductsController < ApplicationController
         @name = "category_grandchild"
       end
     end
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(
+      :name, :description, :status,
+      :who_charge_shipping, :way_of_shipping, :shipping_region,
+      :how_long_shipping, :price, :brand
+    ).merge(
+      category_id: product_category_param,
+      user_profile_id: current_user.user_profile.id
+    )
+  end
+
+  def product_category_param
+    category_params = params.require(:product).permit(:category, :category_child, :category_grandchild)
+    category_params[:category_grandchild] || category_params[:category_child] || category_params[:category]
+  end
+
+  def product_image_param
+    params.require(:product)["product_images_attributes"]
+  end
+
+  def extract_product_images
+    images_array = []
+    product_image_param.each do |index, image|
+      images_array << image[:image][0]
+    end
+    images_array
   end
 end
