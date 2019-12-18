@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_122430) do
+ActiveRecord::Schema.define(version: 2019_12_18_015351) do
 
   create_table "bought_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_122430) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_profile_id"
     t.bigint "category_id"
-    t.bigint "brand_id"
     t.string "name", null: false
     t.text "description", null: false
     t.integer "status", null: false
@@ -75,7 +74,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_122430) do
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_profile_id"], name: "index_products_on_user_profile_id"
   end
@@ -153,7 +151,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_122430) do
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "user_profiles"
   add_foreign_key "product_images", "products"
-  add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "user_profiles"
   add_foreign_key "saling_products", "products"
