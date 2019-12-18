@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_015351) do
+ActiveRecord::Schema.define(version: 2019_12_18_021239) do
 
   create_table "bought_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_015351) do
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "brand"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_profile_id"], name: "index_products_on_user_profile_id"
   end
