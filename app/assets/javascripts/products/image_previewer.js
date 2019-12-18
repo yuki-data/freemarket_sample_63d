@@ -9,6 +9,8 @@ var imageFileInput =
   ".exhibit-center__main__form-section__images__residue__input";
 var imageInputLabel =
   ".exhibit-center__main__form-section__images__residue > label";
+var imageDeleteButton =
+  ".exhibit-center__main__form-section__images__preview__item__button-delete > span";
 var imagesCountUpperLimit = 5;
 
 function buildPreviewItem(src, alt, image_id) {
@@ -30,7 +32,8 @@ function buildImageInput(imageId) {
   <input multiple="multiple" class="exhibit-center__main__form-section__images__residue__input"
     type="file"
     name="product[product_images_attributes][${imageId}][image][]"
-    id="product_product_images_attributes_${imageId}_image">
+    id="product_product_images_attributes_${imageId}_image"
+    data-image-id="${imageId}">
   `;
   return template;
 }
@@ -45,12 +48,22 @@ function getLastImageId() {
   return lastImageId;
 }
 
+function getLastInputId() {
+  var currentInput = $(imageFileInput).first();
+  var currentDataId = currentInput.data("image-id");
+  return currentDataId;
+}
+
 function countPreviewItems() {
   return $(imagePreviewItem).length;
 }
 
 function hideImageLabel() {
   $(imageInputLabel).hide();
+}
+
+function showImageLabel() {
+  $(imageInputLabel).show();
 }
 
 function updateImageLabel(updatedImageId) {
@@ -70,17 +83,36 @@ $(document).on("turbolinks:load", function() {
     var file = this.files[0];
     var fileReader = new FileReader();
     var imagesCount = countPreviewItems();
-    var lastImageId = getLastImageId();
+    // var lastImageId = getLastImageId();
+    var lastImageId = getLastInputId();
 
     fileReader.onload = function(e) {
-      var html = buildPreviewItem(e.target.result, file.name, lastImageId + 1);
+      var html = buildPreviewItem(e.target.result, file.name, lastImageId);
       $(imagePreview).append(html);
     };
     fileReader.readAsDataURL(file);
-    updateImageLabel(lastImageId + 2);
-    appendImageInput(lastImageId + 2);
+    console.log(lastImageId);
+    updateImageLabel(lastImageId + 1);
+    appendImageInput(lastImageId + 1);
     if (imagesCount + 1 >= imagesCountUpperLimit) {
       hideImageLabel();
     }
+  });
+  $(imagePreview).on("click", imageDeleteButton, function() {
+    showImageLabel();
+    var targetImageItem = $(this)
+      .parent()
+      .parent();
+    var imageId = targetImageItem.data("image-id");
+    console.log(imageId);
+    var associatedInput = $(
+      `.exhibit-center__main__form-section__images__residue > [data-image-id=${imageId}]`
+    );
+    var associatedHiddenInput = $(
+      `.exhibit-center__main__form-section__images__residue > input[value=${imageId}]`
+    );
+    targetImageItem.remove();
+    associatedInput.remove();
+    associatedHiddenInput.remove();
   });
 });
