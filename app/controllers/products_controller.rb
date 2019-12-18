@@ -90,6 +90,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    if product.destroy
+      redirect_to user_accounts_path
+    else
+      redirect_to product_path(params[:id])
+    end
+  end
+
   # 以下全て、formatはjsonのみ
   # 親カテゴリーが選択された後に動くアクション
   def get_category_children
