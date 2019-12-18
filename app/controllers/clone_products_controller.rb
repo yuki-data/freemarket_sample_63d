@@ -30,6 +30,17 @@ class CloneProductsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      extract_product_images.each do |image|
+        @product.product_images.create(image: image, product_id: @product.id)
+      end
+      flash[:exhibit_notice] = "編集しました"
+      redirect_to new_clone_product_path
+    else
+      flash[:exhibit_errors] = @product.errors.messages
+      redirect_to new_clone_product_path
+    end
   end
 
   #カテゴリー選択機能
