@@ -1,6 +1,6 @@
 class CloneProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :category_select_function, only: [:new]
+  before_action :category_select_function, only: [:new, :edit]
 
   def new
     @product = Product.new
@@ -19,6 +19,14 @@ class CloneProductsController < ApplicationController
       flash[:exhibit_errors] = @product.errors.messages
       redirect_to new_clone_product_path
     end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+    category_path = @product.category.path
+    @category_root = category_path[0]
+    @category_child = category_path[1]
+    @category_grandchild = category_path[2]
   end
 
   #カテゴリー選択機能
