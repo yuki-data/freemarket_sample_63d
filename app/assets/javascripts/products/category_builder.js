@@ -14,7 +14,7 @@ $(document).on("turbolinks:load", function() {
       return;
     }
     $.ajax({
-      url: "/clone_products/get_category_children",
+      url: "/products/get_category_children",
       type: "GET",
       data: { category_id: categoryValue },
       dataType: "script"
@@ -29,7 +29,7 @@ $(document).on("turbolinks:load", function() {
     $(liCategoryGrandChild).remove();
     var categoryValue = $(categoryChild).val();
     $.ajax({
-      url: "/clone_products/get_category_grandchildren",
+      url: "/products/get_category_grandchildren",
       type: "GET",
       data: { child_id: categoryValue },
       dataType: "script"

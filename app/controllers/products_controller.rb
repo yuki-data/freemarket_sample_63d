@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def create
     unless extract_product_images.size > 0
       flash[:exhibit_notice] = "画像は１枚以上必要です"
-      redirect_to new_clone_product_path and return
+      redirect_to new_product_path and return
     end
 
     if @product.save(product_params)
@@ -22,10 +22,10 @@ class ProductsController < ApplicationController
         @product.product_images.create(image: image, product_id: @product.id)
       end
       flash[:exhibit_notice] = "出品しました"
-      redirect_to new_clone_product_path
+      redirect_to new_product_path
     else
       flash[:exhibit_errors] = @product.errors.messages
-      redirect_to new_clone_product_path
+      redirect_to new_product_path
     end
   end
 
@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
   def update
     unless (extract_existing_product_images.size + extract_product_images.size) > 0
       flash[:exhibit_notice] = "画像は１枚以上必要です"
-      redirect_to edit_clone_product_path(params[:id]) and return
+      redirect_to edit_product_path(params[:id]) and return
     end
     if @product.update(product_params)
       remove_product_images
@@ -47,10 +47,10 @@ class ProductsController < ApplicationController
         @product.product_images.create(image: image, product_id: @product.id)
       end
       flash[:exhibit_notice] = "編集しました"
-      redirect_to new_clone_product_path
+      redirect_to new_product_path
     else
       flash[:exhibit_errors] = @product.errors.messages
-      redirect_to new_clone_product_path
+      redirect_to new_product_path
     end
   end
 
