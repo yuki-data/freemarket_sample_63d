@@ -20,12 +20,20 @@
         height: 150px;
         &__preview {
           display: flex;
-          padding: 10px 15px;
+          padding: 5px 15px;
           &__item {
             width: 110px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             &:not(:first-of-type) {
               margin-left: 10px;
+            }
+            &__image {
+              flex-grow: 1;
+              display: flex;
+              align-items: center;
             }
             &__button-delete {
               color: $mypage-ultramarine;
