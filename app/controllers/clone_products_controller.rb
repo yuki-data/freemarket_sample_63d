@@ -9,6 +9,12 @@ class CloneProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+
+    unless extract_product_images.size > 0
+      flash[:exhibit_notice] = "画像は１枚以上必要です"
+      redirect_to new_clone_product_path and return
+    end
+
     if @product.save
       extract_product_images.each do |image|
         @product.product_images.create(image: image, product_id: @product.id)
@@ -31,6 +37,10 @@ class CloneProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
+    unless (extract_existing_product_images.size + extract_product_images.size) > 0
+      flash[:exhibit_notice] = "画像は１枚以上必要です"
+      redirect_to edit_clone_product_path(params[:id]) and return
+    end
     if @product.update(product_params)
       remove_product_images
       extract_product_images.each do |image|
