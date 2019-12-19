@@ -25,21 +25,13 @@ Rails.application.routes.draw do
   resources :card_registrations, only: [:index, :new], path: "/mypage/card"
   resources :products, only: [:show, :new, :create, :edit, :update] do
     collection do
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
-      get 'get_shipping_method'
+      get 'get_category_children', defaults: { format: 'js' }
+      get 'get_category_grandchildren', defaults: { format: 'js' }
     end
     resources :purchases, only: [:index] do
       collection do
         post :pay
       end
-    end
-  end
-
-  resources :clone_products, only: [:new, :create, :edit, :update] do
-    collection do
-      get 'get_category_children', defaults: { format: 'js' }
-      get 'get_category_grandchildren', defaults: { format: 'js' }
     end
   end
 end
