@@ -17,7 +17,7 @@ function buildPreviewItem(src, alt, image_id) {
   var template = `
   <li class="exhibit-center__main__form-section__images__preview__item" data-image-id="${image_id}">
     <div class="exhibit-center__main__form-section__images__preview__item__image">
-      <img alt="${alt}" src="${src}" width="120">
+      <img alt="${alt}" src="${src}" width="110">
     </div>
     <div class="exhibit-center__main__form-section__images__preview__item__button-delete">
       <span>削除</span>

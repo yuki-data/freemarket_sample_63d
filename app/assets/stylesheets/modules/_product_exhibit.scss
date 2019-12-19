@@ -20,11 +20,12 @@
         height: 150px;
         &__preview {
           display: flex;
+          padding: 10px 15px;
           &__item {
-            width: 120px;
+            width: 110px;
             text-align: center;
             &:not(:first-of-type) {
-              margin-left: 5px;
+              margin-left: 10px;
             }
             &__button-delete {
               color: $mypage-ultramarine;
