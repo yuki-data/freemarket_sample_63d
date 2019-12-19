@@ -104,6 +104,6 @@
       %p また、出品をもちまして加盟店規約に同意したことになります。
     .exhibit-center__main__form-section__group
       .exhibit-center__main__form-section__group__form
-        = f.submit "出品する", class: "exhibit-center__main__form-section__group__form__button--submit"
+        = f.submit value: "#{ (@product.new_record?) ? "出品する" : "変更する"}", class: "exhibit-center__main__form-section__group__form__button--submit"
         = link_to "#", class: "exhibit-center__main__form-section__group__form__button--cancel" do
           %span 戻る
