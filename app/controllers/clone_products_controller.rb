@@ -117,7 +117,7 @@ class CloneProductsController < ApplicationController
     images_ids_array = []
     product_image_param.each do |index, image|
       if image[:id]
-        images_ids_array << image[:id]
+        images_ids_array << image[:id].to_i
       end
     end
     images_ids_array
