@@ -1,11 +1,12 @@
 var $;
-var categoryGroupList = ".exhibit-center__main__form-section__group-list";
-var categoryBase = "#product_category";
-var categoryChild = "#product_category_child";
-var liCategoryChild = "#select_category_child";
-var liCategoryGrandChild = "#select_category_grandchild";
 
 $(document).on("turbolinks:load", function() {
+  var categoryGroupList = ".exhibit-center__main__form-section__group-list";
+  var categoryBase = "#product_category";
+  var categoryChild = "#product_category_child";
+  var liCategoryChild = "#select_category_child";
+  var liCategoryGrandChild = "#select_category_grandchild";
+
   $(categoryBase).on("change", function(e) {
     $(liCategoryChild).remove();
     $(liCategoryGrandChild).remove();
