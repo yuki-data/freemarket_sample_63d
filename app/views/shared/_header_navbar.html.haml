@@ -32,8 +32,11 @@
             %span やることリスト
         %li.pc-header__inner__navbar__menu-right__item
           - if user_signed_in?
-            = link_to destroy_user_session_path, method: :delete do
+            = link_to user_accounts_path do
               = image_tag 'mypage/boy_01.png', alt: 'user_icon', height: '32', width: '32'
               %span #{current_user.user_profile.nickname}
           - else
-            = link_to "新規登録", new_signup_path
+            = link_to "ログイン", new_user_session_path
+        %li.pc-header__inner__navbar__menu-right__item
+          - unless user_signed_in?
+            = link_to "新規会員登録", new_signup_path
