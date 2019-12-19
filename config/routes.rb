@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "tops#index"
   resources :userprofile, only: [:edit]
   resources :cwavetests, only: [:index, :create, :new]
-  resources :user_accounts, only: [:index], path: "mypage" do
+  resources :user_accounts, only: [:index], path: "/mypage" do
     collection do
       get :logout
     end
