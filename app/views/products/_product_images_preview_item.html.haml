@@ -1,5 +1,5 @@
 %li.exhibit-center__main__form-section__images__preview__item{ data: {"image-id": image.id} }
   .exhibit-center__main__form-section__images__preview__item__image
-    = image_tag image.image_url, alt: 'jcb', width: '110'
+    = image_tag image.image_url, alt: image.image.identifier
   .exhibit-center__main__form-section__images__preview__item__button-delete
     %span 削除
