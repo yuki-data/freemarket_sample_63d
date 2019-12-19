@@ -1,73 +1,20 @@
 %ul.new__item
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
-
-%ul.new__item
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
-  = link_to do
-    %li.item
-      .item__picture
-        .item__capital
-          ¥999
-        .item__caption
-          ダミー画像
+  - @products.each do |product|
+    - if product.bought_product.present?
+      = link_to product_path(product.id) do
+        %li.item
+          .item__picture--bought{style: "background-image: url(#{product.product_images.first.image});"}
+            .item__capital--bought
+              ¥
+              = product.price
+            .item__caption--bought
+              = product.name + ' sold'
+    - else
+      = link_to product_path(product.id) do
+        %li.item
+          .item__picture{style: "background-image: url(#{product.product_images.first.image});"}
+            .item__capital
+              ¥
+              = product.price
+            .item__caption
+              = product.name

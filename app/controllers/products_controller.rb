@@ -93,6 +93,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    if product.destroy
+      redirect_to user_accounts_path
+    else
+      redirect_to product_path(params[:id])
+    end
+  end
+
   private
 
   def set_existing_product

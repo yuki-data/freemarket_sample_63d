@@ -1,2 +1,0 @@
-class UserRegistrationSevenController < ApplicationController
-end
