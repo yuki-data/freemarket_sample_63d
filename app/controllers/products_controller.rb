@@ -1,23 +1,24 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :category_select_function, only: [:new, :edit]
-  before_action :set_new_product, only: [:new, :create]
   before_action :set_existing_product, only: [:show, :edit, :update]
 
   def show
   end
 
   def new
+    @product = Product.new
     @product.product_images.build
   end
 
   def create
+    @product = Product.new(product_params)
     unless extract_product_images.size > 0
       flash[:exhibit_notice] = "画像は１枚以上必要です"
       redirect_to new_product_path and return
     end
 
-    if @product.save(product_params)
+    if @product.save
       extract_product_images.each do |image|
         @product.product_images.create(image: image, product_id: @product.id)
       end
@@ -93,10 +94,6 @@ class ProductsController < ApplicationController
   end
 
   private
-
-  def set_new_product
-    @product = Product.new
-  end
 
   def set_existing_product
     @product = Product.find(params[:id])
