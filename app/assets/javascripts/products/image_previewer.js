@@ -87,7 +87,6 @@ $(document).on("turbolinks:load", function() {
     var file = this.files[0];
     var fileReader = new FileReader();
     var imagesCount = countPreviewItems();
-    // var lastImageId = getLastImageId();
     var lastImageId = getLastInputId();
 
     fileReader.onload = function(e) {
@@ -95,7 +94,6 @@ $(document).on("turbolinks:load", function() {
       $(imagePreview).append(html);
     };
     fileReader.readAsDataURL(file);
-    console.log(lastImageId);
     updateImageLabel(lastImageId + 1);
     appendImageInput(lastImageId + 1);
     if (imagesCount + 1 >= imagesCountUpperLimit) {
