@@ -32,6 +32,7 @@ class CloneProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
+      remove_product_images
       extract_product_images.each do |image|
         @product.product_images.create(image: image, product_id: @product.id)
       end
@@ -121,5 +122,13 @@ class CloneProductsController < ApplicationController
       end
     end
     images_ids_array
+  end
+
+  def remove_product_images
+    @product.product_image_ids.each do |i|
+      unless extract_existing_product_images.include?(i)
+        @product.product_images.destroy(i)
+      end
+    end
   end
 end
