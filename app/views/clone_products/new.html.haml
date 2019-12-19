@@ -12,13 +12,13 @@
         %p.exhibit-center__main__form-section__group__text 最大5枚までアップロードできます
       .exhibit-center__main__form-section__images
         %ul.exhibit-center__main__form-section__images__preview
+          - unless @product.new_record?
+            = render partial: "product_images_preview_item", collection: @product.product_images.limit(5), as: :image
         .exhibit-center__main__form-section__images__residue
-          = f.fields_for :product_images do |image|
-            = image.file_field :image, multiple: true, class: "exhibit-center__main__form-section__images__residue__input", data: {"image-id": 0}
-            = image.label :image do
-              .exhibit-center__main__form-section__images__residue__icon
-                = icon("fas", "camera")
-              .exhibit-center__main__form-section__images__residue__text クリックしてアップロード
+          - if @product.new_record?
+            = render partial: "product_images_new_fields", locals: { f: f }
+          - else
+            = render partial: "product_images_edit_fields", locals: { f: f }
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
@@ -38,10 +38,10 @@
         .exhibit-center__main__form-section__group__title
           = f.label :category, "カテゴリー"
           %span 必須
-        %ul.exhibit-center__main__form-section__group-list
-          %li.exhibit-center__main__form-section__group__form--select
-            = f.select :category, options_for_select(@category_parent_array.map{ |c| [c[:name], c[:id]] })
-            = icon("fas", "chevron-down")
+        - if @product.new_record?
+          = render partial: "new_product_category", locals: { f: f }
+        - else
+          = render partial: "edit_product_category", locals: { f: f }
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :brand, "ブランド"

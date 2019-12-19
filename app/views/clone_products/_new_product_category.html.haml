@@ -1,0 +1,4 @@
+%ul.exhibit-center__main__form-section__group-list
+  %li.exhibit-center__main__form-section__group__form--select
+    = f.select :category, options_for_select(@category_parent_array.map{ |c| [c[:name], c[:id]] })
+    = icon("fas", "chevron-down")

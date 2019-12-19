@@ -1,4 +1,3 @@
--# - binding.pry
 = render "shared/product_flash"
 .exhibit-top
   =render 'single/single-header'
@@ -13,20 +12,13 @@
         %p.exhibit-center__main__form-section__group__text 最大5枚までアップロードできます
       .exhibit-center__main__form-section__images
         %ul.exhibit-center__main__form-section__images__preview
-          - if @product.product_images.present?
+          - unless @product.new_record?
             = render partial: "product_images_preview_item", collection: @product.product_images.limit(5), as: :image
         .exhibit-center__main__form-section__images__residue
-          = file_field_tag "product[product_images_attributes][#{@product.product_image_ids.max + 1}][image][]",
-              id: "product_product_images_attributes_#{@product.product_image_ids.max + 1}_image",
-              class: "exhibit-center__main__form-section__images__residue__input",
-              multiple: true,
-              data: {"image-id": @product.product_image_ids.max + 1}
-          = label_tag "product_product_images_attributes_#{@product.product_image_ids.max + 1}_image" do
-            .exhibit-center__main__form-section__images__residue__icon
-              = icon("fas", "camera")
-            .exhibit-center__main__form-section__images__residue__text クリックしてアップロード
-          = f.fields_for :product_images do |image|
-            = image.file_field :image, multiple: true, data: {"image-id": image.object.id}
+          - if @product.new_record?
+            = render partial: "product_images_new_fields", locals: { f: f }
+          - else
+            = render partial: "product_images_edit_fields", locals: { f: f }
     %section.exhibit-center__main__form-section
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
@@ -46,7 +38,10 @@
         .exhibit-center__main__form-section__group__title
           = f.label :category, "カテゴリー"
           %span 必須
-        = render partial: "edit_product_category", locals: { form: f }
+        - if @product.new_record?
+          = render partial: "new_product_category", locals: { f: f }
+        - else
+          = render partial: "edit_product_category", locals: { f: f }
       .exhibit-center__main__form-section__group
         .exhibit-center__main__form-section__group__title
           = f.label :brand, "ブランド"
