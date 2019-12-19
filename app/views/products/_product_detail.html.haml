@@ -2,11 +2,19 @@
   .product-detail__content
     %h1.product-detail__content__title=@product.name
     .product-detail__content__main
-      .product-detail__content__main__photo
-        %ul.product-detail__content__main__photo__slide-show
-          = render partial: "products/product_detail_thumbnail", locals: { height: "300", width: "300" }, collection: @product.product_images.limit(5), as: :img
-        %ul.product-detail__content__main__photo__thumbnails
-          = render partial: "products/product_detail_thumbnail", locals: { height: "60", width: "60" }, collection: @product.product_images.limit(5), as: :img
+      - if @product.bought_product.present?
+        .bought_mark
+          .product-detail__content__main__photo
+            %ul.product-detail__content__main__photo__slide-show
+              = render partial: "products/product_detail_thumbnail", locals: { height: "300", width: "300" }, collection: @product.product_images.limit(5), as: :img
+            %ul.product-detail__content__main__photo__thumbnails
+              = render partial: "products/product_detail_thumbnail", locals: { height: "60", width: "60" }, collection: @product.product_images.limit(5), as: :img
+      - else
+        .product-detail__content__main__photo
+          %ul.product-detail__content__main__photo__slide-show
+            = render partial: "products/product_detail_thumbnail", locals: { height: "300", width: "300" }, collection: @product.product_images.limit(5), as: :img
+          %ul.product-detail__content__main__photo__thumbnails
+            = render partial: "products/product_detail_thumbnail", locals: { height: "60", width: "60" }, collection: @product.product_images.limit(5), as: :img
       .product-detail__content__main__details
         %table.product-detail__table
           %tbody.product-detail__table__tbody
