@@ -79,6 +79,10 @@ function appendImageInput(imageId) {
 }
 
 $(document).on("turbolinks:load", function() {
+  if (countPreviewItems() >= imagesCountUpperLimit) {
+    hideImageLabel();
+  }
+
   $(imageFileInputParent).on("change", imageFileInput, function(e) {
     var file = this.files[0];
     var fileReader = new FileReader();
@@ -104,7 +108,6 @@ $(document).on("turbolinks:load", function() {
       .parent()
       .parent();
     var imageId = targetImageItem.data("image-id");
-    console.log(imageId);
     var associatedInput = $(
       `.exhibit-center__main__form-section__images__residue > [data-image-id=${imageId}]`
     );
