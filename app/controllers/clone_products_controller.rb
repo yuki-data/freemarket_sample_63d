@@ -100,7 +100,7 @@ class CloneProductsController < ApplicationController
   end
 
   def product_image_param
-    params.require(:product)["product_images_attributes"]
+    params.require(:product)["product_images_attributes"] || []
   end
 
   def extract_product_images
