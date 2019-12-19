@@ -39,7 +39,6 @@ class Product < ApplicationRecord
   has_one :saling_product, dependent: :destroy
   has_one :bought_product, dependent: :destroy
   has_one :sold_product, dependent: :destroy
-  belongs_to :brand
   has_many :product_images, dependent: :destroy
   accepts_nested_attributes_for :product_images
 

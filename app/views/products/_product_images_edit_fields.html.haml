@@ -1,0 +1,11 @@
+= file_field_tag "product[product_images_attributes][#{@product.product_image_ids.max + 1}][image][]",
+    id: "product_product_images_attributes_#{@product.product_image_ids.max + 1}_image",
+    class: "exhibit-center__main__form-section__images__residue__input",
+    multiple: true,
+    data: {"image-id": @product.product_image_ids.max + 1}
+= label_tag "product_product_images_attributes_#{@product.product_image_ids.max + 1}_image" do
+  .exhibit-center__main__form-section__images__residue__icon
+    = icon("fas", "camera")
+  .exhibit-center__main__form-section__images__residue__text クリックしてアップロード
+= f.fields_for :product_images do |image|
+  = image.file_field :image, multiple: true, data: {"image-id": image.object.id}

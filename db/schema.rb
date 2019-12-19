@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_231805) do
-
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_12_18_021239) do
 
   create_table "bought_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
@@ -71,7 +64,6 @@ ActiveRecord::Schema.define(version: 2019_12_15_231805) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_profile_id"
     t.bigint "category_id"
-    t.bigint "brand_id"
     t.string "name", null: false
     t.text "description", null: false
     t.integer "status", null: false
@@ -82,7 +74,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_231805) do
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.string "brand"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_profile_id"], name: "index_products_on_user_profile_id"
   end
@@ -139,11 +131,6 @@ ActiveRecord::Schema.define(version: 2019_12_15_231805) do
     t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end
 
-  create_table "user_registration_fives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -168,7 +155,6 @@ ActiveRecord::Schema.define(version: 2019_12_15_231805) do
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "user_profiles"
   add_foreign_key "product_images", "products"
-  add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "user_profiles"
   add_foreign_key "saling_products", "products"

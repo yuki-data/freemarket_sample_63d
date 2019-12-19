@@ -1,0 +1,146 @@
+.exhibit-center {
+  background-color: $mypage-bgcolor;
+  &__main {
+    background-color: $mypage-white;
+    width: $mypage-main-inner-width;
+    margin: 0 auto;
+    &__title {
+      font-size: $product-detail-font-size-title;
+      text-align: center;
+      line-height: 1.4;
+      font-weight: bold;
+      padding: 24px 40px;
+    }
+    &__form-section {
+      border-top: 2px solid $mypage-bgcolor;
+      padding: 24px 40px 40px;
+      &__images {
+        display: flex;
+        background-color: $mypage-bgcolor;
+        height: 150px;
+        &__preview {
+          display: flex;
+          padding: 10px 15px;
+          &__item {
+            width: 110px;
+            text-align: center;
+            &:not(:first-of-type) {
+              margin-left: 10px;
+            }
+            &__button-delete {
+              color: $mypage-ultramarine;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        &__residue {
+          flex-grow: 1;
+          flex-shrink: 1;
+          input {
+            display: none;
+          }
+          label {
+            display: block;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      &__group {
+        padding-top: 20px;
+        &__title {
+          margin-bottom: 5px;
+          label {
+            font-weight: bold;
+          }
+          span {
+            background-color: $mypage-red;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: $mypage-white;
+            font-size: $mypage-font-size-small;
+          }
+        }
+        &__form {
+          &__input {
+            width: 100%;
+            height: $mypage-card-form-input-height;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid $mypage-dimgray;
+            background: $mypage-white;
+            line-height: 1.5;
+          }
+          &__textarea {
+            width: 100%;
+            line-height: 1.5;
+            padding: 10px 16px 8px;
+          }
+          &--select {
+            position: relative;
+            select {
+              width: 100%;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              height: $mypage-card-form-input-height;
+              line-height: 1.5;
+              border-radius: 4px;
+              border: 1px solid $mypage-dimgray;
+              padding: 0 16px;
+              outline: none;
+            }
+            select:-moz-focusring {
+              color: transparent;
+              text-shadow: 0 0 0 $mypage-black;
+            }
+            i {
+              color: #888;
+              position: absolute;
+              right: 20px;
+              top: 18px;
+            }
+          }
+          %__button {
+            line-height: 50px;
+            margin: 8px 0;
+            text-align: center;
+            display: block;
+            width: 100%;
+          }
+          &__button {
+            &--submit {
+              @extend %__button;
+              color: $mypage-white;
+              background-color: $mypage-red;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+            &--cancel {
+              @extend %__button;
+              color: $mypage-white;
+              background-color: $product-detail-gray;
+            }
+          }
+        }
+      }
+      &__calculate {
+        display: flex;
+        justify-content: space-between;
+        line-height: 50px;
+        border-top: 1px solid $mypage-bgcolor;
+        margin-top: 20px;
+      }
+    }
+  }
+}

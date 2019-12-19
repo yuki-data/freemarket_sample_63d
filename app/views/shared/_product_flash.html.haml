@@ -2,3 +2,9 @@
   - flash.each do |key, value|
     - if key == "payment_alert"
       = content_tag(:div, value, class: "flash__message--alert")
+    - if key == "exhibit_notice"
+      = content_tag(:div, value, class: "flash__message--notice")
+  - if flash.keys.include?("exhibit_errors")
+    - flash[:exhibit_errors].each do |key, values|
+      - values.each do |value|
+        = content_tag(:div, "#{key}: #{value}", class: "flash__message--notice")

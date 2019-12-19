@@ -1,0 +1,6 @@
+= f.fields_for :product_images do |image|
+  = image.file_field :image, multiple: true, class: "exhibit-center__main__form-section__images__residue__input", data: {"image-id": 0}
+  = image.label :image do
+    .exhibit-center__main__form-section__images__residue__icon
+      = icon("fas", "camera")
+    .exhibit-center__main__form-section__images__residue__text クリックしてアップロード

@@ -1,0 +1,11 @@
+%ul.exhibit-center__main__form-section__group-list
+  %li.exhibit-center__main__form-section__group__form--select
+    = f.select :category, options_for_select(@category_parent_array.map{ |c| [c[:name], c[:id]] }, selected: @product.category.root.id)
+    = icon("fas", "chevron-down")
+  %li.exhibit-center__main__form-section__group__form--select#select_category_child
+    = f.select :category_child, options_for_select(@category_root.children.map{ |c| [c[:name], c[:id]] }, selected: @category_child ? @category_child.id : false)
+    = icon("fas", "chevron-down")
+  - if @category_child
+    %li.exhibit-center__main__form-section__group__form--select#select_category_grandchild
+      = f.select :category_grandchild, options_for_select(@category_child.children.map{ |c| [c[:name], c[:id]] }, selected: @category_grandchild ? @category_grandchild.id : false)
+      = icon("fas", "chevron-down")

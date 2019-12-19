@@ -1,91 +1,94 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :category_select_function, only: [:new, :create]
-  before_action :set_new_product, only: [:new, :create]
+  before_action :category_select_function, only: [:new, :edit]
   before_action :set_existing_product, only: [:show, :edit, :update]
 
   def show
   end
 
-  def edit
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
-    @category_child_array = @product.category.parent.parent.children
-    @category_grandchild_array = @product.category.parent.children
-  end
-
-  def update
-    brand = Brand.new(name: params.require(:product)[:brand][:name])
-    category_name = params[:category] || params.require(:product)[:category]
-    category = Category.find_by(name: category_name)
-    if !brand.save || !category
-      redirect_to edit_product_path(params[:id]) and return
-    end
-    product_params = product_parameter.merge(
-      brand_id: brand.id,
-      category_id: category.id,
-      user_profile_id: current_user.user_profile.id
-    )
-    if @product.update(product_params)
-      if params.require(:product)["product_images_attributes"].present?
-        image_ids = []
-        params.require(:product)["product_images_attributes"].each do |index, dict|
-          image_ids << dict[:id].to_i
-        end
-        @product.product_image_ids.each do |i|
-          unless image_ids.include?(i)
-            @product.product_images.destroy(i)
-          end
-        end
-      end
-      if params[:product_images]
-        params[:product_images][:image].each do |image|
-          ProductImage.create(image: image, product_id: @product.id)
-        end
-      end
-      redirect_to product_path(params[:id])
-    else
-      redirect_to edit_product_path(params[:id])
-    end
-  end
-
-  def set_new_product
+  def new
     @product = Product.new
     @product.product_images.build
   end
 
-  def set_existing_product
-    @product = Product.find(params[:id])
-  end
-
-  def new
-  end
-
   def create
-    brand = Brand.new(name: params.require(:product)[:brand])
-    category_name = params[:category] || params.require(:product)[:category]
-    category = Category.find_by(name: category_name)
-    if !brand.save || !category
+    @product = Product.new(product_params)
+    unless extract_product_images.size > 0
+      flash[:exhibit_notice] = "画像は１枚以上必要です"
       redirect_to new_product_path and return
     end
 
-    product_params = product_parameter.merge(
-      brand_id: brand.id,
-      category_id: category.id,
-      user_profile_id: current_user.user_profile.id
-    )
-    @product = Product.new(product_params)
+    if @product.save
+      extract_product_images.each do |image|
+        @product.product_images.create(image: image, product_id: @product.id)
+      end
+      flash[:exhibit_notice] = "出品しました"
+      redirect_to new_product_path
+    else
+      flash[:exhibit_errors] = @product.errors.messages
+      redirect_to new_product_path
+    end
+  end
+
+  def edit
+    category_path = @product.category.path
+    @category_root = category_path[0]
+    @category_child = category_path[1]
+    @category_grandchild = category_path[2]
+  end
+
+  def update
+    unless (extract_existing_product_images.size + extract_product_images.size) > 0
+      flash[:exhibit_notice] = "画像は１枚以上必要です"
+      redirect_to edit_product_path(params[:id]) and return
+    end
+    if @product.update(product_params)
+      remove_product_images
+      extract_product_images.each do |image|
+        @product.product_images.create(image: image, product_id: @product.id)
+      end
+      flash[:exhibit_notice] = "編集しました"
+      redirect_to edit_product_path(params[:id])
+    else
+      flash[:exhibit_errors] = @product.errors.messages
+      redirect_to edit_product_path(params[:id])
+    end
+  end
+
+  #カテゴリー選択機能
+  def category_select_function
+    @category_parent_array = [{ name: "---", id: "" }]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << { name: parent.name, id: parent.id }
+    end
+  end
+
+  # 親カテゴリーが選択された後に動くアクション
+  def get_category_children
+    @category_array = []
+    category_children = Category.find(params[:category_id]).children
+    category_children.each do |child|
+      @category_array << { name: child.name, id: child.id }
+    end
+    respond_to do |format|
+      format.js do
+        @status = "success"
+        @name = "category_child"
+      end
+    end
+  end
+
+  def get_category_grandchildren
+    @category_array = []
+    category_grandchildren = Category.find(params[:child_id]).children
+    category_grandchildren.each do |child|
+      @category_array << { name: child.name, id: child.id }
+    end
 
     respond_to do |format|
-      if @product.save
-        params[:product_images][:image].each do |image|
-          @product.product_images.create(image: image, product_id: @product.id)
-        end
-        format.html{redirect_to root_path}
-      else
-        format.html{redirect_to new_product_path}
+      format.js do
+        @status = "success"
+        @name = "category_grandchild"
       end
     end
   end
@@ -99,41 +102,57 @@ class ProductsController < ApplicationController
     end
   end
 
-  # 以下全て、formatはjsonのみ
-  # 親カテゴリーが選択された後に動くアクション
-  def get_category_children
-    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  private
+
+  def set_existing_product
+    @product = Product.find(params[:id])
   end
 
-  # 子カテゴリーが選択された後に動くアクション
-  def get_category_grandchildren
-    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
-  end
-
-  # 配送料の負担が選ばれた後のアクション
-  def get_shipping_method
-  end
-
-  #出品に必要なデータ型の指定
-  def product_parameter
-    #最後に、.merge(user_id: current_user.id)をユーザー設定終わったらつける
+  def product_params
     params.require(:product).permit(
-      :name, :description, :status, :who_charge_shipping,
-      :way_of_shipping, :shipping_region, :how_long_shipping, :price,
-      # product_images_attributes: [:image]
+      :name, :description, :status,
+      :who_charge_shipping, :way_of_shipping, :shipping_region,
+      :how_long_shipping, :price, :brand
+    ).merge(
+      category_id: product_category_param,
+      user_profile_id: current_user.user_profile.id
     )
   end
 
-  #カテゴリー選択機能
-  def category_select_function
-    #セレクトボックスの初期値設定
-    @category_parent_array = ["---"]
-    #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+  def product_category_param
+    category_params = params.require(:product).permit(:category, :category_child, :category_grandchild)
+    category_params[:category_grandchild] || category_params[:category_child] || category_params[:category]
   end
 
+  def product_image_param
+    params.require(:product)["product_images_attributes"] || []
+  end
+
+  def extract_product_images
+    images_array = []
+    product_image_param.each do |index, image|
+      if image[:image]
+        images_array << image[:image][0]
+      end
+    end
+    images_array
+  end
+
+  def extract_existing_product_images
+    images_ids_array = []
+    product_image_param.each do |index, image|
+      if image[:id]
+        images_ids_array << image[:id].to_i
+      end
+    end
+    images_ids_array
+  end
+
+  def remove_product_images
+    @product.product_image_ids.each do |i|
+      unless extract_existing_product_images.include?(i)
+        @product.product_images.destroy(i)
+      end
+    end
+  end
 end
