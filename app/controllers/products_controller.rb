@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
         @product.product_images.create(image: image, product_id: @product.id)
       end
       flash[:exhibit_notice] = "出品しました"
-      redirect_to new_product_path
+      redirect_to product_path(@product.id)
     else
       flash[:exhibit_errors] = @product.errors.messages
       redirect_to new_product_path
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
         @product.product_images.create(image: image, product_id: @product.id)
       end
       flash[:exhibit_notice] = "編集しました"
-      redirect_to edit_product_path(params[:id])
+      redirect_to product_path(params[:id])
     else
       flash[:exhibit_errors] = @product.errors.messages
       redirect_to edit_product_path(params[:id])
@@ -96,7 +96,7 @@ class ProductsController < ApplicationController
   def destroy
     product = Product.find(params[:id])
     if product.destroy
-      redirect_to user_accounts_path
+      redirect_to root_path
     else
       redirect_to product_path(params[:id])
     end
