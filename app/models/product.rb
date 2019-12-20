@@ -68,4 +68,10 @@ class Product < ApplicationRecord
   def humanize_shipping_region
     Prefecture.find(shipping_region).name
   end
+
+  def self.filter_by_category(category_name)
+    products = Product.all
+    filtered = products.select { |p| p.category.root.name == category_name }
+    filtered.take(10)
+  end
 end

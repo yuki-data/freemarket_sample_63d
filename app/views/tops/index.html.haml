@@ -30,28 +30,28 @@
       = link_to do
         %b
           もっと見る＞
-    = render partial: "tops"
+    = render partial: "tops", locals: { products: Product.filter_by_category("レディース")}
 
     .new__item__title
       %h3 メンズ新着アイテム
       = link_to do
         %b
           もっと見る＞
-
+    = render partial: "tops", locals: { products: Product.filter_by_category("メンズ")}
 
     .new__item__title
       %h3 家電・スマホ・カメラ新着アイテム
       = link_to do
         %b
           もっと見る＞
-
+    = render partial: "tops", locals: { products: Product.filter_by_category("家電・スマホ・カメラ")}
 
     .new__item__title
       %h3 おもちゃ・ホビー・グッズ新着アイテム
       = link_to do
         %b
           もっと見る＞
-
+    = render partial: "tops", locals: { products: Product.filter_by_category("おもちゃ・ホビー・グッズ")}
 
   .popularity
     %h2 人気のブランド
