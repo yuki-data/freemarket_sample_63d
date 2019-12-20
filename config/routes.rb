@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "tops#index"
-  resources :userprofile, only: [:edit]
+  resources :userprofile, only: [:index]
   resources :cwavetests, only: [:index, :create, :new]
   resources :user_accounts, only: [:index], path: "/mypage" do
     collection do

@@ -39,15 +39,17 @@
                 %ul.product-detail__category
                   %li.product-detail__category__item
                     = link_to "#" do
-                      %span メンズ
-                  %li.product-detail__category__item
-                    = link_to "#" do
-                      = icon("fas", "chevron-right")
-                      %span 時計
-                  %li.product-detail__category__item
-                    = link_to "#" do
-                      = icon("fas", "chevron-right")
-                      %span=@product.category.name
+                      %span=@product.category.root.name
+                  - if @product.category.path[1]
+                    %li.product-detail__category__item
+                      = link_to "#" do
+                        = icon("fas", "chevron-right")
+                        %span=@product.category.path[1].name
+                  - if @product.category.path[2]
+                    %li.product-detail__category__item
+                      = link_to "#" do
+                        = icon("fas", "chevron-right")
+                        %span=@product.category.name
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title ブランド
               %td.product-detail__table__tbody__row__content
@@ -74,7 +76,7 @@
       %span.product-detail__content__price-box__price=number_to_currency(@product.price, unit: "￥", precision: 0)
       %span.product-detail__content__price-box__tax (税込み)
       %span.product-detail__content__price-box__shipping-fee 送料込み
-    - unless user_signed_in? && current_user == @product.user_profile.user
+    - unless (user_signed_in? && current_user == @product.user_profile.user) || @product.bought_product.present?
       .product-detail__content__buy
         = link_to "購入画面に進む", product_purchases_path(@product.id)
     .product-detail__content__description
