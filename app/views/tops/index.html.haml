@@ -95,51 +95,6 @@
           もっと見る＞
     = render partial: "tops", locals: { products: Product.filter_by_category("ハンドメイド")}
 
-  .popularity
-    %h2 人気のブランド
-    %ul.item
-      %li.item__tag
-        = link_to do
-          シャネル
-      %li.item__tag
-        = link_to do
-          ルイヴィトン
-      %li.item__tag
-        = link_to do
-          シュプリーム
-      %li.item__tag
-        = link_to do
-          ナイキ
-
-  .item__all
-
-    .new__item__title
-      %h3 シャネル新着アイテム
-      = link_to do
-        %b
-          もっと見る＞
-
-
-    .new__item__title
-      %h3 ルイヴィトン新着アイテム
-      = link_to do
-        %b
-          もっと見る＞
-
-
-    .new__item__title
-      %h3 シュプリーム新着アイテム
-      = link_to do
-        %b
-          もっと見る＞
-
-
-    .new__item__title
-      %h3 ナイキ新着アイテム
-      = link_to do
-        %b
-          もっと見る＞
-
 
   = render "shared/footer"
   = render partial: "exibit_button"
