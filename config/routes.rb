@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get :step3
       get :step4
     end
+  end
   resources :products, only: [:show, :new, :create, :edit, :update, :destroy] do
     collection do
       get 'get_category_children', defaults: { format: 'js' }

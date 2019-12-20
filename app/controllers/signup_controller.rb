@@ -1,7 +1,14 @@
 class SignupController < ApplicationController
   protect_from_forgery
 
-  
+  def step1
+    @user = User.new
+    @user.build_user_profile
+  end
+
+  def step2
+    binding.pry
+  end
 
   def new
     @user = User.new
