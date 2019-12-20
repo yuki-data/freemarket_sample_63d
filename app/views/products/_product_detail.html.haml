@@ -39,15 +39,17 @@
                 %ul.product-detail__category
                   %li.product-detail__category__item
                     = link_to "#" do
-                      %span メンズ
-                  %li.product-detail__category__item
-                    = link_to "#" do
-                      = icon("fas", "chevron-right")
-                      %span 時計
-                  %li.product-detail__category__item
-                    = link_to "#" do
-                      = icon("fas", "chevron-right")
-                      %span=@product.category.name
+                      %span=@product.category.root.name
+                  - if @product.category.path[1]
+                    %li.product-detail__category__item
+                      = link_to "#" do
+                        = icon("fas", "chevron-right")
+                        %span=@product.category.path[1].name
+                  - if @product.category.path[2]
+                    %li.product-detail__category__item
+                      = link_to "#" do
+                        = icon("fas", "chevron-right")
+                        %span=@product.category.name
             %tr.product-detail__table__tbody__row
               %th.product-detail__table__tbody__row__title ブランド
               %td.product-detail__table__tbody__row__content
