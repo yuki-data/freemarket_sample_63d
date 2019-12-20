@@ -64,4 +64,62 @@
             必須
         .registration__input__wrapper
           = f.date_select(:birth_day, start_year:Time.now.year, end_year:1920, use_month_numbers:true, prompt:"---",)
+        %p.registration__label
+          %label
+            お名前 (住所用)
+          %span.registration__card
+            必須
+          .registration__input__wrapper
+            = f.fields_for :user_address do |ua|
+              = ua.text_field :last_name, class: 'registration__input', placeholder: '例 メルカリ'
+              = ua.text_field :first_name, class: 'registration__input', placeholder: '例 太郎'
+        %p.registration__label
+          %label
+            お名前（住所用 カナ入力）
+          %span.registration__card
+            必須
+          .registration__input__wrapper
+            = f.fields_for :user_address do |ua|
+              = ua.text_field :last_name_kana, class: 'registration__input', placeholder: '例 メルカリ'
+              = ua.text_field :first_name_kana, class: 'registration__input', placeholder: '例 太郎'
+        %p.registration__label
+          %label
+            都道府県
+          %span.registration__card
+            必須
+          .registration__input__wrapper
+            = f.fields_for :user_address do |ua|
+              = ua.collection_select :prefecture, Prefecture.all, :id, :name, { prompt: '---' }, class: 'registration__input'
+        %p.registration__label
+          %label
+            郵便番号
+          %span.registration__card
+            必須
+          .registration__input__wrapper
+            = f.fields_for :user_address do |ua|
+              = ua.text_field :post_number, class: 'registration__input', placeholder: '例 横浜市緑区'
+        %p.registration__label
+          %label
+            市町村
+          %span.registration__card
+            必須
+          .registration__input__wrapper
+            = f.fields_for :user_address do |ua|
+              = ua.text_field :city, class: 'registration__input', placeholder: '例 横浜市緑区'
+        %p.registration__label
+          %label
+            番地
+          %span.registration__card
+            必須
+          .registration__input__wrapper
+            = f.fields_for :user_address do |ua|
+              = ua.text_field :house_number, class: 'registration__input', placeholder: '例 青山1-1-1'
+        %p.registration__label
+          %label
+            建物名
+          %span.registration__card
+            任意
+          .registration__input__wrapper
+            = f.fields_for :user_address do |ua|
+              = ua.text_field :building_name, class: 'registration__input', placeholder: '例 柳ビル101'
           = f.submit "登録", class: "registration__push__next"
