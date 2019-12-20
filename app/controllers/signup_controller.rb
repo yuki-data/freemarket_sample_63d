@@ -7,7 +7,21 @@ class SignupController < ApplicationController
   end
 
   def step2
-    binding.pry
+    session[:nickname] = user_params[:user_profile_attributes]
+    session[:email] = user_params[:email]
+    session[:password] = user_params[:password]
+    session[:password_confirmation] = user_params[:password_confirmation]
+    session[:last_name] = user_params[:last_name]
+    session[:last_name_kana] = user_params[:last_name_kana]
+    session[:first_name] = user_params[:first_name]
+    session[:first_name_kana] = user_params[:first_name_kana]
+    #データ型をここで加工する
+    year = params[:user]["birth_day(1i)"]
+    month = params[:user]["birth_day(2i)"]
+    day = params[:user]["birth_day(3i)"]
+    params[:user][:birth_day] = "#{year}-#{month}-#{day}"
+    session[:birth_day] = user_params[:birth_day]
+    @user = User.new
   end
 
   def new
@@ -59,5 +73,4 @@ class SignupController < ApplicationController
       ]
     )
   end
-
 end
