@@ -1,7 +1,9 @@
 //////スライダーのダミー/////
 .slider{
-  height:50vh;
-  background: green;
+  height:390px;
+  background-image: url(toppage/top-page-banner.jpg);
+  background-size: cover;
+  background-position: center;
   width:100%;
   display: flex;
   justify-content: space-between;
