@@ -24,6 +24,10 @@ class SignupController < ApplicationController
     @user = User.new
   end
 
+  def step3
+    binding.pry
+  end
+
   def new
     @user = User.new
     @user.build_user_profile
