@@ -9,8 +9,14 @@ Rails.application.routes.draw do
     end
   end
   resources :card_registrations, only: [:index, :new], path: "/mypage/card"
-  resources :signup, only: [:new, :create]
-
+  resources :signup, only: [:new, :create] do
+    collection do
+      get :step1
+      get :step2
+      get :step3
+      get :step4
+    end
+  end
   resources :products, only: [:show, :new, :create, :edit, :update, :destroy] do
     collection do
       get 'get_category_children', defaults: { format: 'js' }
