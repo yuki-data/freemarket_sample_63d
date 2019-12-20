@@ -50,7 +50,6 @@ class SignupController < ApplicationController
       @user.build_user_profile(user_params[:user_profile_attributes])
       @user.build_user_address(user_params[:user_address_attributes])
     if @user.save
-      binding.pry
       sign_in(User.find(@user.id), scope: :user) unless user_signed_in?
       redirect_to root_path
     else
