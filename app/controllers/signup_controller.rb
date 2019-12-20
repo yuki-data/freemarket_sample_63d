@@ -3,11 +3,15 @@ class SignupController < ApplicationController
 
   def step1
     @user = User.new
-    @user.build_user_profile
   end
 
   def step2
-    session[:nickname] = user_params[:user_profile_attributes]
+    @user = User.new
+    @user.build_user_profile
+    #今後のために下記を残しておきます
+    # session[:nickname] = params
+    # session[:nickname] = @user.build_user_profile(user_params[:user_profile_attributes])
+    # session[:nickname] = user_params[:user_profile_attributes][:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
     session[:password_confirmation] = user_params[:password_confirmation]
@@ -25,20 +29,28 @@ class SignupController < ApplicationController
   end
 
   def step3
-    binding.pry
-  end
-
-  def new
+    session[:phone_number] = user_params[:phone_number]
     @user = User.new
     @user.build_user_profile
     @user.build_user_address
   end
 
   def create
-      @user = User.new(user_params)
+      @user = User.new(
+        email: session[:email],
+        password: session[:password],
+        password_confirmation: session[:password_confirmation],
+        last_name: session[:last_name],
+        last_name_kana: session[:last_name_kana],
+        first_name: session[:first_name],
+        first_name_kana: session[:first_name_kana],
+        birth_day: session[:birth_day],
+        phone_number: session[:phone_number],
+      )
       @user.build_user_profile(user_params[:user_profile_attributes])
       @user.build_user_address(user_params[:user_address_attributes])
     if @user.save
+      binding.pry
       sign_in(User.find(@user.id), scope: :user) unless user_signed_in?
       redirect_to root_path
     else

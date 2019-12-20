@@ -7,14 +7,6 @@
       = form_for @user, url: step2_signup_index_path, method: :get do |f|
         %p.registration__label
           %label
-            ニックネーム
-          %span.registration__card
-            必須
-          .registration__input__wrapper
-            = f.fields_for :user_profile do |up|
-              = up.text_field :nickname, class: 'registration__input', placeholder: '例 メルカリ太郎'
-        %p.registration__label
-          %label
             メールアドレス
           %span.registration__card
             必須
