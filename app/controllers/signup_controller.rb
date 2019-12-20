@@ -13,6 +13,7 @@ class SignupController < ApplicationController
   end
 
   def create
+    binding.pry
       @user = User.new(user_params)
       @user.build_user_profile(user_params[:user_profile_attributes])
     if @user.save
