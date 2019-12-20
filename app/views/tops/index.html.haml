@@ -53,50 +53,47 @@
           もっと見る＞
     = render partial: "tops", locals: { products: Product.filter_by_category("おもちゃ・ホビー・グッズ")}
 
-  .popularity
-    %h2 人気のブランド
-    %ul.item
-      %li.item__tag
-        = link_to do
-          シャネル
-      %li.item__tag
-        = link_to do
-          ルイヴィトン
-      %li.item__tag
-        = link_to do
-          シュプリーム
-      %li.item__tag
-        = link_to do
-          ナイキ
-
-  .item__all
-
     .new__item__title
-      %h3 シャネル新着アイテム
+      %h3 ベビー・キッズ
       = link_to do
         %b
           もっと見る＞
-
+    = render partial: "tops", locals: { products: Product.filter_by_category("ベビー・キッズ")}
 
     .new__item__title
-      %h3 ルイヴィトン新着アイテム
+      %h3 インテリア・住まい・小物
       = link_to do
         %b
           もっと見る＞
-
+    = render partial: "tops", locals: { products: Product.filter_by_category("インテリア・住まい・小物")}
 
     .new__item__title
-      %h3 シュプリーム新着アイテム
+      %h3 本・音楽・ゲーム
       = link_to do
         %b
           もっと見る＞
-
+    = render partial: "tops", locals: { products: Product.filter_by_category("本・音楽・ゲーム")}
 
     .new__item__title
-      %h3 ナイキ新着アイテム
+      %h3 コスメ・香水・美容
       = link_to do
         %b
           もっと見る＞
+    = render partial: "tops", locals: { products: Product.filter_by_category("コスメ・香水・美容")}
+
+    .new__item__title
+      %h3 スポーツ・レジャー
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops", locals: { products: Product.filter_by_category("スポーツ・レジャー")}
+
+    .new__item__title
+      %h3 ハンドメイド
+      = link_to do
+        %b
+          もっと見る＞
+    = render partial: "tops", locals: { products: Product.filter_by_category("ハンドメイド")}
 
 
   = render "shared/footer"

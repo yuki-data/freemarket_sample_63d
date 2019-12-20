@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
       flash[:exhibit_notice] = "出品しました"
       redirect_to product_path(@product.id)
     else
-      flash[:exhibit_errors] = @product.errors.messages
+      flash[:exhibit_notice] = "未入力の項目があります"
       redirect_to new_product_path
     end
   end
@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
       flash[:exhibit_notice] = "編集しました"
       redirect_to product_path(params[:id])
     else
-      flash[:exhibit_errors] = @product.errors.messages
+      flash[:exhibit_notice] = "未入力の項目があります"
       redirect_to edit_product_path(params[:id])
     end
   end
